@@ -14,6 +14,19 @@ export async function registerModuleRoutes(app: FastifyInstance) {
     });
   });
 
+  // Module detail — public, same visibility as the catalog list.
+  app.get<{ Params: { slug: string } }>('/modules/:slug', async (req, reply) => {
+    const module = await prisma.module.findUnique({
+      where: { slug: req.params.slug },
+      select: {
+        slug: true, number: true, name: true, description: true,
+        category: true, status: true, priceCents: true, requiresAi: true,
+      },
+    });
+    if (!module) return reply.code(404).send({ error: 'Not found' });
+    return module;
+  });
+
   // Access check for a given module. Anonymous callers always get access: false.
   app.get<{ Params: { slug: string } }>('/modules/:slug/access', async (req) => {
     if (!req.user) return { access: false };

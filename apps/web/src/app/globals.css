@@ -1,0 +1,93 @@
+:root {
+  --color-bg: #0b0d10;
+  --color-surface: #14171c;
+  --color-border: #262b33;
+  --color-text: #e8eaed;
+  --color-text-dim: #9aa2ad;
+  --color-accent: #5b8cff;
+  --color-live: #3ecf8e;
+  --color-soon: #e8a33d;
+  --font-sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --radius: 8px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 40px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input {
+  font-family: inherit;
+  font-size: 14px;
+}
+
+button {
+  cursor: pointer;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  padding: var(--space-2) var(--space-3);
+}
+
+button:hover {
+  border-color: var(--color-accent);
+}
+
+button.primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #0b0d10;
+  font-weight: 600;
+}
+
+input {
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-text);
+  padding: var(--space-2);
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+}
+
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.badge.live {
+  background: rgba(62, 207, 142, 0.15);
+  color: var(--color-live);
+}
+
+.badge.coming_soon {
+  background: rgba(232, 163, 61, 0.15);
+  color: var(--color-soon);
+}

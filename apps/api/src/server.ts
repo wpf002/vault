@@ -4,6 +4,9 @@ import rawBody from 'fastify-raw-body';
 import { authPlugin, requireAuth } from './plugins/auth.js';
 import { registerModuleRoutes } from './routes/modules.js';
 import { registerBillingRoutes } from './routes/billing.js';
+import { registerWaitlistRoutes } from './routes/waitlist.js';
+import { registerLibraryRoutes } from './routes/library.js';
+import { registerAccountRoutes } from './routes/account.js';
 
 if (!process.env.AUTH_SECRET) {
   throw new Error('AUTH_SECRET must be set — it is the shared secret used to verify session tokens issued by the web app.');
@@ -21,6 +24,9 @@ app.get('/health', async () => ({ ok: true }));
 app.get('/me', { preHandler: requireAuth }, async (req) => req.user);
 await registerModuleRoutes(app);
 await registerBillingRoutes(app);
+await registerWaitlistRoutes(app);
+await registerLibraryRoutes(app);
+await registerAccountRoutes(app);
 
 const port = Number(process.env.API_PORT ?? 4000);
 app.listen({ port, host: '0.0.0.0' }).catch((err) => {

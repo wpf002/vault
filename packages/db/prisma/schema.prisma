@@ -62,6 +62,19 @@ model Module {
   requiresAi     Boolean        @default(false)
   createdAt      DateTime       @default(now())
   purchases      Purchase[]
+  waitlistSignups WaitlistSignup[]
+}
+
+// Demand signal for coming_soon modules — which one gets built next in
+// Phase 6+ is read off of this, not decided up front.
+model WaitlistSignup {
+  id        String   @id @default(cuid())
+  email     String
+  moduleId  String
+  createdAt DateTime @default(now())
+  module    Module   @relation(fields: [moduleId], references: [id])
+
+  @@unique([email, moduleId])
 }
 
 enum PurchaseKind {
