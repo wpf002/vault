@@ -9,17 +9,22 @@ export function NavBar() {
   return (
     <header
       style={{
+        position: 'sticky',
+        top: 0,
+        zIndex: 40,
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: '16px 24px',
+        padding: '14px 24px',
         borderBottom: '1px solid var(--color-border)',
+        background: 'rgba(0, 0, 0, 0.72)',
+        backdropFilter: 'blur(14px)',
       }}
     >
-      <Link href="/" style={{ fontWeight: 700, letterSpacing: '-0.02em' }}>
+      <Link href="/" style={{ fontWeight: 800, fontSize: 18, letterSpacing: '-0.03em' }}>
         vault
       </Link>
-      <nav style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
+      <nav style={{ display: 'flex', gap: 20, alignItems: 'center', fontSize: 14 }}>
         <Link href="/">Catalog</Link>
         {status === 'authenticated' ? (
           <>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { ModuleComponentProps } from '@vault/module-sdk';
-import { GatedAction, EmptyState, LoadingState } from '@vault/module-ui';
+import { Button, GatedAction, EmptyState, LoadingState } from '@vault/module-ui';
 import { UNITS, convert, type Category } from './units';
 
 type HistoryEntry = { category: Category; value: number; from: string; to: string; result: number; at: string };
@@ -48,17 +48,18 @@ export function BasicUnitConverter({ mode, store, requestUpgrade }: ModuleCompon
   if (history === null) return <LoadingState />;
 
   return (
-    <div className="card" data-testid="unit-converter-root" style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+    <div className="module-card" data-testid="unit-converter-root" style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
       <div style={{ display: 'flex', gap: 8 }}>
         {(['length', 'weight', 'temperature'] as Category[]).map((c) => (
-          <button
+          <Button
             key={c}
-            className={c === category ? 'primary' : undefined}
+            variant="secondary"
+            className={c === category ? 'active' : undefined}
             data-testid={`category-${c}`}
             onClick={() => changeCategory(c)}
           >
             {c}
-          </button>
+          </Button>
         ))}
       </div>
 
@@ -85,13 +86,15 @@ export function BasicUnitConverter({ mode, store, requestUpgrade }: ModuleCompon
             </option>
           ))}
         </select>
-        <strong data-testid="result-value">{result === null ? '—' : result.toLocaleString(undefined, { maximumFractionDigits: 6 })}</strong>
+        <strong data-testid="result-value" style={{ color: 'var(--module-accent)' }}>
+          {result === null ? '—' : result.toLocaleString(undefined, { maximumFractionDigits: 6 })}
+        </strong>
       </div>
 
       <div>
-        <button onClick={saveToHistory} disabled={result === null} data-testid="save-history-button">
+        <Button variant="primary" onClick={saveToHistory} disabled={result === null} data-testid="save-history-button">
           Save to history
-        </button>
+        </Button>
       </div>
 
       <div>
@@ -107,12 +110,7 @@ export function BasicUnitConverter({ mode, store, requestUpgrade }: ModuleCompon
             ))}
           </ul>
         )}
-        <GatedAction
-          mode={mode}
-          requestUpgrade={requestUpgrade}
-          onAction={exportCsv}
-          className="primary"
-        >
+        <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportCsv}>
           Export history as CSV
         </GatedAction>
       </div>

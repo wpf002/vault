@@ -7,4 +7,7 @@ export default defineModule({
   name: 'Basic Unit Converter',
   Component: BasicUnitConverter,
   seedPreview,
+  // Overrides the 'utilities' category default (slate) — orange reads as
+  // "calculator/tool" (same instinct behind Apple Calculator's accent).
+  theme: { accent: '#ff9f0a' },
 });

@@ -60,9 +60,10 @@ export function ModuleRuntime({ slug, name, priceCents }: Props) {
         });
 
   const Component = manifest.Component;
+  const accent = manifest.theme?.accent;
 
   return (
-    <>
+    <div style={accent ? ({ '--module-accent': accent } as React.CSSProperties) : undefined}>
       {mode === 'preview' && (
         <p style={{ color: 'var(--color-text-dim)', fontSize: 12, marginBottom: 8 }}>
           Preview — try everything free. Saving is ephemeral until you unlock this app.
@@ -76,6 +77,6 @@ export function ModuleRuntime({ slug, name, priceCents }: Props) {
         moduleName={name}
         priceCents={priceCents}
       />
-    </>
+    </div>
   );
 }

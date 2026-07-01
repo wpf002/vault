@@ -1,12 +1,22 @@
-import type { ReactNode } from 'react';
+import type { ButtonHTMLAttributes, ReactNode } from 'react';
 import type { ModuleMode } from '@vault/module-sdk';
 
 /**
  * Small shared UI kit every module reuses so building app #6..120 is "fill
  * in the domain logic," not "rebuild empty states and gated buttons."
- * Styling rides on the shell's globals.css classes (card, button, badge,
- * input) — this package doesn't ship its own stylesheet.
+ * `Button` and `GatedAction` render off `--module-accent`, the CSS variable
+ * ModuleRuntime sets per module from its manifest's `theme.accent` — this
+ * is what makes each app look like itself instead of a clone of the shell.
  */
+
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  variant?: 'primary' | 'secondary';
+};
+
+export function Button({ variant = 'secondary', className, ...rest }: ButtonProps) {
+  const variantClass = variant === 'primary' ? 'module-btn-primary' : 'module-btn-secondary';
+  return <button className={[variantClass, className].filter(Boolean).join(' ')} {...rest} />;
+}
 
 type GatedActionProps = {
   mode: ModuleMode;
@@ -24,15 +34,20 @@ type GatedActionProps = {
  */
 export function GatedAction({ mode, requestUpgrade, onAction, children, className }: GatedActionProps) {
   return (
-    <button className={className} onClick={mode === 'full' ? onAction : requestUpgrade} data-testid="gated-action">
+    <Button
+      variant="primary"
+      className={className}
+      onClick={mode === 'full' ? onAction : requestUpgrade}
+      data-testid="gated-action"
+    >
       {children}
-    </button>
+    </Button>
   );
 }
 
 export function EmptyState({ children }: { children: ReactNode }) {
   return (
-    <div className="card" data-testid="empty-state" style={{ color: 'var(--color-text-dim)', textAlign: 'center' }}>
+    <div className="module-card" data-testid="empty-state" style={{ color: 'var(--color-text-dim)', textAlign: 'center' }}>
       {children}
     </div>
   );

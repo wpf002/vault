@@ -25,6 +25,14 @@ satisfies it — deviate on purpose, not by accident.
    need to and shouldn't try to duplicate that check.
 8. **No module-specific auth, billing, or checkout code.** Those are
    platform concerns (`@vault/entitlements`, the Fastify billing routes).
+9. **Looks like itself, not the shell.** Use `@vault/module-ui`'s `Button`
+   (or `GatedAction`, which already renders one) for this app's own
+   actions — they pick up `theme.accent` from the manifest automatically.
+   Don't reach for the shell's `.primary` class or `--color-accent`
+   inside a module; that's the platform's own identity (nav, catalog,
+   buy wall), not this app's. `gen:module` defaults `theme.accent` from
+   the catalog category — override it in `index.ts` if something more
+   specific to what this app actually does fits better.
 
 Before flipping a module's catalog `status` to `live`, confirm it holds
 this contract — not just that it compiles.

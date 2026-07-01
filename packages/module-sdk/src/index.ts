@@ -1,5 +1,6 @@
 import type { ComponentType } from 'react';
 import type { StoreClient } from './store';
+import type { ModuleTheme } from './theme';
 
 export type ModuleMode = 'preview' | 'full';
 
@@ -23,6 +24,8 @@ export interface ModuleManifest {
   Component: ComponentType<ModuleComponentProps>;
   /** returns the demo data preview mode starts with — never touches the real store */
   seedPreview?: () => Record<string, unknown[]>;
+  /** this app's own visual identity — see @vault/module-ui for the primitives that use it */
+  theme?: ModuleTheme;
 }
 
 export function defineModule(manifest: ModuleManifest): ModuleManifest {
@@ -31,3 +34,5 @@ export function defineModule(manifest: ModuleManifest): ModuleManifest {
 
 export { createStoreClient } from './store';
 export type { StoreClient, StoreDoc } from './store';
+export { CATEGORY_ACCENTS } from './theme';
+export type { ModuleCategory, ModuleTheme } from './theme';

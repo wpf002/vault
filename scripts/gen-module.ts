@@ -28,6 +28,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { CATALOG } from '../packages/db/prisma/modules.catalog.js';
+import { CATEGORY_ACCENTS, type ModuleCategory } from '../packages/module-sdk/src/theme.js';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -56,6 +57,7 @@ const pascalName = entry.name
   .map((w) => w[0].toUpperCase() + w.slice(1))
   .join('');
 const packageName = `@vault/mod-${slug}`;
+const accent = CATEGORY_ACCENTS[entry.category as ModuleCategory] ?? CATEGORY_ACCENTS.utilities;
 
 writeFileSync(
   resolve(moduleDir, 'package.json'),
@@ -113,6 +115,9 @@ type Item = { title: string; note: string };
 // ${entry.name} — ${entry.description}
 // Fill in the domain logic. Keep persistence on \`store\` and gated actions
 // on GatedAction — see modules/CONTRACT.md before shipping this live.
+// Don't pass className="primary" to GatedAction — it already renders
+// themed off this module's own accent (index.ts's theme.accent); the
+// shell's .primary class is the platform's own gradient, not this app's.
 export function ${pascalName}({ mode, store, requestUpgrade }: ModuleComponentProps) {
   const [items, setItems] = useState<Item[] | null>(null);
 
@@ -123,7 +128,7 @@ export function ${pascalName}({ mode, store, requestUpgrade }: ModuleComponentPr
   if (items === null) return <LoadingState />;
 
   return (
-    <div className="card" data-testid="${slug}-root">
+    <div className="module-card" data-testid="${slug}-root">
       {items.length === 0 ? (
         <EmptyState>Nothing here yet.</EmptyState>
       ) : (
@@ -133,7 +138,7 @@ export function ${pascalName}({ mode, store, requestUpgrade }: ModuleComponentPr
           ))}
         </ul>
       )}
-      <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={() => {}} className="primary">
+      <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={() => {}}>
         Export
       </GatedAction>
     </div>
@@ -153,6 +158,9 @@ export default defineModule({
   name: '${entry.name.replace(/'/g, "\\'")}',
   Component: ${pascalName},
   seedPreview,
+  // Defaulted from the catalog category — override with something more
+  // specific to what this app actually does if the category color doesn't fit.
+  theme: { accent: '${accent}' },
 });
 `,
 );

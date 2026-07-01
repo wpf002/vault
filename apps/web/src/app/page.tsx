@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { WaitlistForm } from '@/components/WaitlistForm';
+import { categoryAccent, categoryIcon } from '@/lib/category-theme';
 import type { ModuleSummary } from '@/lib/types';
 
 async function getModules(): Promise<ModuleSummary[]> {
@@ -19,22 +20,27 @@ export default async function CatalogPage({
   const filtered = searchParams.category
     ? modules.filter((m) => m.category === searchParams.category)
     : modules;
+  const liveCount = modules.filter((m) => m.status === 'live').length;
 
   return (
-    <main style={{ padding: 'var(--space-5) var(--space-4)', maxWidth: 1100, margin: '0 auto' }}>
-      <h1 style={{ marginBottom: 4 }}>vault</h1>
-      <p style={{ color: 'var(--color-text-dim)', marginTop: 0 }}>
-        {modules.length} mini-apps under one roof. Browse and preview free — buy one, or subscribe to all.
-      </p>
+    <main style={{ maxWidth: 1100, margin: '0 auto', padding: 'var(--space-4)' }}>
+      <div className="hero">
+        <h1>Every app you need. One vault.</h1>
+        <p>
+          {modules.length} mini-apps under one roof — {liveCount} live today, the rest on the way. Browse and try
+          anything free. Buy one, or subscribe for all-access.
+        </p>
+        <button className="primary">Get all-access</button>
+      </div>
 
-      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', margin: 'var(--space-3) 0' }}>
+      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', margin: 'var(--space-4) 0' }}>
         <Link href="/">
-          <button className={!searchParams.category ? 'primary' : undefined}>All</button>
+          <button className={`pill ${!searchParams.category ? 'active' : ''}`}>All</button>
         </Link>
         {categories.map((c) => (
           <Link key={c} href={`/?category=${c}`}>
-            <button className={searchParams.category === c ? 'primary' : undefined}>
-              {c.replace(/_/g, ' ')}
+            <button className={`pill ${searchParams.category === c ? 'active' : ''}`}>
+              {categoryIcon(c)} {c.replace(/_/g, ' ')}
             </button>
           </Link>
         ))}
@@ -47,26 +53,38 @@ export default async function CatalogPage({
           gap: 'var(--space-3)',
         }}
       >
-        {filtered.map((m) => (
-          <div key={m.slug} className="card" style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start' }}>
-              <Link href={`/modules/${m.slug}`} style={{ fontWeight: 600 }}>
+        {filtered.map((m) => {
+          const accent = categoryAccent(m.category);
+          return (
+            <div
+              key={m.slug}
+              className="product-card"
+              style={{ '--card-accent': accent } as React.CSSProperties}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start' }}>
+                <div className="icon">{categoryIcon(m.category)}</div>
+                <span className={`badge ${m.status}`}>{m.status.replace('_', ' ')}</span>
+              </div>
+              <Link href={`/modules/${m.slug}`} style={{ fontWeight: 700, fontSize: 16 }}>
                 {m.name}
               </Link>
-              <span className={`badge ${m.status}`}>{m.status.replace('_', ' ')}</span>
+              <p style={{ color: 'var(--color-text-dim)', fontSize: 13, margin: 0, flex: 1 }}>{m.description}</p>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 4 }}>
+                <span style={{ fontSize: 13, color: 'var(--color-text-dim)' }}>
+                  {m.priceCents != null ? `$${(m.priceCents / 100).toFixed(2)}` : ''}
+                </span>
+                {m.status === 'live' ? (
+                  <Link href={`/modules/${m.slug}`}>
+                    <button className="pill active" style={{ background: accent }}>
+                      Get
+                    </button>
+                  </Link>
+                ) : null}
+              </div>
+              {m.status !== 'live' && <WaitlistForm slug={m.slug} />}
             </div>
-            <p style={{ color: 'var(--color-text-dim)', fontSize: 13, margin: 0 }}>{m.description}</p>
-            <div style={{ marginTop: 'auto' }}>
-              {m.status === 'live' ? (
-                <Link href={`/modules/${m.slug}`}>
-                  <button className="primary">Launch demo</button>
-                </Link>
-              ) : (
-                <WaitlistForm slug={m.slug} />
-              )}
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </main>
   );
