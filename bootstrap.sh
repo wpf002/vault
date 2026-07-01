@@ -215,7 +215,7 @@ TS
 
 cat > packages/db/prisma/schema.prisma <<'PRISMA'
 // vault — data model
-// The three ideas that make this a "vault" and not 121 apps:
+// The three ideas that make this a "vault" and not 120 apps:
 //   1. Module    -> every mini-app is a ROW, listed day one, flipped live via status
 //   2. Purchase  -> a one-time unlock OR a subscription, both write here
 //   3. Entitlement view -> access = active sub OR a one-time unlock for that module
@@ -264,7 +264,7 @@ model Module {
   id             String         @id @default(cuid())
   // stable slug used in URLs and the module-sdk registry, e.g. "unit-converter"
   slug           String         @unique
-  number         Int            @unique      // 1..121, from the catalog
+  number         Int            @unique      // 1..120, from the catalog
   name           String
   description    String
   category       ModuleCategory
@@ -315,9 +315,9 @@ model Subscription {
 PRISMA
 
 cat > packages/db/prisma/seed.ts <<'TS'
-// Seeds all 121 modules as `coming_soon` rows so the catalog is populated
+// Seeds all 120 modules as `coming_soon` rows so the catalog is populated
 // day one. Flip individual modules to `live` as you build them.
-// The full catalog lives in modules.catalog.ts (generate from the 121 list).
+// The full catalog lives in modules.catalog.ts (generate from the 120 list).
 import { prisma } from '../src';
 import { CATALOG } from './modules.catalog';
 
@@ -350,7 +350,7 @@ main().finally(() => prisma.$disconnect());
 TS
 
 cat > packages/db/prisma/modules.catalog.ts <<'TS'
-// The 121 catalog. Fill this out from the master list — 3 rows shown as the
+// The 120 catalog. Fill this out from the master list — 3 rows shown as the
 // pattern. slug = kebab-case, number = position in the list, category = enum.
 import type { ModuleCategory } from '../src';
 
@@ -568,7 +568,7 @@ import { prisma } from '@vault/db';
 import { hasAccess } from '@vault/entitlements';
 
 export async function registerModuleRoutes(app: FastifyInstance) {
-  // Public catalog — everyone sees all 121, live + coming_soon.
+  // Public catalog — everyone sees all 120, live + coming_soon.
   app.get('/modules', async () => {
     return prisma.module.findMany({
       orderBy: { number: 'asc' },
@@ -638,7 +638,7 @@ export default nextConfig;
 JS
 
 cat > apps/web/src/app/layout.tsx <<'TSX'
-export const metadata = { title: 'vault', description: '121 mini-apps, one roof.' };
+export const metadata = { title: 'vault', description: '120 mini-apps, one roof.' };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

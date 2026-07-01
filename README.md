@@ -8,10 +8,10 @@ Browse and preview anything for free; buy an app (or subscribe to all of them) t
 
 ## What this is (and isn't)
 
-**Is:** a single platform where each of the 121 apps is a *module* — a row in the DB and
+**Is:** a single platform where each of the 120 apps is a *module* — a row in the DB and
 a folder in `modules/`. The shell handles auth, billing, and access. Apps mount into it.
 
-**Isn't:** 121 separate deployments. The original per-app Express+SQLite design was a link
+**Isn't:** 120 separate deployments. The original per-app Express+SQLite design was a link
 farm; this is a vault. One API, one Postgres, one CDN.
 
 ## Monetization
@@ -47,7 +47,7 @@ apps/
   web/          Next.js storefront + app shell
   api/          Fastify: catalog, auth, billing, entitlement checks
 packages/
-  db/           Prisma schema + client + the 121-module seed
+  db/           Prisma schema + client + the 120-module seed
   entitlements/ the single "does this user own this?" function
   module-sdk/   defineModule() — what each mini-app exports to mount in the shell
   config/       shared tsconfig
@@ -67,17 +67,17 @@ pnpm db:seed                  # seeds all 120 as coming_soon
 pnpm dev                      # web :3000, api :4000
 ```
 
-## The build order (do NOT build 121 to launch)
+## The build order (do NOT build 120 to launch)
 
 1. **Platform shell** — auth, Stripe billing, entitlements, catalog, buy wall. *(this repo)*
-2. **Scaffolding pipeline** — a generator so modules 6–121 are assembly-line, not artisanal.
+2. **Scaffolding pipeline** — a generator so modules 6–120 are assembly-line, not artisanal.
 3. **3–5 flagship modules** — prove the buy-and-use loop end to end.
 4. **List all 120 day one** as `coming_soon`; flip to `live` as built.
 5. **Build toward demand** — watch what people click, build that next.
 
 ## The AI-labeled modules
 
-~15 of the 121 are "AI-powered" but the base stack has no LLM. Those rows carry
+~15 of the 120 are "AI-powered" but the base stack has no LLM. Those rows carry
 `requiresAi = true`. They stay `coming_soon` until the server-side AI proxy route exists
 (`ANTHROPIC_API_KEY`, server-only, rate-limited, usage-metered). Don't ship them as fakes.
 

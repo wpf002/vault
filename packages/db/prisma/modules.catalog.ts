@@ -1,6 +1,5 @@
 // The full catalog, transcribed from the master list (document order).
-// NOTE: the source doc is titled "121" but enumerates 120 distinct apps.
-// One is missing or double-counted upstream — reconcile before you claim 121.
+// Confirmed 120 distinct apps — the "121" in early drafts was a miscount.
 // slug = kebab-case (stable, used in URLs + module-sdk). number = list position.
 import type { ModuleCategory } from '../src';
 
