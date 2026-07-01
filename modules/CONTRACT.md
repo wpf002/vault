@@ -1,0 +1,30 @@
+# Module contract
+
+Every module in `modules/<slug>/` must satisfy this before it ships. The
+generator (`pnpm gen:module <slug>`) stamps out a folder that already
+satisfies it — deviate on purpose, not by accident.
+
+1. **Default-exports a `defineModule()` manifest** (`@vault/module-sdk`)
+   whose `slug` matches the `Module.slug` row in the catalog exactly.
+2. **`seedPreview()` returns realistic demo data.** Preview users never see
+   an empty app — that's the "try it free" pitch. No network calls, no
+   randomness that breaks between renders.
+3. **Handles empty and loading states** using `@vault/module-ui`'s
+   `EmptyState` / `LoadingState` — don't hand-roll new ones per module.
+4. **Every interactive element has `data-testid`.** Kebab-case, scoped to
+   what it does (`data-testid="add-note-button"`, not `data-testid="btn1"`).
+5. **All persistence goes through the `store` prop**, never a raw `fetch`
+   to `/store/...`. The store client is what makes preview ephemeral and
+   full mode real — bypassing it breaks both the demo and the buy wall.
+6. **Gated actions (export, download, anything beyond ephemeral CRUD)
+   use `GatedAction`** from `@vault/module-ui`, calling `requestUpgrade()`
+   in preview instead of performing the action.
+7. **The module never checks `hasAccess` or entitlements itself.** It
+   only ever sees `mode: 'preview' | 'full'`, handed down by the shell.
+   The store API is what actually enforces access — the module doesn't
+   need to and shouldn't try to duplicate that check.
+8. **No module-specific auth, billing, or checkout code.** Those are
+   platform concerns (`@vault/entitlements`, the Fastify billing routes).
+
+Before flipping a module's catalog `status` to `live`, confirm it holds
+this contract — not just that it compiles.

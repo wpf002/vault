@@ -1,5 +1,5 @@
 import type { ComponentType } from 'react';
-import type { StoreClient } from './store.js';
+import type { StoreClient } from './store';
 
 export type ModuleMode = 'preview' | 'full';
 
@@ -29,5 +29,5 @@ export function defineModule(manifest: ModuleManifest): ModuleManifest {
   return manifest;
 }
 
-export { createStoreClient } from './store.js';
-export type { StoreClient, StoreDoc } from './store.js';
+export { createStoreClient } from './store';
+export type { StoreClient, StoreDoc } from './store';

@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@vault/db": "workspace:*",
+    "@vault/mod-unit-converter": "workspace:*",
     "@vault/module-sdk": "workspace:*",
+    "@vault/module-ui": "workspace:*",
     "next": "^14.2.13",
     "next-auth": "^4.24.7",
     "bcryptjs": "^2.4.3",
