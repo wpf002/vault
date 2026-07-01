@@ -94,6 +94,7 @@ model Subscription {
   userId                String    @unique
   status                SubStatus @default(active)
   stripeSubscriptionId  String?   @unique
+  stripeCustomerId      String?
   currentPeriodEnd      DateTime?
   createdAt             DateTime  @default(now())
   user                  User      @relation(fields: [userId], references: [id])
