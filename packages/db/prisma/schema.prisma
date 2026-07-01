@@ -112,3 +112,22 @@ model Subscription {
   createdAt             DateTime  @default(now())
   user                  User      @relation(fields: [userId], references: [id])
 }
+
+// The generic per-user document store (Phase 4). Every module gets storage
+// for free from this one table — no per-app migration needed. moduleSlug is
+// a plain string, not a relation to Module, so the store survives catalog
+// edits and doesn't need a join to write. Flagship apps that need real
+// relational queries get their own Prisma models instead (see roadmap).
+model StoreDocument {
+  id         String   @id @default(cuid())
+  userId     String
+  moduleSlug String
+  collection String
+  docId      String
+  data       Json
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([userId, moduleSlug, collection, docId])
+  @@index([userId, moduleSlug, collection])
+}
