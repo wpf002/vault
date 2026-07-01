@@ -1,0 +1,5 @@
+{
+  "extends": "@vault/config/tsconfig.json",
+  "compilerOptions": { "outDir": "dist", "module": "ESNext" },
+  "include": ["src"]
+}

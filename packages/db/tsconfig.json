@@ -1,0 +1,1 @@
+{ "extends": "@vault/config/tsconfig.json", "include": ["src", "prisma"] }

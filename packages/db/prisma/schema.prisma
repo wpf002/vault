@@ -1,0 +1,98 @@
+// vault — data model
+// The three ideas that make this a "vault" and not 121 apps:
+//   1. Module    -> every mini-app is a ROW, listed day one, flipped live via status
+//   2. Purchase  -> a one-time unlock OR a subscription, both write here
+//   3. Entitlement view -> access = active sub OR a one-time unlock for that module
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String        @id @default(cuid())
+  email         String        @unique
+  name          String?
+  createdAt     DateTime      @default(now())
+  purchases     Purchase[]
+  subscription  Subscription?
+}
+
+enum ModuleStatus {
+  coming_soon
+  live
+  retired
+}
+
+enum ModuleCategory {
+  productivity
+  service_ops
+  marketplace
+  content_community
+  health_wellness
+  finance
+  education
+  local
+  ai_tools
+  data_dashboards
+  travel
+  business_saas
+  food_lifestyle
+  utilities
+}
+
+model Module {
+  id             String         @id @default(cuid())
+  // stable slug used in URLs and the module-sdk registry, e.g. "unit-converter"
+  slug           String         @unique
+  number         Int            @unique      // 1..121, from the catalog
+  name           String
+  description    String
+  category       ModuleCategory
+  status         ModuleStatus   @default(coming_soon)
+  // one-time unlock price in integer cents. null = not individually sellable.
+  priceCents     Int?
+  stripePriceId  String?
+  // true if this module needs the server-side AI proxy to function
+  requiresAi     Boolean        @default(false)
+  createdAt      DateTime       @default(now())
+  purchases      Purchase[]
+}
+
+enum PurchaseKind {
+  one_time      // permanent unlock of a single module
+}
+
+model Purchase {
+  id             String       @id @default(cuid())
+  userId         String
+  moduleId       String
+  kind           PurchaseKind @default(one_time)
+  amountCents    Int
+  stripePaymentId String?
+  createdAt      DateTime     @default(now())
+  user           User         @relation(fields: [userId], references: [id])
+  module         Module       @relation(fields: [moduleId], references: [id])
+
+  @@unique([userId, moduleId])   // can't buy the same module twice
+  @@index([userId])
+}
+
+enum SubStatus {
+  active
+  past_due
+  canceled
+}
+
+model Subscription {
+  id                    String    @id @default(cuid())
+  userId                String    @unique
+  status                SubStatus @default(active)
+  stripeSubscriptionId  String?   @unique
+  currentPeriodEnd      DateTime?
+  createdAt             DateTime  @default(now())
+  user                  User      @relation(fields: [userId], references: [id])
+}
