@@ -1,5 +1,5 @@
 // vault — data model
-// The three ideas that make this a "vault" and not 121 apps:
+// The three ideas that make this a "vault" and not 120 apps:
 //   1. Module    -> every mini-app is a ROW, listed day one, flipped live via status
 //   2. Purchase  -> a one-time unlock OR a subscription, both write here
 //   3. Entitlement view -> access = active sub OR a one-time unlock for that module
@@ -16,6 +16,8 @@ model User {
   id            String        @id @default(cuid())
   email         String        @unique
   name          String?
+  // null for accounts created via an OAuth provider (Google) with no password set.
+  passwordHash  String?
   createdAt     DateTime      @default(now())
   purchases     Purchase[]
   subscription  Subscription?
@@ -48,7 +50,7 @@ model Module {
   id             String         @id @default(cuid())
   // stable slug used in URLs and the module-sdk registry, e.g. "unit-converter"
   slug           String         @unique
-  number         Int            @unique      // 1..121, from the catalog
+  number         Int            @unique      // 1..120, from the catalog
   name           String
   description    String
   category       ModuleCategory
