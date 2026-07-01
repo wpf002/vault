@@ -1,10 +1,14 @@
 # Vault Design Baseline
 
-This is the locked-in design system for the platform, set 2026-07-01. It
-covers two layers that are deliberately kept separate: the **shell** (the
-store itself — nav, catalog, buy wall, account pages) and **modules** (the
-120 mini-apps). Every new page or module should read like it already
-follows this doc, not like it's improvising.
+This is the locked-in design system for the platform, confirmed 2026-07-01
+against `unit-converter` and the catalog grid as the reference
+implementation — user-confirmed: "let's use that as the bar for the app
+UI." Every one of the 120 modules is expected to reach this same bar, not
+just compile against `modules/CONTRACT.md`. It covers two layers that are
+deliberately kept separate: the **shell** (the store itself — nav,
+catalog, buy wall, account pages) and **modules** (the 120 mini-apps).
+Every new page or module should read like it already follows this doc,
+not like it's improvising.
 
 ## The shell / module split
 
