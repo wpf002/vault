@@ -8,7 +8,7 @@ export async function registerModuleRoutes(app: FastifyInstance) {
     return prisma.module.findMany({
       orderBy: { number: 'asc' },
       select: {
-        slug: true, number: true, name: true, description: true,
+        slug: true, number: true, name: true, description: true, icon: true,
         category: true, status: true, priceCents: true, requiresAi: true,
       },
     });
@@ -19,7 +19,7 @@ export async function registerModuleRoutes(app: FastifyInstance) {
     const module = await prisma.module.findUnique({
       where: { slug: req.params.slug },
       select: {
-        slug: true, number: true, name: true, description: true,
+        slug: true, number: true, name: true, description: true, icon: true,
         category: true, status: true, priceCents: true, requiresAi: true,
       },
     });

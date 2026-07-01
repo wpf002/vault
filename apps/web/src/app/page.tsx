@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { WaitlistForm } from '@/components/WaitlistForm';
-import { categoryAccent, categoryIcon } from '@/lib/category-theme';
+import { categoryAccent, categoryIcon, categoryLabel, statusLabel } from '@/lib/category-theme';
 import type { ModuleSummary } from '@/lib/types';
 
 async function getModules(): Promise<ModuleSummary[]> {
@@ -25,12 +25,12 @@ export default async function CatalogPage({
   return (
     <main style={{ maxWidth: 1100, margin: '0 auto', padding: 'var(--space-4)' }}>
       <div className="hero">
-        <h1>Every app you need. One vault.</h1>
+        <h1>Every App You Need. One Vault.</h1>
         <p>
           {modules.length} mini-apps under one roof — {liveCount} live today, the rest on the way. Browse and try
           anything free. Buy one, or subscribe for all-access.
         </p>
-        <button className="primary">Get all-access</button>
+        <button className="primary">Get All-Access</button>
       </div>
 
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', margin: 'var(--space-4) 0' }}>
@@ -40,7 +40,7 @@ export default async function CatalogPage({
         {categories.map((c) => (
           <Link key={c} href={`/?category=${c}`}>
             <button className={`pill ${searchParams.category === c ? 'active' : ''}`}>
-              {categoryIcon(c)} {c.replace(/_/g, ' ')}
+              {categoryIcon(c)} {categoryLabel(c)}
             </button>
           </Link>
         ))}
@@ -62,8 +62,8 @@ export default async function CatalogPage({
               style={{ '--card-accent': accent } as React.CSSProperties}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start' }}>
-                <div className="icon">{categoryIcon(m.category)}</div>
-                <span className={`badge ${m.status}`}>{m.status.replace('_', ' ')}</span>
+                <div className="icon">{m.icon}</div>
+                <span className={`badge ${m.status}`}>{statusLabel(m.status)}</span>
               </div>
               <Link href={`/modules/${m.slug}`} style={{ fontWeight: 700, fontSize: 16 }}>
                 {m.name}

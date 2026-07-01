@@ -60,7 +60,7 @@ export function BuyWall({ open, onClose, moduleSlug, moduleName, priceCents }: P
           padding: 'var(--space-4)',
         }}
       >
-        <h3 style={{ marginTop: 0, marginBottom: 4 }}>Keep using {moduleName}</h3>
+        <h3 style={{ marginTop: 0, marginBottom: 4 }}>Keep Using {moduleName}</h3>
         <p style={{ color: 'var(--color-text-dim)', fontSize: 13, marginTop: 0 }}>
           Anyone can try this free. Saving, exporting, and persisting your data needs an unlock.
         </p>
@@ -83,10 +83,10 @@ export function BuyWall({ open, onClose, moduleSlug, moduleName, priceCents }: P
                 color: 'var(--color-accent-2)',
               }}
             >
-              Best value
+              Best Value
             </span>
             <div style={{ fontWeight: 700, fontSize: 17, margin: '4px 0 12px' }}>
-              All-access subscription — every app, unlimited
+              All-Access Subscription — Every App, Unlimited
             </div>
             <button className="primary" style={{ width: '100%' }} onClick={() => checkout('sub')} disabled={loading !== null}>
               {loading === 'sub' ? 'Redirecting…' : 'Subscribe'}
@@ -96,11 +96,11 @@ export function BuyWall({ open, onClose, moduleSlug, moduleName, priceCents }: P
 
         {priceCents != null && (
           <button style={{ width: '100%', marginBottom: 8 }} onClick={() => checkout('module')} disabled={loading !== null}>
-            {loading === 'module' ? 'Redirecting…' : `Buy just this app — $${(priceCents / 100).toFixed(2)}`}
+            {loading === 'module' ? 'Redirecting…' : `Buy Just This App — $${(priceCents / 100).toFixed(2)}`}
           </button>
         )}
         <button style={{ width: '100%', background: 'transparent', border: 'none' }} onClick={onClose}>
-          Not now
+          Not Now
         </button>
       </div>
     </div>

@@ -1,6 +1,6 @@
-// Seeds all 121 modules as `coming_soon` rows so the catalog is populated
+// Seeds all 120 modules as `coming_soon` rows so the catalog is populated
 // day one. Flip individual modules to `live` as you build them.
-// The full catalog lives in modules.catalog.ts (generate from the 121 list).
+// The full catalog lives in modules.catalog.ts.
 import { prisma } from '../src';
 import { CATALOG } from './modules.catalog';
 
@@ -11,6 +11,7 @@ async function main() {
       update: {
         name: m.name,
         description: m.description,
+        icon: m.icon,
         category: m.category,
         requiresAi: m.requiresAi ?? false,
       },
@@ -19,6 +20,7 @@ async function main() {
         number: m.number,
         name: m.name,
         description: m.description,
+        icon: m.icon,
         category: m.category,
         requiresAi: m.requiresAi ?? false,
         status: 'coming_soon',

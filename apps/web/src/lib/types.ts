@@ -5,6 +5,7 @@ export type ModuleSummary = {
   number: number;
   name: string;
   description: string;
+  icon: string;
   category: string;
   status: ModuleStatus;
   priceCents: number | null;

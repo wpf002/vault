@@ -58,7 +58,7 @@ export function BasicUnitConverter({ mode, store, requestUpgrade }: ModuleCompon
             data-testid={`category-${c}`}
             onClick={() => changeCategory(c)}
           >
-            {c}
+            {c.charAt(0).toUpperCase() + c.slice(1)}
           </Button>
         ))}
       </div>
@@ -93,7 +93,7 @@ export function BasicUnitConverter({ mode, store, requestUpgrade }: ModuleCompon
 
       <div>
         <Button variant="primary" onClick={saveToHistory} disabled={result === null} data-testid="save-history-button">
-          Save to history
+          Save to History
         </Button>
       </div>
 
@@ -111,7 +111,7 @@ export function BasicUnitConverter({ mode, store, requestUpgrade }: ModuleCompon
           </ul>
         )}
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportCsv}>
-          Export history as CSV
+          Export History as CSV
         </GatedAction>
       </div>
     </div>

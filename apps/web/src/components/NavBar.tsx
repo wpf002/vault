@@ -22,7 +22,7 @@ export function NavBar() {
       }}
     >
       <Link href="/" style={{ fontWeight: 800, fontSize: 18, letterSpacing: '-0.03em' }}>
-        vault
+        Vault
       </Link>
       <nav style={{ display: 'flex', gap: 20, alignItems: 'center', fontSize: 14 }}>
         <Link href="/">Catalog</Link>

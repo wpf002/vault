@@ -28,7 +28,7 @@ export function WaitlistForm({ slug }: { slug: string }) {
         required
         style={{ flex: 1 }}
       />
-      <button type="submit">Notify me</button>
+      <button type="submit">Notify Me</button>
     </form>
   );
 }

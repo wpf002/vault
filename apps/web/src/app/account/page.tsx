@@ -35,7 +35,10 @@ export default async function AccountPage() {
         {account?.subscription ? (
           <>
             <p>
-              Status: <strong>{account.subscription.status}</strong>
+              Status:{' '}
+              <strong>
+                {account.subscription.status.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())}
+              </strong>
               {account.subscription.currentPeriodEnd
                 ? ` — renews ${new Date(account.subscription.currentPeriodEnd).toLocaleDateString()}`
                 : null}
@@ -48,7 +51,7 @@ export default async function AccountPage() {
       </section>
 
       <section className="card">
-        <h3 style={{ marginTop: 0 }}>Purchase history</h3>
+        <h3 style={{ marginTop: 0 }}>Purchase History</h3>
         {account?.purchases.length ? (
           <ul style={{ paddingLeft: 16 }}>
             {account.purchases.map((p) => (

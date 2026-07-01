@@ -21,7 +21,7 @@ export default async function LibraryPage() {
 
   return (
     <main style={{ padding: 'var(--space-5) var(--space-4)', maxWidth: 1100, margin: '0 auto' }}>
-      <h1>Your library</h1>
+      <h1>Your Library</h1>
       {modules.length === 0 ? (
         <p style={{ color: 'var(--color-text-dim)' }}>
           Nothing yet — <Link href="/">browse the catalog</Link> and unlock an app.
@@ -30,7 +30,8 @@ export default async function LibraryPage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: 'var(--space-3)' }}>
           {modules.map((m) => (
             <Link key={m.slug} href={`/modules/${m.slug}`} className="card">
-              <strong>{m.name}</strong>
+              <span style={{ fontSize: 24 }}>{m.icon}</span>
+              <strong style={{ display: 'block', marginTop: 4 }}>{m.name}</strong>
               <p style={{ color: 'var(--color-text-dim)', fontSize: 13 }}>{m.description}</p>
             </Link>
           ))}

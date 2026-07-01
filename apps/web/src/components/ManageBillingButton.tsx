@@ -8,5 +8,5 @@ export function ManageBillingButton() {
     const body = await res.json().catch(() => null);
     if (body?.url) window.location.href = body.url;
   }
-  return <button onClick={openPortal}>Manage billing</button>;
+  return <button onClick={openPortal}>Manage Billing</button>;
 }

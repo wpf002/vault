@@ -45,7 +45,7 @@ export default function LoginPage() {
         <button onClick={checkMe}>Check /me on the API</button>
         {me ? <pre>{JSON.stringify(me, null, 2)}</pre> : null}
         <div>
-          <button onClick={() => signOut()}>Sign out</button>
+          <button onClick={() => signOut()}>Sign Out</button>
         </div>
       </main>
     );
@@ -53,7 +53,7 @@ export default function LoginPage() {
 
   return (
     <main style={{ padding: 40, fontFamily: 'system-ui', maxWidth: 320 }}>
-      <h1>{mode === 'signin' ? 'Sign in' : 'Create account'}</h1>
+      <h1>{mode === 'signin' ? 'Sign In' : 'Create Account'}</h1>
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
         <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
         <input
@@ -64,12 +64,12 @@ export default function LoginPage() {
           minLength={8}
           required
         />
-        <button type="submit">{mode === 'signin' ? 'Sign in' : 'Register'}</button>
+        <button type="submit">{mode === 'signin' ? 'Sign In' : 'Register'}</button>
       </form>
       <button onClick={() => signIn('google')}>Continue with Google</button>
       <p>
         <button onClick={() => setMode(mode === 'signin' ? 'register' : 'signin')}>
-          {mode === 'signin' ? 'Need an account? Register' : 'Have an account? Sign in'}
+          {mode === 'signin' ? 'Need an Account? Register' : 'Have an Account? Sign In'}
         </button>
       </p>
       {message ? <p>{message}</p> : null}

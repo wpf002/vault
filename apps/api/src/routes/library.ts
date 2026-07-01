@@ -11,7 +11,7 @@ export async function registerLibraryRoutes(app: FastifyInstance) {
     return prisma.module.findMany({
       where: { slug: { in: Array.from(slugs) } },
       orderBy: { number: 'asc' },
-      select: { slug: true, number: true, name: true, description: true, category: true },
+      select: { slug: true, number: true, name: true, description: true, icon: true, category: true },
     });
   });
 }

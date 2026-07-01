@@ -53,6 +53,8 @@ model Module {
   number         Int            @unique      // 1..120, from the catalog
   name           String
   description    String
+  // one emoji, unique per module — renders on catalog cards/detail headers
+  icon           String         @default("📦")
   category       ModuleCategory
   status         ModuleStatus   @default(coming_soon)
   // one-time unlock price in integer cents. null = not individually sellable.
