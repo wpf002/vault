@@ -2,8 +2,9 @@
 // See modules/CONTRACT.md #2.
 export function seedPreview() {
   return {
-    items: [
-      { title: 'Example item', note: 'Replace this with real Basic Unit Converter demo data.' },
+    history: [
+      { category: 'length', value: 5, from: 'km', to: 'mi', result: 3.106856, at: '2026-06-28T09:00:00.000Z' },
+      { category: 'temperature', value: 100, from: 'C', to: 'F', result: 212, at: '2026-06-29T14:30:00.000Z' },
     ],
   };
 }
