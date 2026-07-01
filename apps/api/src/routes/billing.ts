@@ -20,6 +20,8 @@ export async function registerBillingRoutes(app: FastifyInstance) {
       customer_email: req.user!.email,
       client_reference_id: req.user!.id,
       line_items: [{ price: priceId, quantity: 1 }],
+      // the customer.subscription.* webhook handlers key off this, not client_reference_id
+      subscription_data: { metadata: { userId: req.user!.id } },
       success_url: `${process.env.WEB_URL}/account?checkout=success`,
       cancel_url: `${process.env.WEB_URL}/account?checkout=cancelled`,
     });
