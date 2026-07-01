@@ -289,6 +289,102 @@ input {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--module-accent) 25%, transparent);
 }
 
+/* native <select> arrows are inconsistent across browsers and always look
+   slightly out of place in a dark, custom-themed UI — draw our own. */
+.module-select-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.module-select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 32px;
+  cursor: pointer;
+}
+
+.module-select-wrap::after {
+  content: '';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid var(--color-text-dim);
+  border-bottom: 2px solid var(--color-text-dim);
+  transform: translateY(-65%) rotate(45deg);
+  pointer-events: none;
+}
+
+.module-icon-btn {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--color-text-dim);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.module-icon-btn:hover {
+  background: rgba(255, 60, 48, 0.14);
+  color: #ff6b5e;
+  border-color: transparent;
+}
+
+/* iOS-style segmented control — the standard way a module offers a few
+   mutually-exclusive modes/categories, replacing a row of loose buttons. */
+.module-segmented {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+.module-segmented button {
+  border: none;
+  border-radius: var(--radius-full);
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 13px;
+  background: transparent;
+  color: var(--color-text-dim);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.module-segmented button.active {
+  background: var(--module-accent);
+  color: #0b0d10;
+}
+
+.module-list-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--color-bg);
+  border-radius: var(--radius-sm);
+  transition: background 0.12s ease;
+}
+
+.module-list-row:hover {
+  background: var(--color-surface-raised);
+}
+
+.module-list-row-content {
+  font-size: 13px;
+  color: var(--color-text-dim);
+}
+
 .module-label {
   display: block;
   font-size: 11px;
@@ -318,8 +414,14 @@ input {
   margin: var(--space-3) 0;
 }
 
+/* the "readout" — a distinct inset panel, like a calculator screen, so the
+   headline number reads as the point of the app rather than more body text */
 .module-stat {
-  padding: var(--space-3) 0;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-3);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.6) inset;
 }
 
 .module-stat-value {
@@ -328,12 +430,13 @@ input {
   letter-spacing: -0.02em;
   font-variant-numeric: tabular-nums;
   color: var(--module-accent);
+  line-height: 1.1;
 }
 
 .module-stat-label {
   font-size: 12px;
   color: var(--color-text-dim);
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 .module-empty {

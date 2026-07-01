@@ -1,6 +1,20 @@
 import { useEffect, useState } from 'react';
 import type { ModuleComponentProps } from '@vault/module-sdk';
-import { Button, GatedAction, Input, Select, Label, Section, Divider, StatDisplay, EmptyState, LoadingState } from '@vault/module-ui';
+import type { StoreDoc } from '@vault/module-sdk';
+import {
+  Button,
+  GatedAction,
+  Input,
+  Select,
+  Label,
+  Section,
+  Divider,
+  SegmentedControl,
+  StatDisplay,
+  ListRow,
+  EmptyState,
+  LoadingState,
+} from '@vault/module-ui';
 import { UNITS, convert, type Category } from './units';
 
 type HistoryEntry = { category: Category; value: number; from: string; to: string; result: number; at: string };
@@ -10,10 +24,10 @@ export function BasicUnitConverter({ mode, store, requestUpgrade }: ModuleCompon
   const [value, setValue] = useState('1');
   const [from, setFrom] = useState(UNITS.length[0]!);
   const [to, setTo] = useState(UNITS.length[1]!);
-  const [history, setHistory] = useState<HistoryEntry[] | null>(null);
+  const [history, setHistory] = useState<StoreDoc<HistoryEntry>[] | null>(null);
 
   useEffect(() => {
-    store.list<HistoryEntry>('history').then((docs) => setHistory(docs.map((d) => d.data)));
+    store.list<HistoryEntry>('history').then(setHistory);
   }, [store]);
 
   const units = UNITS[category];
@@ -29,12 +43,17 @@ export function BasicUnitConverter({ mode, store, requestUpgrade }: ModuleCompon
   async function saveToHistory() {
     if (result === null) return;
     const entry: HistoryEntry = { category, value: parsed, from, to, result, at: new Date().toISOString() };
-    await store.create('history', entry);
-    setHistory((prev) => [entry, ...(prev ?? [])]);
+    const doc = await store.create('history', entry);
+    setHistory((prev) => [doc, ...(prev ?? [])]);
+  }
+
+  async function removeFromHistory(docId: string) {
+    await store.remove('history', docId);
+    setHistory((prev) => (prev ?? []).filter((d) => d.docId !== docId));
   }
 
   function exportCsv() {
-    const rows = (history ?? []).map((h) => `${h.at},${h.category},${h.value},${h.from},${h.to},${h.result}`);
+    const rows = (history ?? []).map((d) => `${d.data.at},${d.data.category},${d.data.value},${d.data.from},${d.data.to},${d.data.result}`);
     const csv = ['date,category,value,from,to,result', ...rows].join('\n');
     const blob = new Blob([csv], { type: 'text/csv' });
     const url = URL.createObjectURL(blob);
@@ -50,21 +69,19 @@ export function BasicUnitConverter({ mode, store, requestUpgrade }: ModuleCompon
   return (
     <div className="module-card" data-testid="unit-converter-root">
       <Section title="Convert">
-        <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
-          {(['length', 'weight', 'temperature'] as Category[]).map((c) => (
-            <Button
-              key={c}
-              variant="secondary"
-              className={c === category ? 'active' : undefined}
-              data-testid={`category-${c}`}
-              onClick={() => changeCategory(c)}
-            >
-              {c.charAt(0).toUpperCase() + c.slice(1)}
-            </Button>
-          ))}
+        <div style={{ marginBottom: 16 }}>
+          <SegmentedControl
+            options={[
+              { value: 'length', label: 'Length' },
+              { value: 'weight', label: 'Weight' },
+              { value: 'temperature', label: 'Temperature' },
+            ]}
+            value={category}
+            onChange={changeCategory}
+          />
         </div>
 
-        <div style={{ display: 'flex', gap: 12, alignItems: 'flex-end', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', gap: 12, alignItems: 'flex-end', flexWrap: 'wrap', marginBottom: 16 }}>
           <div>
             <Label>Amount</Label>
             <Input
@@ -98,13 +115,15 @@ export function BasicUnitConverter({ mode, store, requestUpgrade }: ModuleCompon
           </div>
         </div>
 
-        <StatDisplay
-          value={<span data-testid="result-value">{result === null ? '—' : result.toLocaleString(undefined, { maximumFractionDigits: 6 })}</span>}
-          label={`${value || 0} ${from} = ? ${to}`}
-        />
+        <div style={{ marginBottom: 16 }}>
+          <StatDisplay
+            value={<span data-testid="result-value">{result === null ? '—' : result.toLocaleString(undefined, { maximumFractionDigits: 6 })}</span>}
+            label={`${value || 0} ${from} = ? ${to}`}
+          />
+        </div>
 
         <Button variant="primary" onClick={saveToHistory} disabled={result === null} data-testid="save-history-button">
-          Save to History
+          💾 Save to History
         </Button>
       </Section>
 
@@ -114,33 +133,21 @@ export function BasicUnitConverter({ mode, store, requestUpgrade }: ModuleCompon
         {history.length === 0 ? (
           <EmptyState icon="📐">No conversions saved yet — try one above.</EmptyState>
         ) : (
-          <ul
+          <div
             data-testid="history-list"
-            style={{ listStyle: 'none', margin: '0 0 12px', padding: 0, display: 'flex', flexDirection: 'column', gap: 6 }}
+            style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 16 }}
           >
-            {history.map((h, i) => (
-              <li
-                key={i}
-                data-testid="history-item"
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  fontSize: 13,
-                  color: 'var(--color-text-dim)',
-                  padding: '8px 10px',
-                  background: 'var(--color-bg)',
-                  borderRadius: 8,
-                }}
-              >
-                <span>
-                  {h.value} {h.from} → {h.result.toLocaleString(undefined, { maximumFractionDigits: 4 })} {h.to}
-                </span>
-              </li>
+            {history.map((d) => (
+              <div key={d.docId} data-testid="history-item">
+                <ListRow onRemove={() => removeFromHistory(d.docId)}>
+                  {d.data.value} {d.data.from} → {d.data.result.toLocaleString(undefined, { maximumFractionDigits: 4 })} {d.data.to}
+                </ListRow>
+              </div>
             ))}
-          </ul>
+          </div>
         )}
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportCsv}>
-          Export History as CSV
+          ⬇️ Export History as CSV
         </GatedAction>
       </Section>
     </div>

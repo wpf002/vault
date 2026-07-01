@@ -68,21 +68,36 @@ shell:
 
 - `Button` (`variant: 'primary' | 'secondary' | 'ghost'`) — themed off
   `--module-accent`, with hover lift and a subtle shadow on primary.
+- `IconButton` — a small round button for a row-level action (delete,
+  edit), not a primary CTA. `ListRow`'s remove action uses one.
 - `GatedAction` — a primary `Button` that runs the real action in full
   mode and surfaces the buy wall in preview, showing a small 🔒 while
   gated so it reads as a feature, not a dead button.
 - `Input` / `Select` — consistent padding, a focus ring in the module's
-  own accent color. Don't drop back to bare `<input>`/`<select>`.
+  own accent color. `Select` draws its own chevron (`appearance: none` +
+  a CSS arrow) — native `<select>` arrows are inconsistent across
+  browsers and always look out of place in a custom dark theme. Don't
+  drop back to bare `<input>`/`<select>`.
 - `Label` — small-caps field label (`AMOUNT`, `FROM`, `TO`, …).
 - `Section` — the layout unit for grouping related controls, with an
   optional uppercase title.
 - `Divider` — a hairline between sections.
-- `StatDisplay` — a large tabular-nums readout for a headline number (a
-  conversion result, a running total, a score) plus an optional caption.
+- `SegmentedControl` — an iOS-style tab switcher for picking one of a
+  few mutually-exclusive modes/categories. Use this instead of a row of
+  loose `Button`s when the options are exclusive (a converter's
+  length/weight/temperature switch, a tracker's day/week/month view).
+- `StatDisplay` — a headline number in its own inset "readout" panel
+  (like a calculator screen), tabular-nums, plus an optional caption.
+  Use it for the one number a module's whole point is: a conversion
+  result, a running total, a score.
+- `ListRow` (optional `onRemove`) — a list item with a consistent hover
+  state and, when the data supports it, a trailing delete `IconButton`.
+  If a module lets a user add something, give them a way to remove it
+  too — add-only lists read as unfinished.
 - `EmptyState` (optional `icon`) / `LoadingState` (real spinner, not just
   text) — every module handles both; see `modules/CONTRACT.md` #3.
 
-`.module-card` itself carries real depth now — a subtle gradient fill and
+`.module-card` itself carries real depth — a subtle gradient fill and
 drop shadow, not a flat gray box. A module that still looks flat and
 unstyled hasn't picked up this baseline yet.
 
