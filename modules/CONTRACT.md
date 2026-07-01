@@ -33,6 +33,12 @@ satisfies it — deviate on purpose, not by accident.
    buy wall), not this app's. `gen:module` defaults `theme.accent` from
    the catalog category — override it in `index.ts` if something more
    specific to what this app actually does fits better.
+10. **Reads as a real app, not a scaffold.** Use `@vault/module-ui`'s
+    `Input`/`Select`/`Label`/`Section`/`Divider`/`StatDisplay` — don't
+    drop back to bare `<input>`/`<ul>` once the domain logic grows past
+    what the generator stamped out. See DESIGN.md at the repo root for
+    the full baseline (colors, casing, icons, component inventory);
+    `unit-converter` is the reference implementation.
 
 Before flipping a module's catalog `status` to `live`, confirm it holds
 this contract — not just that it compiles.

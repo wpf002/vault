@@ -108,16 +108,18 @@ writeFileSync(
   resolve(moduleDir, `${pascalName}.tsx`),
   `import { useEffect, useState } from 'react';
 import type { ModuleComponentProps } from '@vault/module-sdk';
-import { GatedAction, EmptyState, LoadingState } from '@vault/module-ui';
+import { GatedAction, EmptyState, LoadingState, Section } from '@vault/module-ui';
 
 type Item = { title: string; note: string };
 
 // ${entry.name} — ${entry.description}
 // Fill in the domain logic. Keep persistence on \`store\` and gated actions
-// on GatedAction — see modules/CONTRACT.md before shipping this live.
-// Don't pass className="primary" to GatedAction — it already renders
-// themed off this module's own accent (index.ts's theme.accent); the
-// shell's .primary class is the platform's own gradient, not this app's.
+// on GatedAction — see modules/CONTRACT.md and DESIGN.md before shipping
+// this live. Don't pass className="primary" to GatedAction — it already
+// renders themed off this module's own accent (index.ts's theme.accent);
+// the shell's .primary class is the platform's own gradient, not this
+// app's. Reach for @vault/module-ui's Input/Select/Label/StatDisplay/
+// Divider as the domain logic grows — don't drop back to bare <input>/<ul>.
 export function ${pascalName}({ mode, store, requestUpgrade }: ModuleComponentProps) {
   const [items, setItems] = useState<Item[] | null>(null);
 
@@ -129,18 +131,22 @@ export function ${pascalName}({ mode, store, requestUpgrade }: ModuleComponentPr
 
   return (
     <div className="module-card" data-testid="${slug}-root">
-      {items.length === 0 ? (
-        <EmptyState>Nothing here yet.</EmptyState>
-      ) : (
-        <ul>
-          {items.map((item, i) => (
-            <li key={i}>{item.title}</li>
-          ))}
-        </ul>
-      )}
-      <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={() => {}}>
-        Export
-      </GatedAction>
+      <Section title="${entry.name.replace(/'/g, "\\'")}">
+        {items.length === 0 ? (
+          <EmptyState icon="${entry.icon}">Nothing here yet.</EmptyState>
+        ) : (
+          <ul style={{ listStyle: 'none', margin: '0 0 12px', padding: 0, display: 'flex', flexDirection: 'column', gap: 6 }}>
+            {items.map((item, i) => (
+              <li key={i} style={{ padding: '8px 10px', background: 'var(--color-bg)', borderRadius: 8 }}>
+                {item.title}
+              </li>
+            ))}
+          </ul>
+        )}
+        <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={() => {}}>
+          Export
+        </GatedAction>
+      </Section>
     </div>
   );
 }

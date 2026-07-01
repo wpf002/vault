@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { ModuleComponentProps } from '@vault/module-sdk';
-import { Button, GatedAction, EmptyState, LoadingState } from '@vault/module-ui';
+import { Button, GatedAction, Input, Select, Label, Section, Divider, StatDisplay, EmptyState, LoadingState } from '@vault/module-ui';
 import { UNITS, convert, type Category } from './units';
 
 type HistoryEntry = { category: Category; value: number; from: string; to: string; result: number; at: string };
@@ -48,64 +48,93 @@ export function BasicUnitConverter({ mode, store, requestUpgrade }: ModuleCompon
   if (history === null) return <LoadingState />;
 
   return (
-    <div className="module-card" data-testid="unit-converter-root" style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-      <div style={{ display: 'flex', gap: 8 }}>
-        {(['length', 'weight', 'temperature'] as Category[]).map((c) => (
-          <Button
-            key={c}
-            variant="secondary"
-            className={c === category ? 'active' : undefined}
-            data-testid={`category-${c}`}
-            onClick={() => changeCategory(c)}
-          >
-            {c.charAt(0).toUpperCase() + c.slice(1)}
-          </Button>
-        ))}
-      </div>
+    <div className="module-card" data-testid="unit-converter-root">
+      <Section title="Convert">
+        <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
+          {(['length', 'weight', 'temperature'] as Category[]).map((c) => (
+            <Button
+              key={c}
+              variant="secondary"
+              className={c === category ? 'active' : undefined}
+              data-testid={`category-${c}`}
+              onClick={() => changeCategory(c)}
+            >
+              {c.charAt(0).toUpperCase() + c.slice(1)}
+            </Button>
+          ))}
+        </div>
 
-      <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
-        <input
-          type="number"
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-          data-testid="value-input"
-          style={{ width: 100 }}
+        <div style={{ display: 'flex', gap: 12, alignItems: 'flex-end', flexWrap: 'wrap' }}>
+          <div>
+            <Label>Amount</Label>
+            <Input
+              type="number"
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+              data-testid="value-input"
+              style={{ width: 120 }}
+            />
+          </div>
+          <div>
+            <Label>From</Label>
+            <Select value={from} onChange={(e) => setFrom(e.target.value)} data-testid="from-select">
+              {units.map((u) => (
+                <option key={u} value={u}>
+                  {u}
+                </option>
+              ))}
+            </Select>
+          </div>
+          <span style={{ color: 'var(--color-text-dim)', paddingBottom: 10 }}>→</span>
+          <div>
+            <Label>To</Label>
+            <Select value={to} onChange={(e) => setTo(e.target.value)} data-testid="to-select">
+              {units.map((u) => (
+                <option key={u} value={u}>
+                  {u}
+                </option>
+              ))}
+            </Select>
+          </div>
+        </div>
+
+        <StatDisplay
+          value={<span data-testid="result-value">{result === null ? '—' : result.toLocaleString(undefined, { maximumFractionDigits: 6 })}</span>}
+          label={`${value || 0} ${from} = ? ${to}`}
         />
-        <select value={from} onChange={(e) => setFrom(e.target.value)} data-testid="from-select">
-          {units.map((u) => (
-            <option key={u} value={u}>
-              {u}
-            </option>
-          ))}
-        </select>
-        <span>→</span>
-        <select value={to} onChange={(e) => setTo(e.target.value)} data-testid="to-select">
-          {units.map((u) => (
-            <option key={u} value={u}>
-              {u}
-            </option>
-          ))}
-        </select>
-        <strong data-testid="result-value" style={{ color: 'var(--module-accent)' }}>
-          {result === null ? '—' : result.toLocaleString(undefined, { maximumFractionDigits: 6 })}
-        </strong>
-      </div>
 
-      <div>
         <Button variant="primary" onClick={saveToHistory} disabled={result === null} data-testid="save-history-button">
           Save to History
         </Button>
-      </div>
+      </Section>
 
-      <div>
-        <h4 style={{ marginBottom: 4 }}>History</h4>
+      <Divider />
+
+      <Section title="History">
         {history.length === 0 ? (
-          <EmptyState>No conversions saved yet.</EmptyState>
+          <EmptyState icon="📐">No conversions saved yet — try one above.</EmptyState>
         ) : (
-          <ul data-testid="history-list" style={{ paddingLeft: 16, fontSize: 13, color: 'var(--color-text-dim)' }}>
+          <ul
+            data-testid="history-list"
+            style={{ listStyle: 'none', margin: '0 0 12px', padding: 0, display: 'flex', flexDirection: 'column', gap: 6 }}
+          >
             {history.map((h, i) => (
-              <li key={i} data-testid="history-item">
-                {h.value} {h.from} → {h.result.toLocaleString(undefined, { maximumFractionDigits: 4 })} {h.to}
+              <li
+                key={i}
+                data-testid="history-item"
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  fontSize: 13,
+                  color: 'var(--color-text-dim)',
+                  padding: '8px 10px',
+                  background: 'var(--color-bg)',
+                  borderRadius: 8,
+                }}
+              >
+                <span>
+                  {h.value} {h.from} → {h.result.toLocaleString(undefined, { maximumFractionDigits: 4 })} {h.to}
+                </span>
               </li>
             ))}
           </ul>
@@ -113,7 +142,7 @@ export function BasicUnitConverter({ mode, store, requestUpgrade }: ModuleCompon
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportCsv}>
           Export History as CSV
         </GatedAction>
-      </div>
+      </Section>
     </div>
   );
 }
