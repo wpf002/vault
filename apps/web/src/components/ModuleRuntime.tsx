@@ -65,9 +65,9 @@ export function ModuleRuntime({ slug, name, priceCents }: Props) {
   return (
     <div style={accent ? ({ '--module-accent': accent } as React.CSSProperties) : undefined}>
       {mode === 'preview' && (
-        <p style={{ color: 'var(--color-text-dim)', fontSize: 12, marginBottom: 8 }}>
-          Preview — try everything free. Saving is ephemeral until you unlock this app.
-        </p>
+        <div className="preview-banner">
+          <span aria-hidden>👁️</span> Preview — try everything free, saving is ephemeral until you unlock this app
+        </div>
       )}
       <Component mode={mode} store={store} requestUpgrade={() => setBuyWallOpen(true)} />
       <BuyWall

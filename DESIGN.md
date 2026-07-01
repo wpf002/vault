@@ -61,6 +61,24 @@ but is scoped to category *filter pills* only, where sharing an icon
 across a whole category is correct. Never use the category icon as a
 module's own icon.
 
+## The module detail page ("product page")
+
+The header above a module's own content (`ModuleDetailClient.tsx`) is
+shell content, not module content — it uses `--card-accent` (the
+category's default color, same as the catalog card, via `categoryAccent()`)
+rather than `--module-accent`, so the icon badge/price panel visually
+match how the app was presented in the catalog grid one click ago:
+
+- `.detail-icon-badge` — a large rounded icon tile, same treatment as
+  `.product-card .icon` scaled up.
+- `.detail-title-row` / `.detail-description` — name + status badge on
+  one line, description below.
+- `.price-panel` — the one-time price and "or included in All-Access"
+  note as a real panel, not a floating sentence.
+- `.preview-banner` — this one DOES use `--module-accent` (it's telling
+  you about the module you're about to use, not the store), with an icon
+  and pill styling instead of plain dim text.
+
 ## Module component inventory (`@vault/module-ui`)
 
 The baseline "professional app" bar for a module's own content, not the
