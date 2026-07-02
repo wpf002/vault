@@ -53,7 +53,8 @@
     "@vault/mod-remote-job-board": "workspace:*",
     "@vault/mod-tutor-search": "workspace:*",
     "@vault/mod-sustainable-goods-repair": "workspace:*",
-    "@vault/mod-hyperlocal-skill-exchange": "workspace:*"
+    "@vault/mod-hyperlocal-skill-exchange": "workspace:*",
+    "@vault/mod-newsletter-monetization": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
