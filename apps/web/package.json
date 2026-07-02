@@ -36,7 +36,8 @@
     "@vault/mod-task-scheduling-motivation": "workspace:*",
     "@vault/mod-appointment-booking": "workspace:*",
     "@vault/mod-quote-invoice-builder": "workspace:*",
-    "@vault/mod-client-progress-tracker": "workspace:*"
+    "@vault/mod-client-progress-tracker": "workspace:*",
+    "@vault/mod-service-agreement-generator": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
