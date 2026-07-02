@@ -23,7 +23,8 @@
     "@vault/mod-quick-note-taker": "workspace:*",
     "@vault/mod-minimalist-timer": "workspace:*",
     "@vault/mod-habit-tracker": "workspace:*",
-    "@vault/mod-flashcard-spaced-repetition": "workspace:*"
+    "@vault/mod-flashcard-spaced-repetition": "workspace:*",
+    "@vault/mod-custom-client-portal": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",

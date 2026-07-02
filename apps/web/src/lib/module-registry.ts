@@ -11,6 +11,7 @@ import type { ModuleManifest } from '@vault/module-sdk';
  * to a "not available yet" state for any slug with no entry.
  */
 export const MODULE_REGISTRY: Record<string, () => Promise<{ default: ModuleManifest }>> = {
+  'custom-client-portal': () => import('@vault/mod-custom-client-portal'),
   'flashcard-spaced-repetition': () => import('@vault/mod-flashcard-spaced-repetition'),
   'habit-tracker': () => import('@vault/mod-habit-tracker'),
   'minimalist-timer': () => import('@vault/mod-minimalist-timer'),
