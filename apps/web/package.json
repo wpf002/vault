@@ -57,7 +57,8 @@
     "@vault/mod-newsletter-monetization": "workspace:*",
     "@vault/mod-digital-product-storefront": "workspace:*",
     "@vault/mod-community-membership-portal": "workspace:*",
-    "@vault/mod-course-completion-tracker": "workspace:*"
+    "@vault/mod-course-completion-tracker": "workspace:*",
+    "@vault/mod-portfolio-case-study-builder": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
