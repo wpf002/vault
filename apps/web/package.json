@@ -47,7 +47,8 @@
     "@vault/mod-freelancer-directory": "workspace:*",
     "@vault/mod-local-service-comparison": "workspace:*",
     "@vault/mod-specialty-product-aggregator": "workspace:*",
-    "@vault/mod-event-venue-finder": "workspace:*"
+    "@vault/mod-event-venue-finder": "workspace:*",
+    "@vault/mod-pet-service-locator": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
