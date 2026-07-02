@@ -26,7 +26,8 @@
     "@vault/mod-flashcard-spaced-repetition": "workspace:*",
     "@vault/mod-custom-client-portal": "workspace:*",
     "@vault/mod-internal-knowledge-base": "workspace:*",
-    "@vault/mod-contract-status-tracker": "workspace:*"
+    "@vault/mod-contract-status-tracker": "workspace:*",
+    "@vault/mod-proposal-generator": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
