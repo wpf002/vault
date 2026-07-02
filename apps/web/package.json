@@ -29,7 +29,8 @@
     "@vault/mod-contract-status-tracker": "workspace:*",
     "@vault/mod-proposal-generator": "workspace:*",
     "@vault/mod-employee-onboarding-checklist": "workspace:*",
-    "@vault/mod-recurring-task-manager": "workspace:*"
+    "@vault/mod-recurring-task-manager": "workspace:*",
+    "@vault/mod-personal-dashboard": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
