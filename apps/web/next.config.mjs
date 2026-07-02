@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-creative-collaboration-hub',
     '@vault/mod-branching-storytelling',
     '@vault/mod-influencer-campaign-manager',
     '@vault/mod-affiliate-dashboard',
