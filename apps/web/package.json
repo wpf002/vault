@@ -41,7 +41,8 @@
     "@vault/mod-review-collection": "workspace:*",
     "@vault/mod-staff-scheduling": "workspace:*",
     "@vault/mod-referral-tracking": "workspace:*",
-    "@vault/mod-subscription-box-management": "workspace:*"
+    "@vault/mod-subscription-box-management": "workspace:*",
+    "@vault/mod-online-booking-scheduling": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
