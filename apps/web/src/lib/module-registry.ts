@@ -11,6 +11,7 @@ import type { ModuleManifest } from '@vault/module-sdk';
  * to a "not available yet" state for any slug with no entry.
  */
 export const MODULE_REGISTRY: Record<string, () => Promise<{ default: ModuleManifest }>> = {
+  'appointment-booking': () => import('@vault/mod-appointment-booking'),
   'task-scheduling-motivation': () => import('@vault/mod-task-scheduling-motivation'),
   'digital-decluttering': () => import('@vault/mod-digital-decluttering'),
   'form-builder': () => import('@vault/mod-form-builder'),

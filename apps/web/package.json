@@ -33,7 +33,8 @@
     "@vault/mod-personal-dashboard": "workspace:*",
     "@vault/mod-form-builder": "workspace:*",
     "@vault/mod-digital-decluttering": "workspace:*",
-    "@vault/mod-task-scheduling-motivation": "workspace:*"
+    "@vault/mod-task-scheduling-motivation": "workspace:*",
+    "@vault/mod-appointment-booking": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",

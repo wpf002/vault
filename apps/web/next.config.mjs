@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-appointment-booking',
     '@vault/mod-task-scheduling-motivation',
     '@vault/mod-digital-decluttering',
     '@vault/mod-form-builder',
