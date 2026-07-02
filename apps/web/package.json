@@ -20,7 +20,8 @@
     "jose": "^5.9.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "@vault/mod-quick-note-taker": "workspace:*"
+    "@vault/mod-quick-note-taker": "workspace:*",
+    "@vault/mod-minimalist-timer": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
