@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-community-membership-portal',
     '@vault/mod-digital-product-storefront',
     '@vault/mod-newsletter-monetization',
     '@vault/mod-hyperlocal-skill-exchange',

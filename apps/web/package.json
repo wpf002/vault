@@ -55,7 +55,8 @@
     "@vault/mod-sustainable-goods-repair": "workspace:*",
     "@vault/mod-hyperlocal-skill-exchange": "workspace:*",
     "@vault/mod-newsletter-monetization": "workspace:*",
-    "@vault/mod-digital-product-storefront": "workspace:*"
+    "@vault/mod-digital-product-storefront": "workspace:*",
+    "@vault/mod-community-membership-portal": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
