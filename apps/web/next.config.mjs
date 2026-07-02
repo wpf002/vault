@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-mentor-marketplace',
     '@vault/mod-pet-service-locator',
     '@vault/mod-event-venue-finder',
     '@vault/mod-specialty-product-aggregator',
