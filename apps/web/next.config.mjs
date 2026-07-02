@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-hyperlocal-skill-exchange',
     '@vault/mod-sustainable-goods-repair',
     '@vault/mod-tutor-search',
     '@vault/mod-remote-job-board',
