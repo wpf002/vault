@@ -78,6 +78,9 @@ importers:
       '@vault/mod-digital-decluttering':
         specifier: workspace:*
         version: link:../../modules/digital-decluttering
+      '@vault/mod-digital-product-storefront':
+        specifier: workspace:*
+        version: link:../../modules/digital-product-storefront
       '@vault/mod-employee-onboarding-checklist':
         specifier: workspace:*
         version: link:../../modules/employee-onboarding-checklist
@@ -304,6 +307,28 @@ importers:
         version: 5.9.3
 
   modules/digital-decluttering:
+    dependencies:
+      '@vault/module-sdk':
+        specifier: workspace:*
+        version: link:../../packages/module-sdk
+      '@vault/module-ui':
+        specifier: workspace:*
+        version: link:../../packages/module-ui
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+    devDependencies:
+      '@types/react':
+        specifier: ^18.3.5
+        version: 18.3.31
+      '@vault/config':
+        specifier: workspace:*
+        version: link:../../packages/config
+      typescript:
+        specifier: ^5.6.2
+        version: 5.9.3
+
+  modules/digital-product-storefront:
     dependencies:
       '@vault/module-sdk':
         specifier: workspace:*
