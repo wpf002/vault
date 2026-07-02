@@ -51,7 +51,8 @@
     "@vault/mod-pet-service-locator": "workspace:*",
     "@vault/mod-mentor-marketplace": "workspace:*",
     "@vault/mod-remote-job-board": "workspace:*",
-    "@vault/mod-tutor-search": "workspace:*"
+    "@vault/mod-tutor-search": "workspace:*",
+    "@vault/mod-sustainable-goods-repair": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
