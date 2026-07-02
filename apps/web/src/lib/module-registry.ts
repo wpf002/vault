@@ -11,6 +11,7 @@ import type { ModuleManifest } from '@vault/module-sdk';
  * to a "not available yet" state for any slug with no entry.
  */
 export const MODULE_REGISTRY: Record<string, () => Promise<{ default: ModuleManifest }>> = {
+  'freelancer-directory': () => import('@vault/mod-freelancer-directory'),
   'restaurant-reservation': () => import('@vault/mod-restaurant-reservation'),
   'online-booking-scheduling': () => import('@vault/mod-online-booking-scheduling'),
   'subscription-box-management': () => import('@vault/mod-subscription-box-management'),

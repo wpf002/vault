@@ -43,7 +43,8 @@
     "@vault/mod-referral-tracking": "workspace:*",
     "@vault/mod-subscription-box-management": "workspace:*",
     "@vault/mod-online-booking-scheduling": "workspace:*",
-    "@vault/mod-restaurant-reservation": "workspace:*"
+    "@vault/mod-restaurant-reservation": "workspace:*",
+    "@vault/mod-freelancer-directory": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
