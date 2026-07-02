@@ -49,7 +49,8 @@
     "@vault/mod-specialty-product-aggregator": "workspace:*",
     "@vault/mod-event-venue-finder": "workspace:*",
     "@vault/mod-pet-service-locator": "workspace:*",
-    "@vault/mod-mentor-marketplace": "workspace:*"
+    "@vault/mod-mentor-marketplace": "workspace:*",
+    "@vault/mod-remote-job-board": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
