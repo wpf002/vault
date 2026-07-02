@@ -11,6 +11,7 @@ import type { ModuleManifest } from '@vault/module-sdk';
  * to a "not available yet" state for any slug with no entry.
  */
 export const MODULE_REGISTRY: Record<string, () => Promise<{ default: ModuleManifest }>> = {
+  'branching-storytelling': () => import('@vault/mod-branching-storytelling'),
   'influencer-campaign-manager': () => import('@vault/mod-influencer-campaign-manager'),
   'affiliate-dashboard': () => import('@vault/mod-affiliate-dashboard'),
   'content-calendar-approval': () => import('@vault/mod-content-calendar-approval'),

@@ -61,7 +61,8 @@
     "@vault/mod-portfolio-case-study-builder": "workspace:*",
     "@vault/mod-content-calendar-approval": "workspace:*",
     "@vault/mod-affiliate-dashboard": "workspace:*",
-    "@vault/mod-influencer-campaign-manager": "workspace:*"
+    "@vault/mod-influencer-campaign-manager": "workspace:*",
+    "@vault/mod-branching-storytelling": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
