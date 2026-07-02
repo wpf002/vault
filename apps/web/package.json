@@ -32,7 +32,8 @@
     "@vault/mod-recurring-task-manager": "workspace:*",
     "@vault/mod-personal-dashboard": "workspace:*",
     "@vault/mod-form-builder": "workspace:*",
-    "@vault/mod-digital-decluttering": "workspace:*"
+    "@vault/mod-digital-decluttering": "workspace:*",
+    "@vault/mod-task-scheduling-motivation": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
