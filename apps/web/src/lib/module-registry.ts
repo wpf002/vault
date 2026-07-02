@@ -11,6 +11,7 @@ import type { ModuleManifest } from '@vault/module-sdk';
  * to a "not available yet" state for any slug with no entry.
  */
 export const MODULE_REGISTRY: Record<string, () => Promise<{ default: ModuleManifest }>> = {
+  'diy-skill-sharing': () => import('@vault/mod-diy-skill-sharing'),
   'creative-collaboration-hub': () => import('@vault/mod-creative-collaboration-hub'),
   'branching-storytelling': () => import('@vault/mod-branching-storytelling'),
   'influencer-campaign-manager': () => import('@vault/mod-influencer-campaign-manager'),
