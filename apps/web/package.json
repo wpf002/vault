@@ -25,7 +25,8 @@
     "@vault/mod-habit-tracker": "workspace:*",
     "@vault/mod-flashcard-spaced-repetition": "workspace:*",
     "@vault/mod-custom-client-portal": "workspace:*",
-    "@vault/mod-internal-knowledge-base": "workspace:*"
+    "@vault/mod-internal-knowledge-base": "workspace:*",
+    "@vault/mod-contract-status-tracker": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
