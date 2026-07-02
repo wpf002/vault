@@ -28,7 +28,8 @@
     "@vault/mod-internal-knowledge-base": "workspace:*",
     "@vault/mod-contract-status-tracker": "workspace:*",
     "@vault/mod-proposal-generator": "workspace:*",
-    "@vault/mod-employee-onboarding-checklist": "workspace:*"
+    "@vault/mod-employee-onboarding-checklist": "workspace:*",
+    "@vault/mod-recurring-task-manager": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",

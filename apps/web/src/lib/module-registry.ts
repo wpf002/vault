@@ -11,6 +11,7 @@ import type { ModuleManifest } from '@vault/module-sdk';
  * to a "not available yet" state for any slug with no entry.
  */
 export const MODULE_REGISTRY: Record<string, () => Promise<{ default: ModuleManifest }>> = {
+  'recurring-task-manager': () => import('@vault/mod-recurring-task-manager'),
   'employee-onboarding-checklist': () => import('@vault/mod-employee-onboarding-checklist'),
   'proposal-generator': () => import('@vault/mod-proposal-generator'),
   'contract-status-tracker': () => import('@vault/mod-contract-status-tracker'),
