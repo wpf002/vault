@@ -372,10 +372,44 @@ input {
 }
 
 .module-input:focus,
-.module-select:focus {
+.module-select:focus,
+.module-textarea:focus {
   outline: none;
   border-color: var(--module-accent);
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--module-accent) 25%, transparent);
+}
+
+.module-textarea {
+  width: 100%;
+  min-height: 84px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.module-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--module-accent) 14%, transparent);
+  color: var(--module-accent);
+  border: 1px solid transparent;
+}
+
+button.module-tag {
+  cursor: pointer;
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+
+button.module-tag:hover {
+  border-color: var(--module-accent);
+}
+
+button.module-tag.active {
+  background: var(--module-accent);
+  color: #0b0d10;
 }
 
 /* native <select> arrows are inconsistent across browsers and always look

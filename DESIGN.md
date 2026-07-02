@@ -95,12 +95,17 @@ shell:
 - `GatedAction` — a primary `Button` that runs the real action in full
   mode and surfaces the buy wall in preview, showing a small 🔒 while
   gated so it reads as a feature, not a dead button.
-- `Input` / `Select` — consistent padding, a focus ring in the module's
-  own accent color. `Select` draws its own chevron (`appearance: none` +
-  a CSS arrow) — native `<select>` arrows are inconsistent across
-  browsers and always look out of place in a custom dark theme. Don't
-  drop back to bare `<input>`/`<select>`.
+- `Input` / `Select` / `Textarea` — consistent padding, a focus ring in
+  the module's own accent color. `Select` draws its own chevron
+  (`appearance: none` + a CSS arrow) — native `<select>` arrows are
+  inconsistent across browsers and always look out of place in a custom
+  dark theme. `Textarea` is a resizable multi-line `Input`. Don't drop
+  back to bare `<input>`/`<select>`/`<textarea>`.
 - `Label` — small-caps field label (`AMOUNT`, `FROM`, `TO`, …).
+- `Tag` (optional `active`, `onClick`) — a small pill for a label. With
+  `onClick` it's a clickable filter toggle (renders a `<button>`); without,
+  a static label on a list item (renders a `<span>`). Used for anything
+  tag/category/label-shaped a module wants to filter or annotate by.
 - `Section` — the layout unit for grouping related controls, with an
   optional uppercase title.
 - `Divider` — a hairline between sections.
@@ -131,6 +136,8 @@ unstyled hasn't picked up this baseline yet.
 - `scripts/gen-module.ts` — the generator's skeleton already uses
   `Section`/`EmptyState`/`GatedAction` and bakes in the category accent,
   so a freshly scaffolded module starts on this baseline, not behind it.
-- `unit-converter` (`modules/unit-converter/`) is the reference
-  implementation — when in doubt about how a component should look or
-  behave, check how it's used there first.
+- `unit-converter` and `quick-note-taker` (`modules/`) are the reference
+  implementations — when in doubt about how a component should look or
+  behave, check how it's used there first. `unit-converter` covers
+  `SegmentedControl`/`Select`/`StatDisplay`; `quick-note-taker` covers
+  `Textarea`/`Tag`/multi-line `ListRow` content and a tag-filtered list.

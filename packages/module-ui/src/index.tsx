@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes, InputHTMLAttributes, ReactNode, SelectHTMLAttributes } from 'react';
+import type { ButtonHTMLAttributes, InputHTMLAttributes, ReactNode, SelectHTMLAttributes, TextareaHTMLAttributes } from 'react';
 import type { ModuleMode } from '@vault/module-sdk';
 
 /**
@@ -72,8 +72,28 @@ export function Select(props: SelectHTMLAttributes<HTMLSelectElement>) {
   );
 }
 
+export function Textarea(props: TextareaHTMLAttributes<HTMLTextAreaElement>) {
+  const { className, ...rest } = props;
+  return <textarea className={['module-input', 'module-textarea', className].filter(Boolean).join(' ')} {...rest} />;
+}
+
 export function Label({ children }: { children: ReactNode }) {
   return <label className="module-label">{children}</label>;
+}
+
+type TagProps = { children: ReactNode; active?: boolean; onClick?: () => void };
+
+/** A small pill for a label/tag — clickable (as a filter toggle) or purely decorative on a list item. */
+export function Tag({ children, active, onClick }: TagProps) {
+  const className = ['module-tag', active && 'active'].filter(Boolean).join(' ');
+  if (onClick) {
+    return (
+      <button type="button" className={className} onClick={onClick}>
+        {children}
+      </button>
+    );
+  }
+  return <span className={className}>{children}</span>;
 }
 
 /** A titled panel for grouping related controls — the basic layout unit inside a module. */

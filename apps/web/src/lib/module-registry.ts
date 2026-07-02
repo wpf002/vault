@@ -11,5 +11,6 @@ import type { ModuleManifest } from '@vault/module-sdk';
  * to a "not available yet" state for any slug with no entry.
  */
 export const MODULE_REGISTRY: Record<string, () => Promise<{ default: ModuleManifest }>> = {
+  'quick-note-taker': () => import('@vault/mod-quick-note-taker'),
   'unit-converter': () => import('@vault/mod-unit-converter'),
 };
