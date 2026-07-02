@@ -50,7 +50,8 @@
     "@vault/mod-event-venue-finder": "workspace:*",
     "@vault/mod-pet-service-locator": "workspace:*",
     "@vault/mod-mentor-marketplace": "workspace:*",
-    "@vault/mod-remote-job-board": "workspace:*"
+    "@vault/mod-remote-job-board": "workspace:*",
+    "@vault/mod-tutor-search": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
