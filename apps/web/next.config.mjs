@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-review-collection',
     '@vault/mod-service-agreement-generator',
     '@vault/mod-client-progress-tracker',
     '@vault/mod-quote-invoice-builder',
