@@ -11,6 +11,7 @@ import type { ModuleManifest } from '@vault/module-sdk';
  * to a "not available yet" state for any slug with no entry.
  */
 export const MODULE_REGISTRY: Record<string, () => Promise<{ default: ModuleManifest }>> = {
+  'subscription-box-management': () => import('@vault/mod-subscription-box-management'),
   'referral-tracking': () => import('@vault/mod-referral-tracking'),
   'staff-scheduling': () => import('@vault/mod-staff-scheduling'),
   'review-collection': () => import('@vault/mod-review-collection'),

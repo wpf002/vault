@@ -40,7 +40,8 @@
     "@vault/mod-service-agreement-generator": "workspace:*",
     "@vault/mod-review-collection": "workspace:*",
     "@vault/mod-staff-scheduling": "workspace:*",
-    "@vault/mod-referral-tracking": "workspace:*"
+    "@vault/mod-referral-tracking": "workspace:*",
+    "@vault/mod-subscription-box-management": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
