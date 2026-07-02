@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-form-builder',
     '@vault/mod-personal-dashboard',
     '@vault/mod-recurring-task-manager',
     '@vault/mod-employee-onboarding-checklist',
