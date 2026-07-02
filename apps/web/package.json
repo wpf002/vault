@@ -56,7 +56,8 @@
     "@vault/mod-hyperlocal-skill-exchange": "workspace:*",
     "@vault/mod-newsletter-monetization": "workspace:*",
     "@vault/mod-digital-product-storefront": "workspace:*",
-    "@vault/mod-community-membership-portal": "workspace:*"
+    "@vault/mod-community-membership-portal": "workspace:*",
+    "@vault/mod-course-completion-tracker": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",

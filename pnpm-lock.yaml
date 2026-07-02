@@ -75,6 +75,9 @@ importers:
       '@vault/mod-contract-status-tracker':
         specifier: workspace:*
         version: link:../../modules/contract-status-tracker
+      '@vault/mod-course-completion-tracker':
+        specifier: workspace:*
+        version: link:../../modules/course-completion-tracker
       '@vault/mod-custom-client-portal':
         specifier: workspace:*
         version: link:../../modules/custom-client-portal
@@ -288,6 +291,28 @@ importers:
         version: 5.9.3
 
   modules/contract-status-tracker:
+    dependencies:
+      '@vault/module-sdk':
+        specifier: workspace:*
+        version: link:../../packages/module-sdk
+      '@vault/module-ui':
+        specifier: workspace:*
+        version: link:../../packages/module-ui
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+    devDependencies:
+      '@types/react':
+        specifier: ^18.3.5
+        version: 18.3.31
+      '@vault/config':
+        specifier: workspace:*
+        version: link:../../packages/config
+      typescript:
+        specifier: ^5.6.2
+        version: 5.9.3
+
+  modules/course-completion-tracker:
     dependencies:
       '@vault/module-sdk':
         specifier: workspace:*
