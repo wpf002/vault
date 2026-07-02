@@ -58,7 +58,8 @@
     "@vault/mod-digital-product-storefront": "workspace:*",
     "@vault/mod-community-membership-portal": "workspace:*",
     "@vault/mod-course-completion-tracker": "workspace:*",
-    "@vault/mod-portfolio-case-study-builder": "workspace:*"
+    "@vault/mod-portfolio-case-study-builder": "workspace:*",
+    "@vault/mod-content-calendar-approval": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",

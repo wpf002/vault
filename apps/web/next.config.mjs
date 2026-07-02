@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-content-calendar-approval',
     '@vault/mod-portfolio-case-study-builder',
     '@vault/mod-course-completion-tracker',
     '@vault/mod-community-membership-portal',
