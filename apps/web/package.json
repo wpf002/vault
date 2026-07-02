@@ -39,7 +39,8 @@
     "@vault/mod-client-progress-tracker": "workspace:*",
     "@vault/mod-service-agreement-generator": "workspace:*",
     "@vault/mod-review-collection": "workspace:*",
-    "@vault/mod-staff-scheduling": "workspace:*"
+    "@vault/mod-staff-scheduling": "workspace:*",
+    "@vault/mod-referral-tracking": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
