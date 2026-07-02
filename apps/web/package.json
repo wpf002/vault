@@ -44,7 +44,8 @@
     "@vault/mod-subscription-box-management": "workspace:*",
     "@vault/mod-online-booking-scheduling": "workspace:*",
     "@vault/mod-restaurant-reservation": "workspace:*",
-    "@vault/mod-freelancer-directory": "workspace:*"
+    "@vault/mod-freelancer-directory": "workspace:*",
+    "@vault/mod-local-service-comparison": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",

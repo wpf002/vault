@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-local-service-comparison',
     '@vault/mod-freelancer-directory',
     '@vault/mod-restaurant-reservation',
     '@vault/mod-online-booking-scheduling',
