@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-influencer-campaign-manager',
     '@vault/mod-affiliate-dashboard',
     '@vault/mod-content-calendar-approval',
     '@vault/mod-portfolio-case-study-builder',

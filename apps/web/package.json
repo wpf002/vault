@@ -60,7 +60,8 @@
     "@vault/mod-course-completion-tracker": "workspace:*",
     "@vault/mod-portfolio-case-study-builder": "workspace:*",
     "@vault/mod-content-calendar-approval": "workspace:*",
-    "@vault/mod-affiliate-dashboard": "workspace:*"
+    "@vault/mod-affiliate-dashboard": "workspace:*",
+    "@vault/mod-influencer-campaign-manager": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
