@@ -22,7 +22,8 @@
     "react-dom": "^18.3.1",
     "@vault/mod-quick-note-taker": "workspace:*",
     "@vault/mod-minimalist-timer": "workspace:*",
-    "@vault/mod-habit-tracker": "workspace:*"
+    "@vault/mod-habit-tracker": "workspace:*",
+    "@vault/mod-flashcard-spaced-repetition": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
