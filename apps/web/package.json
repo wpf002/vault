@@ -102,7 +102,8 @@
     "@vault/mod-emergency-resource-map": "workspace:*",
     "@vault/mod-local-discovery-platform": "workspace:*",
     "@vault/mod-complaint-registering": "workspace:*",
-    "@vault/mod-disaster-management": "workspace:*"
+    "@vault/mod-disaster-management": "workspace:*",
+    "@vault/mod-random-idea-generator": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",

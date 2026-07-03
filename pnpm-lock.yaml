@@ -231,6 +231,9 @@ importers:
       '@vault/mod-quote-invoice-builder':
         specifier: workspace:*
         version: link:../../modules/quote-invoice-builder
+      '@vault/mod-random-idea-generator':
+        specifier: workspace:*
+        version: link:../../modules/random-idea-generator
       '@vault/mod-recipe-sharing':
         specifier: workspace:*
         version: link:../../modules/recipe-sharing
@@ -1570,6 +1573,28 @@ importers:
         version: 5.9.3
 
   modules/quote-invoice-builder:
+    dependencies:
+      '@vault/module-sdk':
+        specifier: workspace:*
+        version: link:../../packages/module-sdk
+      '@vault/module-ui':
+        specifier: workspace:*
+        version: link:../../packages/module-ui
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+    devDependencies:
+      '@types/react':
+        specifier: ^18.3.5
+        version: 18.3.31
+      '@vault/config':
+        specifier: workspace:*
+        version: link:../../packages/config
+      typescript:
+        specifier: ^5.6.2
+        version: 5.9.3
+
+  modules/random-idea-generator:
     dependencies:
       '@vault/module-sdk':
         specifier: workspace:*
