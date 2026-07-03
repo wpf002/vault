@@ -121,7 +121,8 @@
     "@vault/mod-smart-content-generator": "workspace:*",
     "@vault/mod-meeting-follow-up-automator": "workspace:*",
     "@vault/mod-podcast-audio-curator": "workspace:*",
-    "@vault/mod-ai-health-coach": "workspace:*"
+    "@vault/mod-ai-health-coach": "workspace:*",
+    "@vault/mod-fitness-tracking-platform": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
