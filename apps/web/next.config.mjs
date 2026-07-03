@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-niche-crm',
     '@vault/mod-foodie-tour-planner',
     '@vault/mod-sustainable-travel-tracker',
     '@vault/mod-local-culture-travel-guide',
