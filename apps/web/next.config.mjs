@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-freelancer-cash-flow',
     '@vault/mod-skincare-app',
     '@vault/mod-supplement-tracking',
     '@vault/mod-recovery-tracker',
