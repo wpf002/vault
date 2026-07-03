@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-social-food-delivery',
     '@vault/mod-hybrid-event-planning',
     '@vault/mod-virtual-event-booth',
     '@vault/mod-skill-matching-allocation',
