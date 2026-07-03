@@ -81,7 +81,8 @@
     "@vault/mod-subscription-audit": "workspace:*",
     "@vault/mod-tax-estimate-calculator": "workspace:*",
     "@vault/mod-gamified-budgeting": "workspace:*",
-    "@vault/mod-micro-investing": "workspace:*"
+    "@vault/mod-micro-investing": "workspace:*",
+    "@vault/mod-sustainable-finance-tracker": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
