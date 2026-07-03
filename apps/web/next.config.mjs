@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-language-learning-game',
     '@vault/mod-online-course-platform',
     '@vault/mod-skills-assessment-builder',
     '@vault/mod-language-exchange-matching',
