@@ -104,7 +104,8 @@
     "@vault/mod-complaint-registering": "workspace:*",
     "@vault/mod-disaster-management": "workspace:*",
     "@vault/mod-random-idea-generator": "workspace:*",
-    "@vault/mod-data-visualization-dashboard": "workspace:*"
+    "@vault/mod-data-visualization-dashboard": "workspace:*",
+    "@vault/mod-collaborative-whiteboard": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
