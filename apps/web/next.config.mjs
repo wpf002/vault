@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-local-event-aggregator',
     '@vault/mod-educational-minigame-arcade',
     '@vault/mod-study-group-organizer',
     '@vault/mod-language-learning-game',
