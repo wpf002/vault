@@ -252,6 +252,9 @@ importers:
       '@vault/mod-study-group-coordination':
         specifier: workspace:*
         version: link:../../modules/study-group-coordination
+      '@vault/mod-study-group-organizer':
+        specifier: workspace:*
+        version: link:../../modules/study-group-organizer
       '@vault/mod-subscription-audit':
         specifier: workspace:*
         version: link:../../modules/subscription-audit
@@ -1697,6 +1700,28 @@ importers:
         version: 5.9.3
 
   modules/study-group-coordination:
+    dependencies:
+      '@vault/module-sdk':
+        specifier: workspace:*
+        version: link:../../packages/module-sdk
+      '@vault/module-ui':
+        specifier: workspace:*
+        version: link:../../packages/module-ui
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+    devDependencies:
+      '@types/react':
+        specifier: ^18.3.5
+        version: 18.3.31
+      '@vault/config':
+        specifier: workspace:*
+        version: link:../../packages/config
+      typescript:
+        specifier: ^5.6.2
+        version: 5.9.3
+
+  modules/study-group-organizer:
     dependencies:
       '@vault/module-sdk':
         specifier: workspace:*

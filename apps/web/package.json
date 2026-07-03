@@ -93,7 +93,8 @@
     "@vault/mod-language-exchange-matching": "workspace:*",
     "@vault/mod-skills-assessment-builder": "workspace:*",
     "@vault/mod-online-course-platform": "workspace:*",
-    "@vault/mod-language-learning-game": "workspace:*"
+    "@vault/mod-language-learning-game": "workspace:*",
+    "@vault/mod-study-group-organizer": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
