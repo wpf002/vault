@@ -114,6 +114,9 @@ importers:
       '@vault/mod-educational-minigame-arcade':
         specifier: workspace:*
         version: link:../../modules/educational-minigame-arcade
+      '@vault/mod-emergency-resource-map':
+        specifier: workspace:*
+        version: link:../../modules/emergency-resource-map
       '@vault/mod-employee-onboarding-checklist':
         specifier: workspace:*
         version: link:../../modules/employee-onboarding-checklist
@@ -700,6 +703,28 @@ importers:
         version: 5.9.3
 
   modules/educational-minigame-arcade:
+    dependencies:
+      '@vault/module-sdk':
+        specifier: workspace:*
+        version: link:../../packages/module-sdk
+      '@vault/module-ui':
+        specifier: workspace:*
+        version: link:../../packages/module-ui
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+    devDependencies:
+      '@types/react':
+        specifier: ^18.3.5
+        version: 18.3.31
+      '@vault/config':
+        specifier: workspace:*
+        version: link:../../packages/config
+      typescript:
+        specifier: ^5.6.2
+        version: 5.9.3
+
+  modules/emergency-resource-map:
     dependencies:
       '@vault/module-sdk':
         specifier: workspace:*
