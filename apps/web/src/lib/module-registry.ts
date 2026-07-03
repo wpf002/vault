@@ -11,6 +11,7 @@ import type { ModuleManifest } from '@vault/module-sdk';
  * to a "not available yet" state for any slug with no entry.
  */
 export const MODULE_REGISTRY: Record<string, () => Promise<{ default: ModuleManifest }>> = {
+  'local-discovery-platform': () => import('@vault/mod-local-discovery-platform'),
   'emergency-resource-map': () => import('@vault/mod-emergency-resource-map'),
   'loyalty-program-builder': () => import('@vault/mod-loyalty-program-builder'),
   'neighborhood-services-exchange': () => import('@vault/mod-neighborhood-services-exchange'),

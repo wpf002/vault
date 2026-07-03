@@ -1,0 +1,22 @@
+{
+  "name": "@vault/mod-local-discovery-platform",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@vault/module-sdk": "workspace:*",
+    "@vault/module-ui": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vault/config": "workspace:*",
+    "@types/react": "^18.3.5",
+    "typescript": "^5.6.2"
+  }
+}

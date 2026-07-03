@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-local-discovery-platform',
     '@vault/mod-emergency-resource-map',
     '@vault/mod-loyalty-program-builder',
     '@vault/mod-neighborhood-services-exchange',
