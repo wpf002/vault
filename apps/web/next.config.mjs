@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-fractional-asset-ownership',
     '@vault/mod-sustainable-finance-tracker',
     '@vault/mod-micro-investing',
     '@vault/mod-gamified-budgeting',
