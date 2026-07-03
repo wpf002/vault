@@ -83,7 +83,8 @@
     "@vault/mod-gamified-budgeting": "workspace:*",
     "@vault/mod-micro-investing": "workspace:*",
     "@vault/mod-sustainable-finance-tracker": "workspace:*",
-    "@vault/mod-fractional-asset-ownership": "workspace:*"
+    "@vault/mod-fractional-asset-ownership": "workspace:*",
+    "@vault/mod-wealth-asset-management": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
