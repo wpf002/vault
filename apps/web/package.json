@@ -77,7 +77,8 @@
     "@vault/mod-freelancer-cash-flow": "workspace:*",
     "@vault/mod-shared-expense-tracker": "workspace:*",
     "@vault/mod-budget-to-actual": "workspace:*",
-    "@vault/mod-invoice-aging-report": "workspace:*"
+    "@vault/mod-invoice-aging-report": "workspace:*",
+    "@vault/mod-subscription-audit": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",

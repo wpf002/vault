@@ -219,6 +219,9 @@ importers:
       '@vault/mod-staff-scheduling':
         specifier: workspace:*
         version: link:../../modules/staff-scheduling
+      '@vault/mod-subscription-audit':
+        specifier: workspace:*
+        version: link:../../modules/subscription-audit
       '@vault/mod-subscription-box-management':
         specifier: workspace:*
         version: link:../../modules/subscription-box-management
@@ -1407,6 +1410,28 @@ importers:
         version: 5.9.3
 
   modules/staff-scheduling:
+    dependencies:
+      '@vault/module-sdk':
+        specifier: workspace:*
+        version: link:../../packages/module-sdk
+      '@vault/module-ui':
+        specifier: workspace:*
+        version: link:../../packages/module-ui
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+    devDependencies:
+      '@types/react':
+        specifier: ^18.3.5
+        version: 18.3.31
+      '@vault/config':
+        specifier: workspace:*
+        version: link:../../packages/config
+      typescript:
+        specifier: ^5.6.2
+        version: 5.9.3
+
+  modules/subscription-audit:
     dependencies:
       '@vault/module-sdk':
         specifier: workspace:*
