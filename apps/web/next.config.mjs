@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-micro-investing',
     '@vault/mod-gamified-budgeting',
     '@vault/mod-tax-estimate-calculator',
     '@vault/mod-subscription-audit',

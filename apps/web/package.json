@@ -80,7 +80,8 @@
     "@vault/mod-invoice-aging-report": "workspace:*",
     "@vault/mod-subscription-audit": "workspace:*",
     "@vault/mod-tax-estimate-calculator": "workspace:*",
-    "@vault/mod-gamified-budgeting": "workspace:*"
+    "@vault/mod-gamified-budgeting": "workspace:*",
+    "@vault/mod-micro-investing": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
