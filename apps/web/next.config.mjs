@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-social-media-curator',
     '@vault/mod-multilingual-travel-companion',
     '@vault/mod-browser-cookie-manager',
     '@vault/mod-smart-interior-planner',
