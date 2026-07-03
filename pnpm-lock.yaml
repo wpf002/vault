@@ -279,6 +279,9 @@ importers:
       '@vault/mod-shared-expense-tracker':
         specifier: workspace:*
         version: link:../../modules/shared-expense-tracker
+      '@vault/mod-skill-matching-allocation':
+        specifier: workspace:*
+        version: link:../../modules/skill-matching-allocation
       '@vault/mod-skills-assessment-builder':
         specifier: workspace:*
         version: link:../../modules/skills-assessment-builder
@@ -1949,6 +1952,28 @@ importers:
         version: 5.9.3
 
   modules/shared-expense-tracker:
+    dependencies:
+      '@vault/module-sdk':
+        specifier: workspace:*
+        version: link:../../packages/module-sdk
+      '@vault/module-ui':
+        specifier: workspace:*
+        version: link:../../packages/module-ui
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+    devDependencies:
+      '@types/react':
+        specifier: ^18.3.5
+        version: 18.3.31
+      '@vault/config':
+        specifier: workspace:*
+        version: link:../../packages/config
+      typescript:
+        specifier: ^5.6.2
+        version: 5.9.3
+
+  modules/skill-matching-allocation:
     dependencies:
       '@vault/module-sdk':
         specifier: workspace:*

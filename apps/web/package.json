@@ -111,7 +111,8 @@
     "@vault/mod-sustainable-travel-tracker": "workspace:*",
     "@vault/mod-foodie-tour-planner": "workspace:*",
     "@vault/mod-niche-crm": "workspace:*",
-    "@vault/mod-small-business-crm": "workspace:*"
+    "@vault/mod-small-business-crm": "workspace:*",
+    "@vault/mod-skill-matching-allocation": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",

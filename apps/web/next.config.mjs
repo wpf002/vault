@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-skill-matching-allocation',
     '@vault/mod-small-business-crm',
     '@vault/mod-niche-crm',
     '@vault/mod-foodie-tour-planner',
