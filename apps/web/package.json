@@ -119,7 +119,8 @@
     "@vault/mod-dice-roller-coin-flipper": "workspace:*",
     "@vault/mod-fuel-delivery": "workspace:*",
     "@vault/mod-smart-content-generator": "workspace:*",
-    "@vault/mod-meeting-follow-up-automator": "workspace:*"
+    "@vault/mod-meeting-follow-up-automator": "workspace:*",
+    "@vault/mod-podcast-audio-curator": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
