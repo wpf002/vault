@@ -74,7 +74,8 @@
     "@vault/mod-recovery-tracker": "workspace:*",
     "@vault/mod-supplement-tracking": "workspace:*",
     "@vault/mod-skincare-app": "workspace:*",
-    "@vault/mod-freelancer-cash-flow": "workspace:*"
+    "@vault/mod-freelancer-cash-flow": "workspace:*",
+    "@vault/mod-shared-expense-tracker": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
