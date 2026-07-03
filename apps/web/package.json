@@ -90,7 +90,8 @@
     "@vault/mod-decentralized-identity-wallet": "workspace:*",
     "@vault/mod-study-group-coordination": "workspace:*",
     "@vault/mod-interview-prep-simulator": "workspace:*",
-    "@vault/mod-language-exchange-matching": "workspace:*"
+    "@vault/mod-language-exchange-matching": "workspace:*",
+    "@vault/mod-skills-assessment-builder": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
