@@ -71,7 +71,8 @@
     "@vault/mod-workout-programming-builder": "workspace:*",
     "@vault/mod-sleep-quality-journal": "workspace:*",
     "@vault/mod-mental-health-checkin-teams": "workspace:*",
-    "@vault/mod-recovery-tracker": "workspace:*"
+    "@vault/mod-recovery-tracker": "workspace:*",
+    "@vault/mod-supplement-tracking": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
