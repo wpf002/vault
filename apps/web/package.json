@@ -118,7 +118,8 @@
     "@vault/mod-social-food-delivery": "workspace:*",
     "@vault/mod-dice-roller-coin-flipper": "workspace:*",
     "@vault/mod-fuel-delivery": "workspace:*",
-    "@vault/mod-smart-content-generator": "workspace:*"
+    "@vault/mod-smart-content-generator": "workspace:*",
+    "@vault/mod-meeting-follow-up-automator": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
