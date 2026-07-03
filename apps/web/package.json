@@ -101,7 +101,8 @@
     "@vault/mod-loyalty-program-builder": "workspace:*",
     "@vault/mod-emergency-resource-map": "workspace:*",
     "@vault/mod-local-discovery-platform": "workspace:*",
-    "@vault/mod-complaint-registering": "workspace:*"
+    "@vault/mod-complaint-registering": "workspace:*",
+    "@vault/mod-disaster-management": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
