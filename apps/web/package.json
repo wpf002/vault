@@ -106,7 +106,8 @@
     "@vault/mod-random-idea-generator": "workspace:*",
     "@vault/mod-data-visualization-dashboard": "workspace:*",
     "@vault/mod-collaborative-whiteboard": "workspace:*",
-    "@vault/mod-inventory-supply-chain-tracker": "workspace:*"
+    "@vault/mod-inventory-supply-chain-tracker": "workspace:*",
+    "@vault/mod-local-culture-travel-guide": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
