@@ -153,6 +153,9 @@ importers:
       '@vault/mod-invoice-aging-report':
         specifier: workspace:*
         version: link:../../modules/invoice-aging-report
+      '@vault/mod-language-exchange-matching':
+        specifier: workspace:*
+        version: link:../../modules/language-exchange-matching
       '@vault/mod-local-service-comparison':
         specifier: workspace:*
         version: link:../../modules/local-service-comparison
@@ -959,6 +962,28 @@ importers:
         version: 5.9.3
 
   modules/invoice-aging-report:
+    dependencies:
+      '@vault/module-sdk':
+        specifier: workspace:*
+        version: link:../../packages/module-sdk
+      '@vault/module-ui':
+        specifier: workspace:*
+        version: link:../../packages/module-ui
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+    devDependencies:
+      '@types/react':
+        specifier: ^18.3.5
+        version: 18.3.31
+      '@vault/config':
+        specifier: workspace:*
+        version: link:../../packages/config
+      typescript:
+        specifier: ^5.6.2
+        version: 5.9.3
+
+  modules/language-exchange-matching:
     dependencies:
       '@vault/module-sdk':
         specifier: workspace:*

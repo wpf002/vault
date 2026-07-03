@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-language-exchange-matching',
     '@vault/mod-interview-prep-simulator',
     '@vault/mod-study-group-coordination',
     '@vault/mod-decentralized-identity-wallet',
