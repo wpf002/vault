@@ -108,7 +108,8 @@
     "@vault/mod-collaborative-whiteboard": "workspace:*",
     "@vault/mod-inventory-supply-chain-tracker": "workspace:*",
     "@vault/mod-local-culture-travel-guide": "workspace:*",
-    "@vault/mod-sustainable-travel-tracker": "workspace:*"
+    "@vault/mod-sustainable-travel-tracker": "workspace:*",
+    "@vault/mod-foodie-tour-planner": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
