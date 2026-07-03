@@ -339,6 +339,9 @@ importers:
       '@vault/mod-vehicle-insurance':
         specifier: workspace:*
         version: link:../../modules/vehicle-insurance
+      '@vault/mod-virtual-event-booth':
+        specifier: workspace:*
+        version: link:../../modules/virtual-event-booth
       '@vault/mod-wealth-asset-management':
         specifier: workspace:*
         version: link:../../modules/wealth-asset-management
@@ -2392,6 +2395,28 @@ importers:
         version: 5.9.3
 
   modules/vehicle-insurance:
+    dependencies:
+      '@vault/module-sdk':
+        specifier: workspace:*
+        version: link:../../packages/module-sdk
+      '@vault/module-ui':
+        specifier: workspace:*
+        version: link:../../packages/module-ui
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+    devDependencies:
+      '@types/react':
+        specifier: ^18.3.5
+        version: 18.3.31
+      '@vault/config':
+        specifier: workspace:*
+        version: link:../../packages/config
+      typescript:
+        specifier: ^5.6.2
+        version: 5.9.3
+
+  modules/virtual-event-booth:
     dependencies:
       '@vault/module-sdk':
         specifier: workspace:*
