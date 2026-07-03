@@ -11,6 +11,7 @@ import type { ModuleManifest } from '@vault/module-sdk';
  * to a "not available yet" state for any slug with no entry.
  */
 export const MODULE_REGISTRY: Record<string, () => Promise<{ default: ModuleManifest }>> = {
+  'browser-cookie-manager': () => import('@vault/mod-browser-cookie-manager'),
   'smart-interior-planner': () => import('@vault/mod-smart-interior-planner'),
   'ecommerce-ai-agent': () => import('@vault/mod-ecommerce-ai-agent'),
   'hrms-chatbot': () => import('@vault/mod-hrms-chatbot'),

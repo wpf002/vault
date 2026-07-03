@@ -131,7 +131,8 @@
     "@vault/mod-itinerary-generator": "workspace:*",
     "@vault/mod-hrms-chatbot": "workspace:*",
     "@vault/mod-ecommerce-ai-agent": "workspace:*",
-    "@vault/mod-smart-interior-planner": "workspace:*"
+    "@vault/mod-smart-interior-planner": "workspace:*",
+    "@vault/mod-browser-cookie-manager": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
