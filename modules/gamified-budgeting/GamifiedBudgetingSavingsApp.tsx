@@ -16,7 +16,8 @@ type Profile = { xp: number };
 const XP_PER_LEVEL = 250;
 
 function fmt(cents: number): string {
-  return `$${(cents / 100).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 2 })}`;
+  const frac = cents % 100 === 0 ? 0 : 2;
+  return `$${(cents / 100).toLocaleString(undefined, { minimumFractionDigits: frac, maximumFractionDigits: frac })}`;
 }
 
 export function GamifiedBudgetingSavingsApp({ mode, store, requestUpgrade }: ModuleComponentProps) {

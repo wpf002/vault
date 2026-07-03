@@ -28,7 +28,8 @@ function kgFor(p: Purchase): number {
 }
 
 function fmt(cents: number): string {
-  return `$${(cents / 100).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 2 })}`;
+  const frac = cents % 100 === 0 ? 0 : 2;
+  return `$${(cents / 100).toLocaleString(undefined, { minimumFractionDigits: frac, maximumFractionDigits: frac })}`;
 }
 
 export function SustainableFinanceSpendingTracker({ mode, store, requestUpgrade }: ModuleComponentProps) {

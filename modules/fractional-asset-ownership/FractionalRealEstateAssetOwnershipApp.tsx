@@ -28,7 +28,8 @@ function stakeCents(a: Asset): number {
 }
 
 function fmt(cents: number): string {
-  return `$${(cents / 100).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 2 })}`;
+  const frac = cents % 100 === 0 ? 0 : 2;
+  return `$${(cents / 100).toLocaleString(undefined, { minimumFractionDigits: frac, maximumFractionDigits: frac })}`;
 }
 
 export function FractionalRealEstateAssetOwnershipApp({ mode, store, requestUpgrade }: ModuleComponentProps) {
@@ -102,7 +103,7 @@ export function FractionalRealEstateAssetOwnershipApp({ mode, store, requestUpgr
       <Section title="Portfolio">
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 10, marginBottom: 4 }}>
           <StatDisplay value={<span data-testid="portfolio-value">{fmt(portfolioCents)}</span>} label={`Stake across ${list.length} assets`} />
-          <StatDisplay value={`${fmt(monthlyIncomeCents)}/mo`} label="Projected income" />
+          <StatDisplay value={fmt(monthlyIncomeCents)} label="Projected income per month" />
           <StatDisplay value={fmt(totalDistributedCents)} label="Distributions received" />
         </div>
       </Section>
