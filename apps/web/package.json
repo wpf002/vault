@@ -67,7 +67,8 @@
     "@vault/mod-diy-skill-sharing": "workspace:*",
     "@vault/mod-recipe-sharing": "workspace:*",
     "@vault/mod-news-aggregator": "workspace:*",
-    "@vault/mod-nutrition-log": "workspace:*"
+    "@vault/mod-nutrition-log": "workspace:*",
+    "@vault/mod-workout-programming-builder": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",

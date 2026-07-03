@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-workout-programming-builder',
     '@vault/mod-nutrition-log',
     '@vault/mod-news-aggregator',
     '@vault/mod-recipe-sharing',
