@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-mental-health-checkin-teams',
     '@vault/mod-sleep-quality-journal',
     '@vault/mod-workout-programming-builder',
     '@vault/mod-nutrition-log',
