@@ -120,7 +120,8 @@
     "@vault/mod-fuel-delivery": "workspace:*",
     "@vault/mod-smart-content-generator": "workspace:*",
     "@vault/mod-meeting-follow-up-automator": "workspace:*",
-    "@vault/mod-podcast-audio-curator": "workspace:*"
+    "@vault/mod-podcast-audio-curator": "workspace:*",
+    "@vault/mod-ai-health-coach": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",

@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-ai-health-coach',
     '@vault/mod-podcast-audio-curator',
     '@vault/mod-meeting-follow-up-automator',
     '@vault/mod-smart-content-generator',
