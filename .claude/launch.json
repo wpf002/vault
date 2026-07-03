@@ -7,10 +7,10 @@
       "runtimeArgs": ["--filter", "@vault/web", "dev"],
       "port": 3000,
       "env": {
-        "NEXT_PUBLIC_API_URL": "http://127.0.0.1:4250",
+        "NEXT_PUBLIC_API_URL": "http://127.0.0.1:4260",
         "AUTH_SECRET": "devsecretdevsecretdevsecretdevsecret",
         "NEXTAUTH_URL": "http://localhost:3000",
-        "DATABASE_URL": "postgresql://vault:vault@localhost:5477/vault?schema=public"
+        "DATABASE_URL": "postgresql://vault:vault@localhost:5478/vault?schema=public"
       }
     }
   ]
