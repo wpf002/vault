@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-home-maintenance-predictor',
     '@vault/mod-feedback-analyzer',
     '@vault/mod-ai-shopping-recommendation',
     '@vault/mod-ai-learning-companion',
