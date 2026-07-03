@@ -94,7 +94,8 @@
     "@vault/mod-skills-assessment-builder": "workspace:*",
     "@vault/mod-online-course-platform": "workspace:*",
     "@vault/mod-language-learning-game": "workspace:*",
-    "@vault/mod-study-group-organizer": "workspace:*"
+    "@vault/mod-study-group-organizer": "workspace:*",
+    "@vault/mod-educational-minigame-arcade": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",

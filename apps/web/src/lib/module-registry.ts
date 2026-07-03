@@ -11,6 +11,7 @@ import type { ModuleManifest } from '@vault/module-sdk';
  * to a "not available yet" state for any slug with no entry.
  */
 export const MODULE_REGISTRY: Record<string, () => Promise<{ default: ModuleManifest }>> = {
+  'educational-minigame-arcade': () => import('@vault/mod-educational-minigame-arcade'),
   'study-group-organizer': () => import('@vault/mod-study-group-organizer'),
   'language-learning-game': () => import('@vault/mod-language-learning-game'),
   'online-course-platform': () => import('@vault/mod-online-course-platform'),
