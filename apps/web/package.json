@@ -65,7 +65,8 @@
     "@vault/mod-branching-storytelling": "workspace:*",
     "@vault/mod-creative-collaboration-hub": "workspace:*",
     "@vault/mod-diy-skill-sharing": "workspace:*",
-    "@vault/mod-recipe-sharing": "workspace:*"
+    "@vault/mod-recipe-sharing": "workspace:*",
+    "@vault/mod-news-aggregator": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",

@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-news-aggregator',
     '@vault/mod-recipe-sharing',
     '@vault/mod-diy-skill-sharing',
     '@vault/mod-creative-collaboration-hub',
