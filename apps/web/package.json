@@ -86,7 +86,8 @@
     "@vault/mod-fractional-asset-ownership": "workspace:*",
     "@vault/mod-wealth-asset-management": "workspace:*",
     "@vault/mod-e-wallet": "workspace:*",
-    "@vault/mod-vehicle-insurance": "workspace:*"
+    "@vault/mod-vehicle-insurance": "workspace:*",
+    "@vault/mod-decentralized-identity-wallet": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",

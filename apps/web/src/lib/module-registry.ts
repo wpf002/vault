@@ -11,6 +11,7 @@ import type { ModuleManifest } from '@vault/module-sdk';
  * to a "not available yet" state for any slug with no entry.
  */
 export const MODULE_REGISTRY: Record<string, () => Promise<{ default: ModuleManifest }>> = {
+  'decentralized-identity-wallet': () => import('@vault/mod-decentralized-identity-wallet'),
   'vehicle-insurance': () => import('@vault/mod-vehicle-insurance'),
   'e-wallet': () => import('@vault/mod-e-wallet'),
   'wealth-asset-management': () => import('@vault/mod-wealth-asset-management'),

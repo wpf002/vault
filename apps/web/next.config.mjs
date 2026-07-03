@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-decentralized-identity-wallet',
     '@vault/mod-vehicle-insurance',
     '@vault/mod-e-wallet',
     '@vault/mod-wealth-asset-management',
