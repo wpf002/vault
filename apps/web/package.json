@@ -64,7 +64,8 @@
     "@vault/mod-influencer-campaign-manager": "workspace:*",
     "@vault/mod-branching-storytelling": "workspace:*",
     "@vault/mod-creative-collaboration-hub": "workspace:*",
-    "@vault/mod-diy-skill-sharing": "workspace:*"
+    "@vault/mod-diy-skill-sharing": "workspace:*",
+    "@vault/mod-recipe-sharing": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
