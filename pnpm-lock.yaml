@@ -234,6 +234,9 @@ importers:
       '@vault/mod-task-scheduling-motivation':
         specifier: workspace:*
         version: link:../../modules/task-scheduling-motivation
+      '@vault/mod-tax-estimate-calculator':
+        specifier: workspace:*
+        version: link:../../modules/tax-estimate-calculator
       '@vault/mod-tutor-search':
         specifier: workspace:*
         version: link:../../modules/tutor-search
@@ -1520,6 +1523,28 @@ importers:
         version: 5.9.3
 
   modules/task-scheduling-motivation:
+    dependencies:
+      '@vault/module-sdk':
+        specifier: workspace:*
+        version: link:../../packages/module-sdk
+      '@vault/module-ui':
+        specifier: workspace:*
+        version: link:../../packages/module-ui
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+    devDependencies:
+      '@types/react':
+        specifier: ^18.3.5
+        version: 18.3.31
+      '@vault/config':
+        specifier: workspace:*
+        version: link:../../packages/config
+      typescript:
+        specifier: ^5.6.2
+        version: 5.9.3
+
+  modules/tax-estimate-calculator:
     dependencies:
       '@vault/module-sdk':
         specifier: workspace:*

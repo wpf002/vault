@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "web",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--filter", "@vault/web", "dev"],
+      "port": 3000,
+      "env": {
+        "NEXT_PUBLIC_API_URL": "http://127.0.0.1:4230",
+        "AUTH_SECRET": "devsecretdevsecretdevsecretdevsecret",
+        "NEXTAUTH_URL": "http://localhost:3000",
+        "DATABASE_URL": "postgresql://vault:vault@localhost:5475/vault?schema=public"
+      }
+    }
+  ]
+}
