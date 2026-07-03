@@ -85,7 +85,8 @@
     "@vault/mod-sustainable-finance-tracker": "workspace:*",
     "@vault/mod-fractional-asset-ownership": "workspace:*",
     "@vault/mod-wealth-asset-management": "workspace:*",
-    "@vault/mod-e-wallet": "workspace:*"
+    "@vault/mod-e-wallet": "workspace:*",
+    "@vault/mod-vehicle-insurance": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
