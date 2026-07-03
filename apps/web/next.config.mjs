@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-invoice-aging-report',
     '@vault/mod-budget-to-actual',
     '@vault/mod-shared-expense-tracker',
     '@vault/mod-freelancer-cash-flow',

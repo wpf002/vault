@@ -11,6 +11,7 @@ import type { ModuleManifest } from '@vault/module-sdk';
  * to a "not available yet" state for any slug with no entry.
  */
 export const MODULE_REGISTRY: Record<string, () => Promise<{ default: ModuleManifest }>> = {
+  'invoice-aging-report': () => import('@vault/mod-invoice-aging-report'),
   'budget-to-actual': () => import('@vault/mod-budget-to-actual'),
   'shared-expense-tracker': () => import('@vault/mod-shared-expense-tracker'),
   'freelancer-cash-flow': () => import('@vault/mod-freelancer-cash-flow'),
