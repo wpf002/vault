@@ -117,7 +117,8 @@
     "@vault/mod-hybrid-event-planning": "workspace:*",
     "@vault/mod-social-food-delivery": "workspace:*",
     "@vault/mod-dice-roller-coin-flipper": "workspace:*",
-    "@vault/mod-fuel-delivery": "workspace:*"
+    "@vault/mod-fuel-delivery": "workspace:*",
+    "@vault/mod-smart-content-generator": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",

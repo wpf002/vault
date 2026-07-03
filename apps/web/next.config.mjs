@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-smart-content-generator',
     '@vault/mod-fuel-delivery',
     '@vault/mod-dice-roller-coin-flipper',
     '@vault/mod-social-food-delivery',
