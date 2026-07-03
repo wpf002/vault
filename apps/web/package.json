@@ -125,7 +125,8 @@
     "@vault/mod-fitness-tracking-platform": "workspace:*",
     "@vault/mod-financial-dashboard": "workspace:*",
     "@vault/mod-ai-learning-companion": "workspace:*",
-    "@vault/mod-ai-shopping-recommendation": "workspace:*"
+    "@vault/mod-ai-shopping-recommendation": "workspace:*",
+    "@vault/mod-feedback-analyzer": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
