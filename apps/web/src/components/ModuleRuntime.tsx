@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useSession, getSession } from 'next-auth/react';
-import { createStoreClient, type ModuleManifest, type ModuleMode, type StoreClient } from '@vault/module-sdk';
+import { createAiClient, createStoreClient, type ModuleManifest, type ModuleMode, type StoreClient } from '@vault/module-sdk';
 import { apiFetch } from '@/lib/api';
 import { MODULE_REGISTRY } from '@/lib/module-registry';
 import { BuyWall } from '@/components/BuyWall';
@@ -59,6 +59,15 @@ export function ModuleRuntime({ slug, name, priceCents }: Props) {
           getToken: async () => (await getSession())?.apiToken,
         });
 
+  // Always server-backed, in both modes — the server owns the provider key
+  // and the preview allowance. Signed-out users get sign_in_required from
+  // the client itself without a request.
+  const ai = createAiClient({
+    moduleSlug: slug,
+    apiBaseUrl: process.env.NEXT_PUBLIC_API_URL,
+    getToken: async () => (await getSession())?.apiToken,
+  });
+
   const Component = manifest.Component;
   const accent = manifest.theme?.accent;
 
@@ -69,7 +78,7 @@ export function ModuleRuntime({ slug, name, priceCents }: Props) {
           <span aria-hidden>👁️</span> Preview — try everything free, saving is ephemeral until you unlock this app
         </div>
       )}
-      <Component mode={mode} store={store} requestUpgrade={() => setBuyWallOpen(true)} />
+      <Component mode={mode} store={store} ai={ai} requestUpgrade={() => setBuyWallOpen(true)} />
       <BuyWall
         open={buyWallOpen}
         onClose={() => setBuyWallOpen(false)}

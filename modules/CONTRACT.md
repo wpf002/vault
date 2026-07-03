@@ -40,5 +40,16 @@ satisfies it — deviate on purpose, not by accident.
     the full baseline (colors, casing, icons, component inventory);
     `unit-converter` is the reference implementation.
 
+11. **AI goes through the proxy, and only the proxy.** Modules with
+    `requiresAi: true` use the `ai` prop (`AiClient`) from
+    `ModuleComponentProps` — never a provider SDK, never an API key,
+    never a hardcoded fake answer. `ai.complete()` returns a
+    discriminated result; the module must render all three failure
+    states: `sign_in_required` (prompt to sign in — AI needs an account
+    even in preview), `preview_exhausted` (surface `requestUpgrade()` —
+    the free allowance is spent), and `unavailable` (a calm "AI is
+    offline" state, not a crash). When `remainingPreviewCalls` comes
+    back, show it — the countdown is the upsell.
+
 Before flipping a module's catalog `status` to `live`, confirm it holds
 this contract — not just that it compiles.

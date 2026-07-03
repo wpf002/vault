@@ -133,3 +133,20 @@ model StoreDocument {
   @@unique([userId, moduleSlug, collection, docId])
   @@index([userId, moduleSlug, collection])
 }
+
+// One row per AI completion, written by the Phase 7 proxy. This is both
+// the usage meter (billing/cost visibility sums tokens) and the preview
+// allowance counter (unentitled users get N rows per module, then the
+// wall). moduleSlug is a plain string for the same reason as
+// StoreDocument's.
+model AiUsage {
+  id           String   @id @default(cuid())
+  userId       String
+  moduleSlug   String
+  inputTokens  Int
+  outputTokens Int
+  preview      Boolean  @default(false)
+  createdAt    DateTime @default(now())
+
+  @@index([userId, moduleSlug])
+}
