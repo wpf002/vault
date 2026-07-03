@@ -110,7 +110,8 @@
     "@vault/mod-local-culture-travel-guide": "workspace:*",
     "@vault/mod-sustainable-travel-tracker": "workspace:*",
     "@vault/mod-foodie-tour-planner": "workspace:*",
-    "@vault/mod-niche-crm": "workspace:*"
+    "@vault/mod-niche-crm": "workspace:*",
+    "@vault/mod-small-business-crm": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",

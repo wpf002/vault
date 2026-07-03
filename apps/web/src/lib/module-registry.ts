@@ -11,6 +11,7 @@ import type { ModuleManifest } from '@vault/module-sdk';
  * to a "not available yet" state for any slug with no entry.
  */
 export const MODULE_REGISTRY: Record<string, () => Promise<{ default: ModuleManifest }>> = {
+  'small-business-crm': () => import('@vault/mod-small-business-crm'),
   'niche-crm': () => import('@vault/mod-niche-crm'),
   'foodie-tour-planner': () => import('@vault/mod-foodie-tour-planner'),
   'sustainable-travel-tracker': () => import('@vault/mod-sustainable-travel-tracker'),
