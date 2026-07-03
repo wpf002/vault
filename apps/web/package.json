@@ -113,7 +113,8 @@
     "@vault/mod-niche-crm": "workspace:*",
     "@vault/mod-small-business-crm": "workspace:*",
     "@vault/mod-skill-matching-allocation": "workspace:*",
-    "@vault/mod-virtual-event-booth": "workspace:*"
+    "@vault/mod-virtual-event-booth": "workspace:*",
+    "@vault/mod-hybrid-event-planning": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
