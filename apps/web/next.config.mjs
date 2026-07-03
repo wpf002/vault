@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-data-visualization-dashboard',
     '@vault/mod-random-idea-generator',
     '@vault/mod-disaster-management',
     '@vault/mod-complaint-registering',
