@@ -123,7 +123,8 @@
     "@vault/mod-podcast-audio-curator": "workspace:*",
     "@vault/mod-ai-health-coach": "workspace:*",
     "@vault/mod-fitness-tracking-platform": "workspace:*",
-    "@vault/mod-financial-dashboard": "workspace:*"
+    "@vault/mod-financial-dashboard": "workspace:*",
+    "@vault/mod-ai-learning-companion": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
