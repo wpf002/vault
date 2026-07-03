@@ -97,7 +97,8 @@
     "@vault/mod-study-group-organizer": "workspace:*",
     "@vault/mod-educational-minigame-arcade": "workspace:*",
     "@vault/mod-local-event-aggregator": "workspace:*",
-    "@vault/mod-neighborhood-services-exchange": "workspace:*"
+    "@vault/mod-neighborhood-services-exchange": "workspace:*",
+    "@vault/mod-loyalty-program-builder": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
