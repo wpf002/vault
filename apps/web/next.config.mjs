@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-ecommerce-ai-agent',
     '@vault/mod-hrms-chatbot',
     '@vault/mod-itinerary-generator',
     '@vault/mod-home-maintenance-predictor',

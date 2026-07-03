@@ -129,7 +129,8 @@
     "@vault/mod-feedback-analyzer": "workspace:*",
     "@vault/mod-home-maintenance-predictor": "workspace:*",
     "@vault/mod-itinerary-generator": "workspace:*",
-    "@vault/mod-hrms-chatbot": "workspace:*"
+    "@vault/mod-hrms-chatbot": "workspace:*",
+    "@vault/mod-ecommerce-ai-agent": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
