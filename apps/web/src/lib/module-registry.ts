@@ -11,6 +11,7 @@ import type { ModuleManifest } from '@vault/module-sdk';
  * to a "not available yet" state for any slug with no entry.
  */
 export const MODULE_REGISTRY: Record<string, () => Promise<{ default: ModuleManifest }>> = {
+  'online-course-platform': () => import('@vault/mod-online-course-platform'),
   'skills-assessment-builder': () => import('@vault/mod-skills-assessment-builder'),
   'language-exchange-matching': () => import('@vault/mod-language-exchange-matching'),
   'interview-prep-simulator': () => import('@vault/mod-interview-prep-simulator'),
