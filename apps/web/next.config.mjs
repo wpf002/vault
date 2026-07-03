@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-interview-prep-simulator',
     '@vault/mod-study-group-coordination',
     '@vault/mod-decentralized-identity-wallet',
     '@vault/mod-vehicle-insurance',

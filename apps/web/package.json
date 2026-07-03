@@ -88,7 +88,8 @@
     "@vault/mod-e-wallet": "workspace:*",
     "@vault/mod-vehicle-insurance": "workspace:*",
     "@vault/mod-decentralized-identity-wallet": "workspace:*",
-    "@vault/mod-study-group-coordination": "workspace:*"
+    "@vault/mod-study-group-coordination": "workspace:*",
+    "@vault/mod-interview-prep-simulator": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
