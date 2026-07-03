@@ -115,7 +115,8 @@
     "@vault/mod-skill-matching-allocation": "workspace:*",
     "@vault/mod-virtual-event-booth": "workspace:*",
     "@vault/mod-hybrid-event-planning": "workspace:*",
-    "@vault/mod-social-food-delivery": "workspace:*"
+    "@vault/mod-social-food-delivery": "workspace:*",
+    "@vault/mod-dice-roller-coin-flipper": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
