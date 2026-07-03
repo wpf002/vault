@@ -123,6 +123,9 @@ importers:
       '@vault/mod-dice-roller-coin-flipper':
         specifier: workspace:*
         version: link:../../modules/dice-roller-coin-flipper
+      '@vault/mod-diet-planning-assistant':
+        specifier: workspace:*
+        version: link:../../modules/diet-planning-assistant
       '@vault/mod-digital-decluttering':
         specifier: workspace:*
         version: link:../../modules/digital-decluttering
@@ -877,6 +880,28 @@ importers:
         version: 5.9.3
 
   modules/dice-roller-coin-flipper:
+    dependencies:
+      '@vault/module-sdk':
+        specifier: workspace:*
+        version: link:../../packages/module-sdk
+      '@vault/module-ui':
+        specifier: workspace:*
+        version: link:../../packages/module-ui
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+    devDependencies:
+      '@types/react':
+        specifier: ^18.3.5
+        version: 18.3.31
+      '@vault/config':
+        specifier: workspace:*
+        version: link:../../packages/config
+      typescript:
+        specifier: ^5.6.2
+        version: 5.9.3
+
+  modules/diet-planning-assistant:
     dependencies:
       '@vault/module-sdk':
         specifier: workspace:*

@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-diet-planning-assistant',
     '@vault/mod-recipe-planner-pantry',
     '@vault/mod-social-media-curator',
     '@vault/mod-multilingual-travel-companion',

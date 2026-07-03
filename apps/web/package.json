@@ -135,7 +135,8 @@
     "@vault/mod-browser-cookie-manager": "workspace:*",
     "@vault/mod-multilingual-travel-companion": "workspace:*",
     "@vault/mod-social-media-curator": "workspace:*",
-    "@vault/mod-recipe-planner-pantry": "workspace:*"
+    "@vault/mod-recipe-planner-pantry": "workspace:*",
+    "@vault/mod-diet-planning-assistant": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",
