@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    '@vault/mod-sustainable-travel-tracker',
     '@vault/mod-local-culture-travel-guide',
     '@vault/mod-inventory-supply-chain-tracker',
     '@vault/mod-collaborative-whiteboard',
