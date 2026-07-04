@@ -9,6 +9,7 @@ import { registerLibraryRoutes } from './routes/library.js';
 import { registerAccountRoutes } from './routes/account.js';
 import { registerStoreRoutes } from './routes/store.js';
 import { registerAiRoutes } from './routes/ai.js';
+import { registerAdminRoutes } from './routes/admin.js';
 
 if (!process.env.AUTH_SECRET) {
   throw new Error('AUTH_SECRET must be set — it is the shared secret used to verify session tokens issued by the web app.');
@@ -31,6 +32,7 @@ await registerLibraryRoutes(app);
 await registerAccountRoutes(app);
 await registerStoreRoutes(app);
 await registerAiRoutes(app);
+await registerAdminRoutes(app);
 
 const port = Number(process.env.API_PORT ?? 4000);
 app.listen({ port, host: '0.0.0.0' }).catch((err) => {
