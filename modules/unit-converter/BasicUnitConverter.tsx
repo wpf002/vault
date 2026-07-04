@@ -123,7 +123,7 @@ export function BasicUnitConverter({ mode, store, requestUpgrade }: ModuleCompon
         </div>
 
         <Button variant="primary" onClick={saveToHistory} disabled={result === null} data-testid="save-history-button">
-          💾 Save to History
+          Save to History
         </Button>
       </Section>
 
@@ -147,7 +147,7 @@ export function BasicUnitConverter({ mode, store, requestUpgrade }: ModuleCompon
           </div>
         )}
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportCsv}>
-          ⬇️ Export History as CSV
+          Export History as CSV
         </GatedAction>
       </Section>
     </div>

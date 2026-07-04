@@ -119,7 +119,7 @@ export function CommunityMembershipPortal({ mode, store, requestUpgrade }: Modul
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportContent}>
-          ⬇️ Export All Content as Markdown
+          Export All Content as Markdown
         </GatedAction>
       </Section>
 

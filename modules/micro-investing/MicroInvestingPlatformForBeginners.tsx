@@ -126,7 +126,7 @@ export function MicroInvestingPlatformForBeginners({ mode, store, requestUpgrade
                     style={{ width: 110 }}
                   />
                   <Button variant="secondary" onClick={() => invest(p, 'One-time investment')} data-testid={`invest-button-${p.docId}`} style={{ padding: '5px 10px', fontSize: 12 }}>
-                    💵 Invest
+                    Invest
                   </Button>
                   <span style={{ fontSize: 12, color: 'var(--color-text-dim)', marginLeft: 'auto', display: 'inline-flex', gap: 6, alignItems: 'center' }}>
                     Auto:
@@ -195,7 +195,7 @@ export function MicroInvestingPlatformForBeginners({ mode, store, requestUpgrade
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportLedger}>
-          ⬇️ Export Ledger as CSV
+          Export Ledger as CSV
         </GatedAction>
       </Section>
     </div>

@@ -204,7 +204,7 @@ export function ServiceAgreementGenerator({ mode, store, requestUpgrade }: Modul
             <div style={{ display: 'flex', gap: 10, alignItems: 'flex-end', flexWrap: 'wrap', marginBottom: 14 }}>
               {open.data.status === 'draft' && (
                 <Button variant="secondary" onClick={() => update(open, { status: 'sent' })} data-testid="send-button">
-                  📤 Mark Sent
+                  Mark Sent
                 </Button>
               )}
               {open.data.status === 'sent' && (
@@ -214,7 +214,7 @@ export function ServiceAgreementGenerator({ mode, store, requestUpgrade }: Modul
                     <Input value={signName} onChange={(e) => setSignName(e.target.value)} placeholder="J. Smith" data-testid="sign-name-input" style={{ width: '100%' }} />
                   </div>
                   <Button variant="primary" onClick={sign} data-testid="sign-button">
-                    ✍️ Record Signature
+                    Record Signature
                   </Button>
                 </>
               )}
@@ -226,7 +226,7 @@ export function ServiceAgreementGenerator({ mode, store, requestUpgrade }: Modul
             </div>
 
             <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportAgreement}>
-              ⬇️ Export Agreement
+              Export Agreement
             </GatedAction>
           </Section>
         </>

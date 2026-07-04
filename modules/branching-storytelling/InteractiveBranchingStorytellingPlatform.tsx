@@ -184,7 +184,7 @@ export function InteractiveBranchingStorytellingPlatform({ mode, store, requestU
 
       <Section title="Export">
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportStory}>
-          ⬇️ Export Story as JSON
+          Export Story as JSON
         </GatedAction>
       </Section>
     </div>

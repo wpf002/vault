@@ -111,7 +111,7 @@ export function MeetingFollowUpAutomator({ mode, store, ai, requestUpgrade }: Mo
               <Input value={meetingName} onChange={(e) => setMeetingName(e.target.value)} placeholder="e.g. Weekly sync — July 3" data-testid="meeting-input" style={{ width: '100%' }} />
             </div>
             <Button variant="primary" onClick={extract} data-testid="extract-button" disabled={working || notes.trim().length < 30}>
-              {working ? '🗣️ Extracting…' : '🗣️ Extract Follow-Ups'}
+              {working ? 'Extracting…' : 'Extract Follow-Ups'}
             </Button>
           </div>
           <Textarea value={notes} onChange={(e) => setNotes(e.target.value)} placeholder="Paste the raw meeting notes or transcript here…" data-testid="notes-input" rows={6} style={{ width: '100%' }} />
@@ -156,7 +156,7 @@ export function MeetingFollowUpAutomator({ mode, store, ai, requestUpgrade }: Mo
                     </div>
                   ))}
                   <Button variant="secondary" onClick={keepExtracted} data-testid="keep-button" style={{ alignSelf: 'flex-start' }}>
-                    💾 Add {extracted.length} to the Board
+                    Add {extracted.length} to the Board
                   </Button>
                 </>
               )}
@@ -197,7 +197,7 @@ export function MeetingFollowUpAutomator({ mode, store, ai, requestUpgrade }: Mo
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportFollowUp}>
-          ⬇️ Export Follow-Ups as Markdown
+          Export Follow-Ups as Markdown
         </GatedAction>
       </Section>
     </div>

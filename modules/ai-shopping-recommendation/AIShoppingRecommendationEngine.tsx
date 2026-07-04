@@ -134,7 +134,7 @@ export function AIShoppingRecommendationEngine({ mode, store, ai, requestUpgrade
               <Input value={occasion} onChange={(e) => setOccasion(e.target.value)} placeholder="e.g. Gift for my brother who codes" data-testid="occasion-input" style={{ width: '100%' }} />
             </div>
             <Button variant="primary" onClick={recommend} data-testid="recommend-button" disabled={working || tasteList.length < 3}>
-              {working ? '🛍️ Shopping…' : '🛍️ Recommend'}
+              {working ? 'Shopping…' : 'Recommend'}
             </Button>
           </div>
           {tasteList.length < 3 && <span style={{ fontSize: 12, color: 'var(--color-text-dim)' }}>Rate at least 3 items below so the engine knows your taste.</span>}
@@ -209,7 +209,7 @@ export function AIShoppingRecommendationEngine({ mode, store, ai, requestUpgrade
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportWishlist}>
-          ⬇️ Export Wishlist as Markdown
+          Export Wishlist as Markdown
         </GatedAction>
       </Section>
 

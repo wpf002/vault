@@ -138,7 +138,7 @@ export function InvoiceAgingReport({ mode, store, requestUpgrade }: ModuleCompon
                             </div>
                             <span style={{ fontVariantNumeric: 'tabular-nums', fontWeight: 700, color: 'var(--module-accent)' }}>{fmt(i.data.amountCents)}</span>
                             <Button variant="ghost" onClick={() => logReminder(i)} data-testid={`remind-${i.docId}`} style={{ padding: '5px 10px', fontSize: 12 }}>
-                              ✉️ Log Reminder
+                              Log Reminder
                             </Button>
                             <Button variant="secondary" onClick={() => markPaid(i)} data-testid={`paid-${i.docId}`} style={{ padding: '5px 10px', fontSize: 12 }}>
                               ✓ Paid
@@ -179,7 +179,7 @@ export function InvoiceAgingReport({ mode, store, requestUpgrade }: ModuleCompon
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportReport}>
-          ⬇️ Export Aging Report as CSV
+          Export Aging Report as CSV
         </GatedAction>
       </Section>
     </div>

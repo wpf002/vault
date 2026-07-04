@@ -168,7 +168,7 @@ export function InteractiveDataVisualizationDashboard({ mode, store, requestUpgr
               <Input value={name} onChange={(e) => setName(e.target.value)} placeholder="e.g. Q3 Expenses" data-testid="name-input" style={{ width: '100%' }} />
             </div>
             <Button variant="primary" onClick={addDataset} data-testid="add-dataset-button" disabled={!parseCsv(csv) || !name.trim()}>
-              📊 Visualize
+              Visualize
             </Button>
           </div>
           <div>
@@ -178,7 +178,7 @@ export function InteractiveDataVisualizationDashboard({ mode, store, requestUpgr
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportData}>
-          ⬇️ Export Selected Dataset as CSV
+          Export Selected Dataset as CSV
         </GatedAction>
       </Section>
     </div>

@@ -134,7 +134,7 @@ export function VirtualEventBoothNetworkingPlatform({ mode, store, requestUpgrad
               </div>
             )}
             <Button variant="secondary" onClick={startEditing} data-testid="edit-booth-button" style={{ alignSelf: 'flex-start' }}>
-              ✏️ Edit Booth
+              Edit Booth
             </Button>
           </div>
         ) : (
@@ -159,7 +159,7 @@ export function VirtualEventBoothNetworkingPlatform({ mode, store, requestUpgrad
             </div>
             <div style={{ display: 'flex', gap: 8 }}>
               <Button variant="primary" onClick={commitEdit} data-testid="save-booth-button">
-                💾 Save Booth
+                Save Booth
               </Button>
               {booth && (
                 <Button variant="ghost" onClick={() => setEditing(false)}>
@@ -186,7 +186,7 @@ export function VirtualEventBoothNetworkingPlatform({ mode, store, requestUpgrad
               </Select>
             </div>
             <Button variant="secondary" onClick={addResource} data-testid="add-resource-button">
-              📎 Stock It
+              Stock It
             </Button>
           </div>
         )}
@@ -256,7 +256,7 @@ export function VirtualEventBoothNetworkingPlatform({ mode, store, requestUpgrad
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportLeads}>
-          ⬇️ Export Leads as CSV
+          Export Leads as CSV
         </GatedAction>
       </Section>
     </div>

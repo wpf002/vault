@@ -160,11 +160,11 @@ export function MinimalistTimerStopwatch({ mode, store, requestUpgrade }: Module
         <div style={{ display: 'flex', gap: 8 }}>
           {running ? (
             <Button variant="secondary" onClick={pause} data-testid="pause-button">
-              ⏸ Pause
+              Pause
             </Button>
           ) : (
             <Button variant="primary" onClick={start} data-testid="start-button">
-              ▶ Start
+              Start
             </Button>
           )}
           <Button variant="ghost" onClick={reset} data-testid="reset-button">
@@ -201,7 +201,7 @@ export function MinimalistTimerStopwatch({ mode, store, requestUpgrade }: Module
                 />
               </div>
               <Button variant="primary" onClick={savePreset} data-testid="save-preset-button">
-                💾 Save
+                Save
               </Button>
             </div>
 
@@ -216,7 +216,7 @@ export function MinimalistTimerStopwatch({ mode, store, requestUpgrade }: Module
             )}
 
             <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportPresets}>
-              ⬇️ Export Presets as JSON
+              Export Presets as JSON
             </GatedAction>
           </Section>
         </>

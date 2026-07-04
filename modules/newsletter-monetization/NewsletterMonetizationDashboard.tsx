@@ -124,7 +124,7 @@ export function NewsletterMonetizationDashboard({ mode, store, requestUpgrade }:
               ))}
             </div>
             <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportReport}>
-              ⬇️ Export Growth Report as CSV
+              Export Growth Report as CSV
             </GatedAction>
           </Section>
         </>

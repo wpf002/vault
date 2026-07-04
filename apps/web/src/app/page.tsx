@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { WaitlistForm } from '@/components/WaitlistForm';
-import { categoryAccent, categoryIcon, categoryLabel, statusLabel } from '@/lib/category-theme';
+import { categoryAccent, categoryIcon, categoryLabel } from '@/lib/category-theme';
 import type { ModuleSummary } from '@/lib/types';
 
 async function getModules(): Promise<ModuleSummary[]> {
@@ -20,17 +20,12 @@ export default async function CatalogPage({
   const filtered = searchParams.category
     ? modules.filter((m) => m.category === searchParams.category)
     : modules;
-  const liveCount = modules.filter((m) => m.status === 'live').length;
 
   return (
     <main style={{ maxWidth: 1100, margin: '0 auto', padding: 'var(--space-4)' }}>
       <div className="hero">
         <h1>Every App You Need. One Vault.</h1>
-        <p>
-          {modules.length} mini-apps under one roof — {liveCount} live today, the rest on the way. Browse and try
-          anything free. Buy one, or subscribe for all-access.
-        </p>
-        <button className="primary">Get All-Access</button>
+        <p>{modules.length} mini-apps under one roof. Open any of them and start — your account unlocks everything.</p>
       </div>
 
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', margin: 'var(--space-4) 0' }}>
@@ -56,33 +51,17 @@ export default async function CatalogPage({
         {filtered.map((m) => {
           const accent = categoryAccent(m.category);
           return (
-            <div
+            <Link
               key={m.slug}
+              href={`/modules/${m.slug}`}
               className="product-card"
               style={{ '--card-accent': accent } as React.CSSProperties}
             >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start' }}>
-                <div className="icon">{m.icon}</div>
-                <span className={`badge ${m.status}`}>{statusLabel(m.status)}</span>
-              </div>
-              <Link href={`/modules/${m.slug}`} style={{ fontWeight: 700, fontSize: 16 }}>
-                {m.name}
-              </Link>
+              <div className="icon">{m.icon}</div>
+              <span style={{ fontWeight: 700, fontSize: 16 }}>{m.name}</span>
               <p style={{ color: 'var(--color-text-dim)', fontSize: 13, margin: 0, flex: 1 }}>{m.description}</p>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 4 }}>
-                <span style={{ fontSize: 13, color: 'var(--color-text-dim)' }}>
-                  {m.priceCents != null ? `$${(m.priceCents / 100).toFixed(2)}` : ''}
-                </span>
-                {m.status === 'live' ? (
-                  <Link href={`/modules/${m.slug}`}>
-                    <button className="pill active" style={{ background: accent }}>
-                      Get
-                    </button>
-                  </Link>
-                ) : null}
-              </div>
               {m.status !== 'live' && <WaitlistForm slug={m.slug} />}
-            </div>
+            </Link>
           );
         })}
       </div>

@@ -141,7 +141,7 @@ export function ECommerceAIAgent({ mode, store, ai, requestUpgrade }: ModuleComp
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap' }}>
             <Button variant="primary" onClick={reviewPricing} data-testid="pricing-button" disabled={working !== null || productList.length === 0}>
-              {working === 'pricing' ? '🛒 Reviewing…' : '💲 Review Pricing'}
+              {working === 'pricing' ? 'Reviewing…' : 'Review Pricing'}
             </Button>
             <span style={{ fontSize: 11, color: 'var(--color-text-dim)' }}>Suggestions only — the agent never changes a price itself.</span>
           </div>
@@ -208,7 +208,7 @@ export function ECommerceAIAgent({ mode, store, ai, requestUpgrade }: ModuleComp
                 </div>
                 <span style={{ fontVariantNumeric: 'tabular-nums', fontWeight: 700, color: 'var(--module-accent)' }}>{fmt(c.data.valueCents)}</span>
                 <Button variant="secondary" onClick={() => draftRecovery(c)} data-testid={`recover-${c.docId}`} disabled={working !== null} style={{ padding: '5px 10px', fontSize: 12 }}>
-                  ✉️ Draft Recovery
+                  Draft Recovery
                 </Button>
                 <IconButton label="Remove" onClick={() => removeCart(c.docId)}>
                   ✕
@@ -270,7 +270,7 @@ export function ECommerceAIAgent({ mode, store, ai, requestUpgrade }: ModuleComp
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportOutputs}>
-          ⬇️ Export Agent Outputs as Markdown
+          Export Agent Outputs as Markdown
         </GatedAction>
       </Section>
     </div>

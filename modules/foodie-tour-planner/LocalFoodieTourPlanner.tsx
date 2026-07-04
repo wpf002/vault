@@ -210,7 +210,7 @@ export function LocalFoodieTourPlanner({ mode, store, requestUpgrade }: ModuleCo
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportItinerary}>
-          ⬇️ Export Itinerary as Markdown
+          Export Itinerary as Markdown
         </GatedAction>
       </Section>
     </div>

@@ -144,7 +144,7 @@ export function EmployeeSkillMatchingProjectAllocation({ mode, store, requestUpg
                   </div>
                   {p.data.assigned.length === 0 ? <Tag active>Unstaffed</Tag> : <Tag>{p.data.assigned.length} assigned</Tag>}
                   <Button variant="secondary" onClick={() => setMatchingFor(matchingFor === p.docId ? null : p.docId)} data-testid={`match-${p.docId}`} style={{ padding: '5px 10px', fontSize: 12 }}>
-                    🎯 Find Matches
+                    Find Matches
                   </Button>
                   <IconButton label="Remove" onClick={() => removeProject(p)}>
                     ✕
@@ -252,7 +252,7 @@ export function EmployeeSkillMatchingProjectAllocation({ mode, store, requestUpg
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportAllocations}>
-          ⬇️ Export Allocations as CSV
+          Export Allocations as CSV
         </GatedAction>
       </Section>
     </div>

@@ -147,7 +147,7 @@ export function InfluencerMarketingCampaignManager({ mode, store, requestUpgrade
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportCampaign}>
-          ⬇️ Export Campaign Report as CSV
+          Export Campaign Report as CSV
         </GatedAction>
       </Section>
 

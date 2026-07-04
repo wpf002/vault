@@ -133,7 +133,7 @@ export function SkincareApp({ mode, store, requestUpgrade }: ModuleComponentProp
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportRoutine}>
-          ⬇️ Export Routine as CSV
+          Export Routine as CSV
         </GatedAction>
       </Section>
 

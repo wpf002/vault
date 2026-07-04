@@ -131,7 +131,7 @@ export function CustomClientPortal({ mode, store, requestUpgrade }: ModuleCompon
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportFeed}>
-          ⬇️ Export Feed as Markdown
+          Export Feed as Markdown
         </GatedAction>
       </Section>
     </div>

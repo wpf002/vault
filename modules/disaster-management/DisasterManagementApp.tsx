@@ -169,7 +169,7 @@ export function DisasterManagementApp({ mode, store, requestUpgrade }: ModuleCom
             <Input value={area} onChange={(e) => setArea(e.target.value)} placeholder="e.g. South of Route 9" data-testid="area-input" style={{ width: '100%' }} />
           </div>
           <Button variant="primary" onClick={addAlert} data-testid="issue-alert-button">
-            🚨 Issue Alert
+            Issue Alert
           </Button>
         </div>
       </Section>
@@ -197,12 +197,12 @@ export function DisasterManagementApp({ mode, store, requestUpgrade }: ModuleCom
                   </Tag>
                   {c.data.status === 'waiting' && (
                     <Button variant="secondary" onClick={() => setDispatching(dispatching === c.docId ? null : c.docId)} data-testid={`dispatch-${c.docId}`} style={{ padding: '5px 10px', fontSize: 12 }}>
-                      🚁 Dispatch
+                      Dispatch
                     </Button>
                   )}
                   {c.data.status === 'assigned' && (
                     <Button variant="secondary" onClick={() => markRescued(c)} data-testid={`rescued-${c.docId}`} style={{ padding: '5px 10px', fontSize: 12 }}>
-                      ✅ Rescued
+                      Rescued
                     </Button>
                   )}
                   <IconButton label="Remove" onClick={() => removeCheckIn(c.docId)}>
@@ -246,7 +246,7 @@ export function DisasterManagementApp({ mode, store, requestUpgrade }: ModuleCom
             <Input value={ciNeeds} onChange={(e) => setCiNeeds(e.target.value)} placeholder="e.g. medical, boat" data-testid="ci-needs-input" style={{ width: '100%' }} />
           </div>
           <Button variant="primary" onClick={addCheckIn} data-testid="add-checkin-button">
-            🙋 Log Check-In
+            Log Check-In
           </Button>
         </div>
       </Section>
@@ -269,7 +269,7 @@ export function DisasterManagementApp({ mode, store, requestUpgrade }: ModuleCom
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportLog}>
-          ⬇️ Export Incident Log as CSV
+          Export Incident Log as CSV
         </GatedAction>
       </Section>
     </div>

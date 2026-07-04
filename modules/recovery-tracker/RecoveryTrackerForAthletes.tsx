@@ -167,7 +167,7 @@ export function RecoveryTrackerForAthletes({ mode, store, requestUpgrade }: Modu
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportLog}>
-          ⬇️ Export Recovery Log as CSV
+          Export Recovery Log as CSV
         </GatedAction>
       </Section>
     </div>

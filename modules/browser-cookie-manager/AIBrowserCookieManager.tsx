@@ -111,7 +111,7 @@ export function AIBrowserCookieManager({ mode, store, ai, requestUpgrade }: Modu
               <Input value={site} onChange={(e) => setSite(e.target.value)} placeholder="e.g. shop.example.com" data-testid="site-input" style={{ width: '100%' }} />
             </div>
             <Button variant="primary" onClick={audit} data-testid="audit-button" disabled={working || !site.trim() || !cookieInput.trim()}>
-              {working ? '🍪 Classifying…' : '🍪 Classify Cookies'}
+              {working ? 'Classifying…' : 'Classify Cookies'}
             </Button>
           </div>
           <div>
@@ -186,7 +186,7 @@ export function AIBrowserCookieManager({ mode, store, ai, requestUpgrade }: Modu
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportLedger}>
-          ⬇️ Export Ledger as CSV
+          Export Ledger as CSV
         </GatedAction>
       </Section>
     </div>

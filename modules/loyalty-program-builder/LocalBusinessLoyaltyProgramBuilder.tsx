@@ -171,11 +171,11 @@ export function LocalBusinessLoyaltyProgramBuilder({ mode, store, requestUpgrade
                     {c.data.redeemed > 0 && <Tag>🏅 {c.data.redeemed} redeemed</Tag>}
                     {ready ? (
                       <Button variant="primary" onClick={() => redeem(c)} data-testid={`redeem-${c.docId}`} style={{ padding: '5px 12px', fontSize: 12 }}>
-                        🎉 Redeem Reward
+                        Redeem Reward
                       </Button>
                     ) : (
                       <Button variant="secondary" onClick={() => punch(c)} data-testid={`punch-${c.docId}`} style={{ padding: '5px 12px', fontSize: 12 }}>
-                        👊 Punch
+                        Punch
                       </Button>
                     )}
                     <IconButton label="Remove" onClick={() => removeCard(c.docId)}>
@@ -227,12 +227,12 @@ export function LocalBusinessLoyaltyProgramBuilder({ mode, store, requestUpgrade
             </Select>
           </div>
           <Button variant="primary" onClick={issueCard} data-testid="issue-card-button">
-            💳 Issue Card
+            Issue Card
           </Button>
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportCustomers}>
-          ⬇️ Export Customers as CSV — No Lock-In
+          Export Customers as CSV — No Lock-In
         </GatedAction>
       </Section>
     </div>

@@ -124,7 +124,7 @@ export function AIHomeMaintenancePredictor({ mode, store, ai, requestUpgrade }: 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
             <Button variant="primary" onClick={assess} data-testid="assess-button" disabled={working || applianceList.length === 0}>
-              {working ? '🏠 Assessing…' : '🏠 Predict What Needs Attention'}
+              {working ? 'Assessing…' : 'Predict What Needs Attention'}
             </Button>
             <span style={{ fontSize: 11, color: 'var(--color-text-dim)' }}>Estimate from age + symptoms — not a professional inspection.</span>
           </div>
@@ -239,7 +239,7 @@ export function AIHomeMaintenancePredictor({ mode, store, ai, requestUpgrade }: 
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportSchedule}>
-          ⬇️ Export Schedule as Markdown
+          Export Schedule as Markdown
         </GatedAction>
       </Section>
     </div>

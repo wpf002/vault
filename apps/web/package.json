@@ -136,7 +136,9 @@
     "@vault/mod-multilingual-travel-companion": "workspace:*",
     "@vault/mod-social-media-curator": "workspace:*",
     "@vault/mod-recipe-planner-pantry": "workspace:*",
-    "@vault/mod-diet-planning-assistant": "workspace:*"
+    "@vault/mod-diet-planning-assistant": "workspace:*",
+    "@vault/mod-mental-health-journal": "workspace:*",
+    "@vault/mod-ai-mental-health-companion": "workspace:*"
   },
   "devDependencies": {
     "@vault/config": "workspace:*",

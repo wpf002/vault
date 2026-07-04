@@ -129,7 +129,7 @@ export function FinancialDashboardSmallBusinessPersonal({ mode, store, ai, reque
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
             <Button variant="primary" onClick={forecast} data-testid="forecast-button" disabled={working || sorted.length < 3}>
-              {working ? '🏦 Forecasting…' : '🏦 Forecast Next 2 Months'}
+              {working ? 'Forecasting…' : 'Forecast Next 2 Months'}
             </Button>
             {sorted.length < 3 && <span style={{ fontSize: 12, color: 'var(--color-text-dim)' }}>Track at least 3 months first.</span>}
             <span style={{ fontSize: 11, color: 'var(--color-text-dim)' }}>Planning estimate, not financial advice.</span>
@@ -224,7 +224,7 @@ export function FinancialDashboardSmallBusinessPersonal({ mode, store, ai, reque
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportActuals}>
-          ⬇️ Export Actuals as CSV
+          Export Actuals as CSV
         </GatedAction>
       </Section>
     </div>

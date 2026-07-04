@@ -155,7 +155,7 @@ export function DietPlanningAssistant({ mode, store, ai, requestUpgrade }: Modul
               />
             </div>
             <Button variant="primary" onClick={analyzeMeal} data-testid="analyze-button" disabled={working !== null || description.trim().length < 5}>
-              {working === 'analyze' ? '🥑 Analyzing…' : '🥑 Log & Analyze'}
+              {working === 'analyze' ? 'Analyzing…' : 'Log & Analyze'}
             </Button>
           </div>
 
@@ -165,7 +165,7 @@ export function DietPlanningAssistant({ mode, store, ai, requestUpgrade }: Modul
               <Input value={goal} onChange={(e) => setGoal(e.target.value)} placeholder="e.g. more fiber" data-testid="goal-input" style={{ width: '100%' }} />
             </div>
             <Button variant="secondary" onClick={suggestRecipe} data-testid="recipe-button" disabled={working !== null}>
-              {working === 'recipe' ? '👩‍🍳 Thinking…' : '👩‍🍳 Suggest Tonight\'s Recipe'}
+              {working === 'recipe' ? 'Thinking…' : 'Suggest Tonight\'s Recipe'}
             </Button>
           </div>
 
@@ -239,7 +239,7 @@ export function DietPlanningAssistant({ mode, store, ai, requestUpgrade }: Modul
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportDiary}>
-          ⬇️ Export Food Diary as CSV
+          Export Food Diary as CSV
         </GatedAction>
       </Section>
     </div>

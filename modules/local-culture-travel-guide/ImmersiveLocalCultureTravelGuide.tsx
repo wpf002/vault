@@ -242,7 +242,7 @@ export function ImmersiveLocalCultureTravelGuide({ mode, store, requestUpgrade }
             </div>
 
             <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportGuide}>
-              ⬇️ Export Guide as Markdown
+              Export Guide as Markdown
             </GatedAction>
           </Section>
         </>

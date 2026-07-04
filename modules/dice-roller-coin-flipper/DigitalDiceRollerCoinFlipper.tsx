@@ -111,14 +111,14 @@ export function DigitalDiceRollerCoinFlipper({ mode, store, requestUpgrade }: Mo
               <Input value={notation} onChange={(e) => setNotation(e.target.value)} placeholder="e.g. 3d8+2" data-testid="notation-input" style={{ width: '100%' }} />
             </div>
             <Button variant="primary" onClick={() => rollDice(notation)} data-testid="roll-button" disabled={!parseNotation(notation)}>
-              🎲 Roll
+              Roll
             </Button>
             <div style={{ width: 90 }}>
               <Label>Coins</Label>
               <Input type="number" value={coinCount} onChange={(e) => setCoinCount(e.target.value)} data-testid="coin-count-input" style={{ width: '100%' }} />
             </div>
             <Button variant="secondary" onClick={flipCoins} data-testid="flip-button">
-              🪙 Flip
+              Flip
             </Button>
           </div>
           <div style={{ display: 'flex', gap: 10, alignItems: 'flex-end', flexWrap: 'wrap' }}>
@@ -127,7 +127,7 @@ export function DigitalDiceRollerCoinFlipper({ mode, store, requestUpgrade }: Mo
               <Input value={options} onChange={(e) => setOptions(e.target.value)} data-testid="options-input" style={{ width: '100%' }} />
             </div>
             <Button variant="secondary" onClick={decide} data-testid="decide-button">
-              🎯 Decide for Me
+              Decide for Me
             </Button>
           </div>
 
@@ -170,7 +170,7 @@ export function DigitalDiceRollerCoinFlipper({ mode, store, requestUpgrade }: Mo
             <Input value={presetName} onChange={(e) => setPresetName(e.target.value)} placeholder="e.g. Sneak Attack" data-testid="preset-name-input" style={{ width: '100%' }} />
           </div>
           <Button variant="secondary" onClick={savePreset} data-testid="save-preset-button">
-            💾 Save Preset
+            Save Preset
           </Button>
         </div>
       </Section>
@@ -199,7 +199,7 @@ export function DigitalDiceRollerCoinFlipper({ mode, store, requestUpgrade }: Mo
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportLog}>
-          ⬇️ Export Session Log as CSV
+          Export Session Log as CSV
         </GatedAction>
       </Section>
     </div>

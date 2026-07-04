@@ -5,21 +5,21 @@ import { useSession, getSession } from 'next-auth/react';
 import { createAiClient, createStoreClient, type ModuleManifest, type ModuleMode, type StoreClient } from '@vault/module-sdk';
 import { apiFetch } from '@/lib/api';
 import { MODULE_REGISTRY } from '@/lib/module-registry';
-import { BuyWall } from '@/components/BuyWall';
+import { AccountPrompt } from '@/components/AccountPrompt';
 
-type Props = { slug: string; name: string; priceCents: number | null };
+type Props = { slug: string; name: string };
 
 /**
- * The gating wrapper every live module renders through. Decides preview vs
- * full from a real access check (never trusts the client beyond that), and
- * hands the module a store client that's ephemeral in preview or backed by
- * the real API in full — the module component itself never checks access.
+ * The gating wrapper every live module renders through. With the vault
+ * sold as one product, the split is simply signed-out (ephemeral demo
+ * data) vs. signed-in (real persistence + AI) — the server still makes
+ * that call per request, the client mode prop is UX only.
  */
-export function ModuleRuntime({ slug, name, priceCents }: Props) {
+export function ModuleRuntime({ slug, name }: Props) {
   const { status } = useSession();
   const [mode, setMode] = useState<ModuleMode | 'loading'>('loading');
   const [manifest, setManifest] = useState<ModuleManifest | 'missing' | null>(null);
-  const [buyWallOpen, setBuyWallOpen] = useState(false);
+  const [promptOpen, setPromptOpen] = useState(false);
 
   useEffect(() => {
     if (status === 'loading') return;
@@ -73,19 +73,8 @@ export function ModuleRuntime({ slug, name, priceCents }: Props) {
 
   return (
     <div style={accent ? ({ '--module-accent': accent } as React.CSSProperties) : undefined}>
-      {mode === 'preview' && (
-        <div className="preview-banner">
-          <span aria-hidden>👁️</span> Preview — try everything free, saving is ephemeral until you unlock this app
-        </div>
-      )}
-      <Component mode={mode} store={store} ai={ai} requestUpgrade={() => setBuyWallOpen(true)} />
-      <BuyWall
-        open={buyWallOpen}
-        onClose={() => setBuyWallOpen(false)}
-        moduleSlug={slug}
-        moduleName={name}
-        priceCents={priceCents}
-      />
+      <Component mode={mode} store={store} ai={ai} requestUpgrade={() => setPromptOpen(true)} />
+      <AccountPrompt open={promptOpen} onClose={() => setPromptOpen(false)} moduleName={name} />
     </div>
   );
 }

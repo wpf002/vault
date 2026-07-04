@@ -106,7 +106,7 @@ export function ReviewCollectionAndShowcaseTool({ mode, store, requestUpgrade }:
             <div style={{ display: 'flex', gap: 8 }}>
               <Input value={author} onChange={(e) => setAuthor(e.target.value)} placeholder="Client name" data-testid="request-author-input" style={{ flex: 1 }} />
               <Button variant="primary" onClick={request} data-testid="request-button">
-                ✉️ Request
+                Request
               </Button>
             </div>
           </Section>
@@ -188,7 +188,7 @@ export function ReviewCollectionAndShowcaseTool({ mode, store, requestUpgrade }:
               </div>
             )}
             <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportEmbed}>
-              ⬇️ Export Showcase as HTML Embed
+              Export Showcase as HTML Embed
             </GatedAction>
           </Section>
         </>

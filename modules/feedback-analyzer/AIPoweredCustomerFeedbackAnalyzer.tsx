@@ -124,7 +124,7 @@ export function AIPoweredCustomerFeedbackAnalyzer({ mode, store, ai, requestUpgr
             <Textarea value={batch} onChange={(e) => setBatch(e.target.value)} placeholder={'Paste reviews here…\nOne per line.'} data-testid="batch-input" rows={5} style={{ width: '100%' }} />
           </div>
           <Button variant="primary" onClick={analyze} data-testid="analyze-button" disabled={working || batch.trim().length < 6} style={{ alignSelf: 'flex-start' }}>
-            {working ? '💬 Analyzing…' : '💬 Analyze Sentiment'}
+            {working ? 'Analyzing…' : 'Analyze Sentiment'}
           </Button>
 
           {remaining !== null && (
@@ -222,7 +222,7 @@ export function AIPoweredCustomerFeedbackAnalyzer({ mode, store, ai, requestUpgr
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportReport}>
-          ⬇️ Export Analysis as CSV
+          Export Analysis as CSV
         </GatedAction>
       </Section>
     </div>

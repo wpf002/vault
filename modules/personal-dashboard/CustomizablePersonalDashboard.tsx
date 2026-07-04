@@ -153,7 +153,7 @@ export function CustomizablePersonalDashboard({ mode, store, requestUpgrade }: M
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportDashboard}>
-          ⬇️ Export Dashboard as Markdown
+          Export Dashboard as Markdown
         </GatedAction>
       </Section>
     </div>

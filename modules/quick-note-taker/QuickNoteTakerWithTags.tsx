@@ -73,7 +73,7 @@ export function QuickNoteTakerWithTags({ mode, store, requestUpgrade }: ModuleCo
           <Input value={tagsInput} onChange={(e) => setTagsInput(e.target.value)} placeholder="work, idea" data-testid="note-tags-input" style={{ width: '100%' }} />
         </div>
         <Button variant="primary" onClick={addNote} data-testid="add-note-button">
-          📝 Save Note
+          Save Note
         </Button>
       </Section>
 
@@ -116,7 +116,7 @@ export function QuickNoteTakerWithTags({ mode, store, requestUpgrade }: ModuleCo
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportMarkdown}>
-          ⬇️ Export Notes as Markdown
+          Export Notes as Markdown
         </GatedAction>
       </Section>
     </div>

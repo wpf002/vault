@@ -147,7 +147,7 @@ export function HabitTrackerWithAccountabilityPartners({ mode, store, requestUpg
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportReport}>
-          ⬇️ Export Streak Report as CSV
+          Export Streak Report as CSV
         </GatedAction>
       </Section>
     </div>

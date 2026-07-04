@@ -110,7 +110,7 @@ export function AIHealthWellnessCoach({ mode, store, ai, requestUpgrade }: Modul
             <Tag>🏋️ {p.equipment || 'Bodyweight'}</Tag>
             {p.diet && <Tag>🍽️ {p.diet}</Tag>}
             <Button variant="ghost" onClick={() => { setDraft(p); setEditing(true); }} data-testid="edit-profile-button" style={{ padding: '5px 10px', fontSize: 12 }}>
-              ✏️ Edit
+              Edit
             </Button>
           </div>
         ) : (
@@ -145,7 +145,7 @@ export function AIHealthWellnessCoach({ mode, store, ai, requestUpgrade }: Modul
                 <Input value={draft.diet} onChange={(e) => setDraft({ ...draft, diet: e.target.value })} placeholder="e.g. Vegetarian" data-testid="diet-input" style={{ width: '100%' }} />
               </div>
               <Button variant="primary" onClick={saveProfile} data-testid="save-profile-button">
-                💾 Save Profile
+                Save Profile
               </Button>
             </div>
           </div>
@@ -159,7 +159,7 @@ export function AIHealthWellnessCoach({ mode, store, ai, requestUpgrade }: Modul
           <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap' }}>
             <SegmentedControl options={['Workout Week', 'Day of Eating'].map((v) => ({ value: v, label: v }))} value={planKind} onChange={setPlanKind} data-testid="kind-control" />
             <Button variant="primary" onClick={generate} data-testid="generate-button" disabled={working || !p}>
-              {working ? '🏃 Coaching…' : '🏃 Generate Plan'}
+              {working ? 'Coaching…' : 'Generate Plan'}
             </Button>
           </div>
           <p style={{ fontSize: 11, color: 'var(--color-text-dim)', margin: 0 }} data-testid="disclaimer">
@@ -197,10 +197,10 @@ export function AIHealthWellnessCoach({ mode, store, ai, requestUpgrade }: Modul
               </div>
               <div style={{ display: 'flex', gap: 8 }}>
                 <Button variant="secondary" onClick={keepPlan} data-testid="keep-button">
-                  💾 Keep This Plan
+                  Keep This Plan
                 </Button>
                 <Button variant="ghost" onClick={generate} data-testid="retry-button" disabled={working}>
-                  🔁 Regenerate
+                  Regenerate
                 </Button>
               </div>
             </div>
@@ -239,7 +239,7 @@ export function AIHealthWellnessCoach({ mode, store, ai, requestUpgrade }: Modul
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportPlans}>
-          ⬇️ Export Plans as Markdown
+          Export Plans as Markdown
         </GatedAction>
       </Section>
     </div>

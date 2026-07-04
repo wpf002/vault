@@ -146,7 +146,7 @@ export function MentalHealthCheckInToolForTeams({ mode, store, requestUpgrade }:
             )}
 
             <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportTrend}>
-              ⬇️ Export Trend as CSV
+              Export Trend as CSV
             </GatedAction>
           </>
         )}

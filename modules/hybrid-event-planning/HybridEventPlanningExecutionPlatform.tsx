@@ -145,7 +145,7 @@ export function HybridEventPlanningExecutionPlatform({ mode, store, requestUpgra
             </div>
             <Tag active>⏳ {daysUntil(event.data.date)} days out</Tag>
             <Button variant="ghost" onClick={() => { setEventDraft(event.data); setEditingEvent(true); }} data-testid="edit-event-button" style={{ padding: '5px 10px', fontSize: 12 }}>
-              ✏️ Edit
+              Edit
             </Button>
           </div>
         ) : (
@@ -167,7 +167,7 @@ export function HybridEventPlanningExecutionPlatform({ mode, store, requestUpgra
               <Input value={eventDraft.virtualLink} onChange={(e) => setEventDraft({ ...eventDraft, virtualLink: e.target.value })} placeholder="stream URL" data-testid="event-link-input" style={{ width: '100%' }} />
             </div>
             <Button variant="primary" onClick={saveEvent} data-testid="save-event-button">
-              💾 Save
+              Save
             </Button>
           </div>
         )}
@@ -289,7 +289,7 @@ export function HybridEventPlanningExecutionPlatform({ mode, store, requestUpgra
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportRunOfShow}>
-          ⬇️ Export Run of Show as Markdown
+          Export Run of Show as Markdown
         </GatedAction>
       </Section>
     </div>

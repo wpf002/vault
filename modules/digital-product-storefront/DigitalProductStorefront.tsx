@@ -111,7 +111,7 @@ export function DigitalProductStorefront({ mode, store, requestUpgrade }: Module
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportCatalog}>
-          ⬇️ Export Catalog as CSV
+          Export Catalog as CSV
         </GatedAction>
       </Section>
 

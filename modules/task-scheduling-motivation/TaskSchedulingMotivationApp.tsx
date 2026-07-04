@@ -141,7 +141,7 @@ export function TaskSchedulingMotivationApp({ mode, store, requestUpgrade }: Mod
 
       <Section title="Export">
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportDay}>
-          ⬇️ Export Today's Schedule as CSV
+          Export Today's Schedule as CSV
         </GatedAction>
       </Section>
     </div>

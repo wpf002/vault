@@ -137,7 +137,7 @@ export function FlashcardBuilderWithSpacedRepetition({ mode, store, requestUpgra
           </div>
         )}
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportDeck}>
-          ⬇️ Export Deck as JSON
+          Export Deck as JSON
         </GatedAction>
       </Section>
     </div>

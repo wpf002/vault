@@ -126,7 +126,7 @@ export function LocalEventAggregator({ mode, store, requestUpgrade }: ModuleComp
                   <Tag>{e.data.category}</Tag>
                   {d >= 0 && d <= 7 && <Tag active>{d === 0 ? 'Today' : d === 1 ? 'Tomorrow' : `In ${d} days`}</Tag>}
                   <Button variant={e.data.saved ? 'secondary' : 'ghost'} onClick={() => toggleSaved(e)} data-testid={`save-${e.docId}`} style={{ padding: '5px 10px', fontSize: 12 }}>
-                    {e.data.saved ? '⭐ Saved' : '☆ Save'}
+                    {e.data.saved ? 'Saved' : '☆ Save'}
                   </Button>
                   <IconButton label="Remove" onClick={() => removeEvent(e.docId)}>
                     ✕
@@ -154,10 +154,10 @@ export function LocalEventAggregator({ mode, store, requestUpgrade }: ModuleComp
                   </div>
                 </div>
                 <Button variant="secondary" onClick={() => setApproved(e, true)} data-testid={`approve-${e.docId}`} style={{ padding: '5px 10px', fontSize: 12 }}>
-                  ✅ Approve
+                  Approve
                 </Button>
                 <Button variant="ghost" onClick={() => setApproved(e, false)} data-testid={`reject-${e.docId}`} style={{ padding: '5px 10px', fontSize: 12 }}>
-                  ⛔ Reject
+                  Reject
                 </Button>
               </div>
             ))}
@@ -192,12 +192,12 @@ export function LocalEventAggregator({ mode, store, requestUpgrade }: ModuleComp
             <Input value={submittedBy} onChange={(e) => setSubmittedBy(e.target.value)} placeholder="Your name" data-testid="submitter-input" style={{ width: '100%' }} />
           </div>
           <Button variant="primary" onClick={submitEvent} data-testid="submit-event-button">
-            📮 Submit
+            Submit
           </Button>
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportDigest}>
-          ⬇️ Export This Week's Digest as Markdown
+          Export This Week's Digest as Markdown
         </GatedAction>
       </Section>
     </div>

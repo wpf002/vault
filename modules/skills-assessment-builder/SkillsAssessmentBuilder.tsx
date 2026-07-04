@@ -159,7 +159,7 @@ export function SkillsAssessmentBuilder({ mode, store, requestUpgrade }: ModuleC
           </Button>
           {selected && (
             <Button variant="ghost" onClick={() => removeAssessment(selected.docId)} data-testid="delete-assessment-button">
-              🗑️ Delete
+              Delete
             </Button>
           )}
         </div>
@@ -285,7 +285,7 @@ export function SkillsAssessmentBuilder({ mode, store, requestUpgrade }: ModuleC
             )}
 
             <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportResults}>
-              ⬇️ Export Results as CSV
+              Export Results as CSV
             </GatedAction>
           </Section>
         </>

@@ -187,7 +187,7 @@ export function StaffSchedulingTool({ mode, store, requestUpgrade }: ModuleCompo
         {shifts.length === 0 && <EmptyState icon="🗓️">No shifts scheduled — add the first one above.</EmptyState>}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportWeek}>
-          ⬇️ Export This Week as CSV
+          Export This Week as CSV
         </GatedAction>
       </Section>
     </div>

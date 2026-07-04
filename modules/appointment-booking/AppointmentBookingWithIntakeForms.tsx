@@ -118,7 +118,7 @@ export function AppointmentBookingWithIntakeForms({ mode, store, requestUpgrade 
 
         <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
           <Button variant="primary" onClick={book} data-testid="book-button">
-            📆 Book
+            Book
           </Button>
           {error && (
             <span style={{ fontSize: 13, color: '#ff6b5e' }} data-testid="book-error">
@@ -175,7 +175,7 @@ export function AppointmentBookingWithIntakeForms({ mode, store, requestUpgrade 
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportSchedule}>
-          ⬇️ Export Appointments as CSV
+          Export Appointments as CSV
         </GatedAction>
       </Section>
     </div>

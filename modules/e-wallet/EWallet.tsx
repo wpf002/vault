@@ -109,10 +109,10 @@ export function EWallet({ mode, store, requestUpgrade }: ModuleComponentProps) {
             <Input type="number" value={topUpAmount} onChange={(e) => setTopUpAmount(e.target.value)} data-testid="topup-input" style={{ width: '100%' }} />
           </div>
           <Button variant="primary" onClick={topUp} data-testid="topup-button">
-            ⬆️ Top Up
+            Top Up
           </Button>
           <Button variant="secondary" onClick={redeemCashback} data-testid="redeem-button" disabled={cashbackAvailableCents <= 0}>
-            🎁 Redeem {cashbackAvailableCents > 0 ? fmt(cashbackAvailableCents) : 'Cashback'}
+            Redeem {cashbackAvailableCents > 0 ? fmt(cashbackAvailableCents) : 'Cashback'}
           </Button>
         </div>
       </Section>
@@ -140,7 +140,7 @@ export function EWallet({ mode, store, requestUpgrade }: ModuleComponentProps) {
             <Input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} data-testid="amount-input" style={{ width: '100%' }} />
           </div>
           <Button variant="primary" onClick={spend} data-testid="pay-button">
-            💳 Pay
+            Pay
           </Button>
         </div>
         <p style={{ fontSize: 11, color: 'var(--color-text-dim)', margin: 0 }}>Payments are declined past your balance — the wallet never goes negative.</p>
@@ -174,7 +174,7 @@ export function EWallet({ mode, store, requestUpgrade }: ModuleComponentProps) {
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportLedger}>
-          ⬇️ Export Ledger as CSV
+          Export Ledger as CSV
         </GatedAction>
       </Section>
     </div>

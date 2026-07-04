@@ -133,7 +133,7 @@ export function ContractStatusTracker({ mode, store, requestUpgrade }: ModuleCom
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportPipeline}>
-          ⬇️ Export Pipeline as CSV
+          Export Pipeline as CSV
         </GatedAction>
       </Section>
     </div>

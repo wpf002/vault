@@ -170,7 +170,7 @@ export function OnlineBookingSchedulingForServiceProviders({ mode, store, reques
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportDaySheet}>
-          ⬇️ Export Day Sheet as CSV
+          Export Day Sheet as CSV
         </GatedAction>
       </Section>
 

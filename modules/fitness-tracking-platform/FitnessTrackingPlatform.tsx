@@ -121,7 +121,7 @@ export function FitnessTrackingPlatform({ mode, store, ai, requestUpgrade }: Mod
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
             <Button variant="primary" onClick={getTip} data-testid="tip-button" disabled={working || list.length < 3}>
-              {working ? '⌚ Reading your log…' : '⌚ Get a Coaching Tip'}
+              {working ? 'Reading your log…' : 'Get a Coaching Tip'}
             </Button>
             {list.length < 3 && <span style={{ fontSize: 12, color: 'var(--color-text-dim)' }}>Log at least 3 workouts first.</span>}
             <span style={{ fontSize: 11, color: 'var(--color-text-dim)' }}>General fitness info, not medical advice.</span>
@@ -223,7 +223,7 @@ export function FitnessTrackingPlatform({ mode, store, ai, requestUpgrade }: Mod
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportLog}>
-          ⬇️ Export Training Log as CSV
+          Export Training Log as CSV
         </GatedAction>
       </Section>
     </div>

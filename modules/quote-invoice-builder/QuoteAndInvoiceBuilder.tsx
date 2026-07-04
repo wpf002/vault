@@ -192,7 +192,7 @@ export function QuoteAndInvoiceBuilder({ mode, store, requestUpgrade }: ModuleCo
             </div>
 
             <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportDoc}>
-              ⬇️ Export {open.data.kind === 'quote' ? 'Quote' : 'Invoice'}
+              Export {open.data.kind === 'quote' ? 'Quote' : 'Invoice'}
             </GatedAction>
           </Section>
         </>

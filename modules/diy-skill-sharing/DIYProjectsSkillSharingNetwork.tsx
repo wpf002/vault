@@ -115,7 +115,7 @@ export function DiyProjectsSkillSharingNetwork({ mode, store, requestUpgrade }: 
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportGuides}>
-          ⬇️ Export Guides as Markdown
+          Export Guides as Markdown
         </GatedAction>
       </Section>
 

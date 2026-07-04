@@ -139,10 +139,10 @@ export function ContentCalendarWithClientApproval({ mode, store, requestUpgrade 
                     />
                   </div>
                   <Button variant="primary" onClick={() => decide(p, 'approved')} data-testid={`approve-${p.docId}`}>
-                    ✅ Approve
+                    Approve
                   </Button>
                   <Button variant="secondary" onClick={() => decide(p, 'rejected')} data-testid={`reject-${p.docId}`}>
-                    ↩️ Request Changes
+                    Request Changes
                   </Button>
                 </div>
               </div>
@@ -151,7 +151,7 @@ export function ContentCalendarWithClientApproval({ mode, store, requestUpgrade 
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportCalendar}>
-          ⬇️ Export Calendar as CSV
+          Export Calendar as CSV
         </GatedAction>
       </Section>
 

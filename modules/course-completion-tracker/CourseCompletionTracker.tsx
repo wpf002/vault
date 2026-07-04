@@ -123,7 +123,7 @@ export function CourseCompletionTracker({ mode, store, requestUpgrade }: ModuleC
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportFunnel}>
-          ⬇️ Export Funnel as CSV
+          Export Funnel as CSV
         </GatedAction>
       </Section>
 

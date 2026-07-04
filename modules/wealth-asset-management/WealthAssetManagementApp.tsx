@@ -185,7 +185,7 @@ export function WealthAssetManagementApp({ mode, store, requestUpgrade }: Module
                         style={{ width: 100, fontSize: 12, padding: '4px 8px' }}
                       />
                       <Button variant="ghost" onClick={() => markPrice(h)} data-testid={`mark-button-${h.data.ticker}`} style={{ padding: '4px 10px', fontSize: 12 }}>
-                        📈 Mark Price
+                        Mark Price
                       </Button>
                     </span>
                   </div>
@@ -232,7 +232,7 @@ export function WealthAssetManagementApp({ mode, store, requestUpgrade }: Module
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportPortfolio}>
-          ⬇️ Export Portfolio as CSV
+          Export Portfolio as CSV
         </GatedAction>
       </Section>
     </div>

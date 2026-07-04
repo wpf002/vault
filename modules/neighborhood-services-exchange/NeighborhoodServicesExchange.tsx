@@ -123,7 +123,7 @@ export function NeighborhoodServicesExchange({ mode, store, requestUpgrade }: Mo
                   <Tag active={p.data.status === 'matched'}>{p.data.status === 'open' ? 'Open' : p.data.status === 'matched' ? '🤝 Matched' : '✓ Done'}</Tag>
                   {p.data.status === 'open' && (
                     <Button variant="secondary" onClick={() => setMatching(matching?.docId === p.docId ? null : p)} data-testid={`match-${p.docId}`} style={{ padding: '5px 10px', fontSize: 12 }}>
-                      🤝 Match
+                      Match
                     </Button>
                   )}
                   {p.data.status === 'matched' && (
@@ -203,12 +203,12 @@ export function NeighborhoodServicesExchange({ mode, store, requestUpgrade }: Mo
             </Select>
           </div>
           <Button variant="primary" onClick={addPost} data-testid="add-post-button">
-            📌 Post
+            Post
           </Button>
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportBoard}>
-          ⬇️ Export Board as CSV
+          Export Board as CSV
         </GatedAction>
       </Section>
     </div>

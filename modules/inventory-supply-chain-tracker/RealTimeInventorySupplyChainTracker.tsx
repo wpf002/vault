@@ -223,7 +223,7 @@ export function RealTimeInventorySupplyChainTracker({ mode, store, requestUpgrad
                 </Tag>
                 {s.data.status !== 'received' && (
                   <Button variant="secondary" onClick={() => advanceShipment(s)} data-testid={`advance-shipment-${s.docId}`} style={{ padding: '5px 10px', fontSize: 12 }}>
-                    {s.data.status === 'ordered' ? '🚚 Ship It' : '✅ Receive'}
+                    {s.data.status === 'ordered' ? 'Ship It' : 'Receive'}
                   </Button>
                 )}
                 <IconButton label="Remove" onClick={() => removeShipment(s.docId)}>
@@ -258,12 +258,12 @@ export function RealTimeInventorySupplyChainTracker({ mode, store, requestUpgrad
             <Input type="date" value={shipEta} onChange={(e) => setShipEta(e.target.value)} data-testid="ship-eta-input" style={{ width: '100%' }} />
           </div>
           <Button variant="primary" onClick={addShipment} data-testid="add-shipment-button">
-            📝 Order
+            Order
           </Button>
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportInventory}>
-          ⬇️ Export Inventory as CSV
+          Export Inventory as CSV
         </GatedAction>
       </Section>
     </div>

@@ -111,7 +111,7 @@ export function PetServiceLocator({ mode, store, requestUpgrade }: ModuleCompone
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportDirectory}>
-          ⬇️ Export Directory as CSV
+          Export Directory as CSV
         </GatedAction>
       </Section>
 

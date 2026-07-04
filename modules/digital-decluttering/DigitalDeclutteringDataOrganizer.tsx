@@ -148,7 +148,7 @@ export function DigitalDeclutteringDataOrganizer({ mode, store, requestUpgrade }
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportPlan}>
-          ⬇️ Export Declutter Plan as CSV
+          Export Declutter Plan as CSV
         </GatedAction>
       </Section>
     </div>

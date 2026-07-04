@@ -120,7 +120,7 @@ export function MultilingualTravelCompanionPhrasebook({ mode, store, ai, request
               </Select>
             </div>
             <Button variant="primary" onClick={translate} data-testid="translate-button" disabled={working || !original.trim()}>
-              {working ? '🎙️ Translating…' : '🎙️ Translate'}
+              {working ? 'Translating…' : 'Translate'}
             </Button>
           </div>
 
@@ -158,7 +158,7 @@ export function MultilingualTravelCompanionPhrasebook({ mode, store, ai, request
                 <div style={{ fontSize: 13, color: 'var(--color-text-dim)', lineHeight: 1.6 }}>💡 {current.etiquette}</div>
               </div>
               <Button variant="secondary" onClick={keepPhrase} data-testid="keep-button" style={{ alignSelf: 'flex-start' }}>
-                📖 Add to Phrasebook
+                Add to Phrasebook
               </Button>
             </div>
           )}
@@ -211,7 +211,7 @@ export function MultilingualTravelCompanionPhrasebook({ mode, store, ai, request
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportPhrasebook}>
-          ⬇️ Export Phrasebook as Markdown
+          Export Phrasebook as Markdown
         </GatedAction>
       </Section>
     </div>

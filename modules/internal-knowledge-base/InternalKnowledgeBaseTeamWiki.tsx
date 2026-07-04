@@ -115,7 +115,7 @@ export function InternalKnowledgeBaseTeamWiki({ mode, store, requestUpgrade }: M
             </div>
             <div style={{ display: 'flex', gap: 8 }}>
               <Button variant="primary" onClick={save} data-testid="save-article-button">
-                💾 Save Article
+                Save Article
               </Button>
               <Button variant="ghost" onClick={() => setEditing(false)}>
                 Cancel
@@ -138,7 +138,7 @@ export function InternalKnowledgeBaseTeamWiki({ mode, store, requestUpgrade }: M
             </div>
             <div style={{ display: 'flex', gap: 8 }}>
               <Button variant="secondary" onClick={() => startEdit(open)} data-testid="edit-article-button">
-                ✏️ Edit
+                Edit
               </Button>
               <Button variant="ghost" onClick={() => setOpenId(null)}>
                 Close
@@ -178,7 +178,7 @@ export function InternalKnowledgeBaseTeamWiki({ mode, store, requestUpgrade }: M
           </div>
         )}
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportWiki}>
-          ⬇️ Export Wiki as Markdown
+          Export Wiki as Markdown
         </GatedAction>
       </Section>
     </div>

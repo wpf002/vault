@@ -149,7 +149,7 @@ export function SharedExpenseTrackerForSmallTeams({ mode, store, requestUpgrade 
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportLedger}>
-          ⬇️ Export Ledger as CSV
+          Export Ledger as CSV
         </GatedAction>
       </Section>
     </div>

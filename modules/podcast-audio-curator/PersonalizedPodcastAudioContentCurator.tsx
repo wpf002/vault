@@ -116,7 +116,7 @@ export function PersonalizedPodcastAudioContentCurator({ mode, store, ai, reques
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
             <Button variant="primary" onClick={curate} data-testid="curate-button" disabled={working || logList.length < 3}>
-              {working ? '🎧 Curating…' : '🎧 Recommend From My Log'}
+              {working ? 'Curating…' : 'Recommend From My Log'}
             </Button>
             {logList.length < 3 && <span style={{ fontSize: 12, color: 'var(--color-text-dim)' }}>Log at least 3 shows so the curator has taste to work with.</span>}
           </div>
@@ -191,7 +191,7 @@ export function PersonalizedPodcastAudioContentCurator({ mode, store, ai, reques
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportQueue}>
-          ⬇️ Export Queue as Markdown
+          Export Queue as Markdown
         </GatedAction>
       </Section>
 

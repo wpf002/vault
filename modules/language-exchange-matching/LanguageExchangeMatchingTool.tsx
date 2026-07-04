@@ -164,7 +164,7 @@ export function LanguageExchangeMatchingTool({ mode, store, requestUpgrade }: Mo
                       style={{ width: 100 }}
                     />
                     <Button variant="secondary" onClick={() => logSession(p)} data-testid={`log-session-${p.data.name}`} style={{ padding: '5px 10px', fontSize: 12 }}>
-                      ⏱️ Log Session
+                      Log Session
                     </Button>
                   </div>
                 </div>
@@ -217,7 +217,7 @@ export function LanguageExchangeMatchingTool({ mode, store, requestUpgrade }: Mo
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportLog}>
-          ⬇️ Export Practice Log as CSV
+          Export Practice Log as CSV
         </GatedAction>
       </Section>
     </div>

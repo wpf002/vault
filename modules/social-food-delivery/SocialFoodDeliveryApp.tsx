@@ -164,7 +164,7 @@ export function SocialFoodDeliveryApp({ mode, store, requestUpgrade }: ModuleCom
               <Input value={blurb} onChange={(e) => setBlurb(e.target.value)} placeholder="The one-liner that sells it" data-testid="blurb-input" style={{ width: '100%' }} />
             </div>
             <Button variant="primary" onClick={addRec} data-testid="add-rec-button">
-              🍽️ Recommend
+              Recommend
             </Button>
           </div>
         </div>
@@ -216,12 +216,12 @@ export function SocialFoodDeliveryApp({ mode, store, requestUpgrade }: ModuleCom
             <Input type="date" value={dExpires} onChange={(e) => setDExpires(e.target.value)} data-testid="deal-expires-input" style={{ width: '100%' }} />
           </div>
           <Button variant="primary" onClick={addDeal} data-testid="add-deal-button">
-            🏷️ Share Deal
+            Share Deal
           </Button>
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportGuide}>
-          ⬇️ Export Food Guide as Markdown
+          Export Food Guide as Markdown
         </GatedAction>
       </Section>
     </div>

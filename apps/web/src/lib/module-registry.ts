@@ -11,6 +11,8 @@ import type { ModuleManifest } from '@vault/module-sdk';
  * to a "not available yet" state for any slug with no entry.
  */
 export const MODULE_REGISTRY: Record<string, () => Promise<{ default: ModuleManifest }>> = {
+  'ai-mental-health-companion': () => import('@vault/mod-ai-mental-health-companion'),
+  'mental-health-journal': () => import('@vault/mod-mental-health-journal'),
   'diet-planning-assistant': () => import('@vault/mod-diet-planning-assistant'),
   'recipe-planner-pantry': () => import('@vault/mod-recipe-planner-pantry'),
   'social-media-curator': () => import('@vault/mod-social-media-curator'),

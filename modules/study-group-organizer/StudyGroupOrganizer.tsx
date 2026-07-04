@@ -222,7 +222,7 @@ export function StudyGroupOrganizer({ mode, store, requestUpgrade }: ModuleCompo
                 <Input value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Post to the board…" data-testid="message-input" style={{ width: '100%' }} />
               </div>
               <Button variant="primary" onClick={postMessage} data-testid="post-button">
-                💬 Post
+                Post
               </Button>
             </div>
           </>
@@ -270,7 +270,7 @@ export function StudyGroupOrganizer({ mode, store, requestUpgrade }: ModuleCompo
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportBoard}>
-          ⬇️ Export Groups & Boards as Markdown
+          Export Groups & Boards as Markdown
         </GatedAction>
       </Section>
     </div>

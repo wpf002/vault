@@ -190,7 +190,7 @@ export function DragAndDropFormBuilder({ mode, store, requestUpgrade }: ModuleCo
               )}
             </div>
             <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportSchema}>
-              ⬇️ Export Form Schema as JSON
+              Export Form Schema as JSON
             </GatedAction>
           </Section>
         </>

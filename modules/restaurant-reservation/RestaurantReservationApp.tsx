@@ -137,7 +137,7 @@ export function RestaurantReservationApp({ mode, store, requestUpgrade }: Module
             <Input type="time" value={time} onChange={(e) => setTime(e.target.value)} data-testid="res-time-input" style={{ width: '100%' }} />
           </div>
           <Button variant="primary" onClick={book} data-testid="book-button">
-            🍽 Book
+            Book
           </Button>
           {error && (
             <span style={{ fontSize: 13, color: '#ff6b5e' }} data-testid="book-error">
@@ -172,7 +172,7 @@ export function RestaurantReservationApp({ mode, store, requestUpgrade }: Module
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportBook}>
-          ⬇️ Export Reservations as CSV
+          Export Reservations as CSV
         </GatedAction>
       </Section>
 

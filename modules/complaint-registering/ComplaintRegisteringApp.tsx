@@ -142,7 +142,7 @@ export function ComplaintRegisteringApp({ mode, store, requestUpgrade }: ModuleC
           </div>
           <Textarea value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Describe the issue — what, where, since when, and its impact." data-testid="description-input" rows={3} style={{ width: '100%' }} />
           <Button variant="primary" onClick={fileComplaint} data-testid="file-button" style={{ alignSelf: 'flex-start' }}>
-            📮 Register Complaint
+            Register Complaint
           </Button>
         </div>
       </Section>
@@ -173,7 +173,7 @@ export function ComplaintRegisteringApp({ mode, store, requestUpgrade }: ModuleC
                       → {STATUS_LABELS[STATUS_FLOW[STATUS_FLOW.indexOf(c.data.status) + 1]!].split(' ')[1]}
                     </Button>
                     <Button variant="ghost" onClick={() => logFollowUp(c)} data-testid={`followup-${c.data.refId}`} style={{ padding: '5px 10px', fontSize: 12 }}>
-                      ✉️ Follow Up
+                      Follow Up
                     </Button>
                   </>
                 )}
@@ -186,7 +186,7 @@ export function ComplaintRegisteringApp({ mode, store, requestUpgrade }: ModuleC
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportRecord}>
-          ⬇️ Export Formal Record as Markdown
+          Export Formal Record as Markdown
         </GatedAction>
       </Section>
     </div>

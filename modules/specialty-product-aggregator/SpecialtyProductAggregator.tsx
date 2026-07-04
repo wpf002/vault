@@ -121,7 +121,7 @@ export function SpecialtyProductAggregator({ mode, store, requestUpgrade }: Modu
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportTable}>
-          ⬇️ Export Comparison as CSV
+          Export Comparison as CSV
         </GatedAction>
       </Section>
 

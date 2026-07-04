@@ -120,7 +120,7 @@ export function AILearningCompanion({ mode, store, ai, requestUpgrade }: ModuleC
             <Tag>{p.level}</Tag>
             <Tag>{STYLE_META[p.style].label}</Tag>
             <Button variant="ghost" onClick={() => { setDraft(p); setEditing(true); }} data-testid="edit-profile-button" style={{ padding: '5px 10px', fontSize: 12 }}>
-              ✏️ Edit
+              Edit
             </Button>
           </div>
         ) : (
@@ -150,7 +150,7 @@ export function AILearningCompanion({ mode, store, ai, requestUpgrade }: ModuleC
               </Select>
             </div>
             <Button variant="primary" onClick={saveProfile} data-testid="save-profile-button">
-              💾 Save
+              Save
             </Button>
           </div>
         )}
@@ -166,7 +166,7 @@ export function AILearningCompanion({ mode, store, ai, requestUpgrade }: ModuleC
               <Input value={topic} onChange={(e) => setTopic(e.target.value)} placeholder="e.g. Confidence intervals" data-testid="topic-input" style={{ width: '100%' }} />
             </div>
             <Button variant="primary" onClick={teach} data-testid="teach-button" disabled={working || !p}>
-              {working ? '🧑‍🏫 Preparing…' : '🧑‍🏫 Teach Me'}
+              {working ? 'Preparing…' : 'Teach Me'}
             </Button>
           </div>
 
@@ -238,7 +238,7 @@ export function AILearningCompanion({ mode, store, ai, requestUpgrade }: ModuleC
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportNotebook}>
-          ⬇️ Export Notebook as Markdown
+          Export Notebook as Markdown
         </GatedAction>
       </Section>
     </div>

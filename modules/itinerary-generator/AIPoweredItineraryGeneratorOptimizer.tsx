@@ -132,7 +132,7 @@ export function AIPoweredItineraryGeneratorOptimizer({ mode, store, ai, requestU
               <Input value={interests} onChange={(e) => setInterests(e.target.value)} placeholder="e.g. street food, markets, one great view per day" data-testid="interests-input" style={{ width: '100%' }} />
             </div>
             <Button variant="primary" onClick={generate} data-testid="generate-button" disabled={working || !destination.trim()}>
-              {working ? '🧳 Planning…' : '🧳 Generate Itinerary'}
+              {working ? 'Planning…' : 'Generate Itinerary'}
             </Button>
           </div>
 
@@ -171,10 +171,10 @@ export function AIPoweredItineraryGeneratorOptimizer({ mode, store, ai, requestU
                   <Input value={feedback} onChange={(e) => setFeedback(e.target.value)} placeholder="e.g. Day 2 is too packed — spread it out" data-testid="feedback-input" style={{ width: '100%' }} />
                 </div>
                 <Button variant="secondary" onClick={optimize} data-testid="optimize-button" disabled={working || !feedback.trim()}>
-                  🔧 Rework
+                  Rework
                 </Button>
                 <Button variant="primary" onClick={keepItinerary} data-testid="keep-button">
-                  💾 Save Trip
+                  Save Trip
                 </Button>
               </div>
             </div>
@@ -211,7 +211,7 @@ export function AIPoweredItineraryGeneratorOptimizer({ mode, store, ai, requestU
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportTrips}>
-          ⬇️ Export Trips as Markdown
+          Export Trips as Markdown
         </GatedAction>
       </Section>
     </div>

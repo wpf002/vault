@@ -37,10 +37,9 @@ type GatedActionProps = {
 };
 
 /**
- * A button for an action that must be walled in preview (export, download,
- * anything that isn't ephemeral CRUD). In full mode it just runs onAction;
- * in preview it surfaces the buy wall instead — and shows a small lock so
- * the gating reads as a feature, not a broken button. This is UX only —
+ * A button for an action that needs an account (export, download, anything
+ * that isn't ephemeral demo CRUD). Signed in it just runs onAction; in the
+ * signed-out demo it opens the account prompt instead. This is UX only —
  * the real enforcement is server-side on the store API
  * (apps/api/src/routes/store.ts).
  */
@@ -52,7 +51,6 @@ export function GatedAction({ mode, requestUpgrade, onAction, children, classNam
       onClick={mode === 'full' ? onAction : requestUpgrade}
       data-testid="gated-action"
     >
-      {mode === 'preview' && <span aria-hidden style={{ marginRight: 6 }}>🔒</span>}
       {children}
     </Button>
   );

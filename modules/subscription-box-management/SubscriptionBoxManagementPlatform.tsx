@@ -167,7 +167,7 @@ export function SubscriptionBoxManagementPlatform({ mode, store, requestUpgrade 
                       <Tag>✓ Shipped</Tag>
                     ) : (
                       <Button variant="primary" onClick={() => markShipped(s)} data-testid={`ship-${s.docId}`} style={{ padding: '5px 10px', fontSize: 12 }}>
-                        📦 Ship
+                        Ship
                       </Button>
                     ))}
                   <IconButton label="Remove" onClick={() => removeSub(s.docId)}>
@@ -179,7 +179,7 @@ export function SubscriptionBoxManagementPlatform({ mode, store, requestUpgrade 
           )}
 
           <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportRoster}>
-            ⬇️ Export Subscriber Roster as CSV
+            Export Subscriber Roster as CSV
           </GatedAction>
         </Section>
       ) : (

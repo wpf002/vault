@@ -98,7 +98,7 @@ export function ProposalGenerator({ mode, store, requestUpgrade }: ModuleCompone
             </div>
             <div style={{ display: 'flex', gap: 8 }}>
               <Button variant="primary" onClick={saveTemplate} data-testid="save-template-button">
-                💾 Save Template
+                Save Template
               </Button>
               <Button variant="ghost" onClick={() => setEditing(false)}>
                 Cancel
@@ -152,7 +152,7 @@ export function ProposalGenerator({ mode, store, requestUpgrade }: ModuleCompone
               {preview}
             </div>
             <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportProposal}>
-              ⬇️ Export Proposal
+              Export Proposal
             </GatedAction>
           </Section>
         </>

@@ -214,7 +214,7 @@ export function SustainableTravelImpactTracker({ mode, store, requestUpgrade }: 
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportImpact}>
-          ⬇️ Export Impact Report as CSV
+          Export Impact Report as CSV
         </GatedAction>
       </Section>
     </div>

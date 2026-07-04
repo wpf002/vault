@@ -164,13 +164,13 @@ export function CommunityPoweredLocalDiscoveryPlatform({ mode, store, requestUpg
               <Input value={tip} onChange={(e) => setTip(e.target.value)} placeholder="What do locals know that visitors don't?" data-testid="tip-input" style={{ width: '100%' }} />
             </div>
             <Button variant="primary" onClick={addGem} data-testid="add-gem-button">
-              📍 Share It
+              Share It
             </Button>
           </div>
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportGuide}>
-          ⬇️ Export City Guide as Markdown
+          Export City Guide as Markdown
         </GatedAction>
       </Section>
     </div>

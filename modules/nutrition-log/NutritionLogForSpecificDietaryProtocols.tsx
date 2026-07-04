@@ -173,7 +173,7 @@ export function NutritionLogForSpecificDietaryProtocols({ mode, store, requestUp
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportLog}>
-          ⬇️ Export Log as CSV
+          Export Log as CSV
         </GatedAction>
       </Section>
     </div>

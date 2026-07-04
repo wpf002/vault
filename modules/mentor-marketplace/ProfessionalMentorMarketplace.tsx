@@ -174,7 +174,7 @@ export function ProfessionalMentorMarketplace({ mode, store, requestUpgrade }: M
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportSessions}>
-          ⬇️ Export Session History as CSV
+          Export Session History as CSV
         </GatedAction>
       </Section>
 

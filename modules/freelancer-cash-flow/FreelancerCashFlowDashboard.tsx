@@ -183,7 +183,7 @@ export function FreelancerCashFlowDashboard({ mode, store, requestUpgrade }: Mod
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportProjection}>
-          ⬇️ Export 12-Month Projection as CSV
+          Export 12-Month Projection as CSV
         </GatedAction>
       </Section>
     </div>

@@ -134,7 +134,7 @@ export function LocalServiceComparisonTool({ mode, store, requestUpgrade }: Modu
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportComparison}>
-          ⬇️ Export All Quotes as CSV
+          Export All Quotes as CSV
         </GatedAction>
       </Section>
 

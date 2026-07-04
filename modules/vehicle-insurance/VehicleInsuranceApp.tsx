@@ -137,7 +137,7 @@ export function VehicleInsuranceApp({ mode, store, requestUpgrade }: ModuleCompo
                   </div>
                   <span style={{ fontVariantNumeric: 'tabular-nums', fontWeight: 700, color: 'var(--module-accent)' }}>{fmt(p.data.premiumCents)}/6mo</span>
                   <Button variant="secondary" onClick={() => renewPolicy(p)} data-testid={`renew-${p.docId}`} style={{ padding: '5px 10px', fontSize: 12 }}>
-                    🔄 Renew
+                    Renew
                   </Button>
                   <IconButton label="Remove" onClick={() => removePolicy(p.docId)}>
                     ✕
@@ -238,12 +238,12 @@ export function VehicleInsuranceApp({ mode, store, requestUpgrade }: ModuleCompo
             <Input type="number" value={cAmount} onChange={(e) => setCAmount(e.target.value)} data-testid="claim-amount-input" style={{ width: '100%' }} />
           </div>
           <Button variant="primary" onClick={fileClaim} data-testid="file-claim-button">
-            📨 File Claim
+            File Claim
           </Button>
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportPolicies}>
-          ⬇️ Export Policies as CSV
+          Export Policies as CSV
         </GatedAction>
       </Section>
     </div>

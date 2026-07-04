@@ -72,6 +72,9 @@ importers:
       '@vault/mod-ai-learning-companion':
         specifier: workspace:*
         version: link:../../modules/ai-learning-companion
+      '@vault/mod-ai-mental-health-companion':
+        specifier: workspace:*
+        version: link:../../modules/ai-mental-health-companion
       '@vault/mod-ai-shopping-recommendation':
         specifier: workspace:*
         version: link:../../modules/ai-shopping-recommendation
@@ -249,6 +252,9 @@ importers:
       '@vault/mod-mental-health-checkin-teams':
         specifier: workspace:*
         version: link:../../modules/mental-health-checkin-teams
+      '@vault/mod-mental-health-journal':
+        specifier: workspace:*
+        version: link:../../modules/mental-health-journal
       '@vault/mod-mentor-marketplace':
         specifier: workspace:*
         version: link:../../modules/mentor-marketplace
@@ -506,6 +512,28 @@ importers:
         version: 5.9.3
 
   modules/ai-learning-companion:
+    dependencies:
+      '@vault/module-sdk':
+        specifier: workspace:*
+        version: link:../../packages/module-sdk
+      '@vault/module-ui':
+        specifier: workspace:*
+        version: link:../../packages/module-ui
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+    devDependencies:
+      '@types/react':
+        specifier: ^18.3.5
+        version: 18.3.31
+      '@vault/config':
+        specifier: workspace:*
+        version: link:../../packages/config
+      typescript:
+        specifier: ^5.6.2
+        version: 5.9.3
+
+  modules/ai-mental-health-companion:
     dependencies:
       '@vault/module-sdk':
         specifier: workspace:*
@@ -1804,6 +1832,28 @@ importers:
         version: 5.9.3
 
   modules/mental-health-checkin-teams:
+    dependencies:
+      '@vault/module-sdk':
+        specifier: workspace:*
+        version: link:../../packages/module-sdk
+      '@vault/module-ui':
+        specifier: workspace:*
+        version: link:../../packages/module-ui
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+    devDependencies:
+      '@types/react':
+        specifier: ^18.3.5
+        version: 18.3.31
+      '@vault/config':
+        specifier: workspace:*
+        version: link:../../packages/config
+      typescript:
+        specifier: ^5.6.2
+        version: 5.9.3
+
+  modules/mental-health-journal:
     dependencies:
       '@vault/module-sdk':
         specifier: workspace:*

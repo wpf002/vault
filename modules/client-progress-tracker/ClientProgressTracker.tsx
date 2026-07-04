@@ -157,7 +157,7 @@ export function ClientProgressTracker({ mode, store, requestUpgrade }: ModuleCom
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportTimeline}>
-          ⬇️ Export Timeline as CSV
+          Export Timeline as CSV
         </GatedAction>
       </Section>
     </div>

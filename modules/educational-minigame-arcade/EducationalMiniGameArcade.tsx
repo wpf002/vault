@@ -160,7 +160,7 @@ export function EducationalMiniGameArcade({ mode, store, requestUpgrade }: Modul
                   {hs ? `🏆 Best ${hs.best}/${ROUNDS} · ${hs.plays} plays` : 'No runs yet'}
                 </div>
                 <Button variant="primary" onClick={() => start(g.id)} data-testid={`play-${g.id}`} style={{ marginTop: 'auto' }}>
-                  ▶ Play
+                  Play
                 </Button>
               </div>
             );
@@ -230,7 +230,7 @@ export function EducationalMiniGameArcade({ mode, store, requestUpgrade }: Modul
               {gameOver && (
                 <div style={{ display: 'flex', gap: 8 }}>
                   <Button variant="primary" onClick={() => start(run.game)} data-testid="play-again-button">
-                    🔁 Play Again
+                    Play Again
                   </Button>
                   <Button variant="ghost" onClick={() => setRun(null)} data-testid="back-button">
                     ← Back to Arcade
@@ -252,7 +252,7 @@ export function EducationalMiniGameArcade({ mode, store, requestUpgrade }: Modul
           })}
         </div>
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportScores}>
-          ⬇️ Export Scores as CSV
+          Export Scores as CSV
         </GatedAction>
       </Section>
     </div>

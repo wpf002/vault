@@ -258,7 +258,7 @@ export function SmallBusinessCRMWithMarketingAutomation({ mode, store, requestUp
       <Section title="Automation Outbox">
         <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap', marginBottom: 12 }}>
           <Button variant="primary" onClick={runAutomations} data-testid="run-automations-button">
-            ⚡ Run Automations
+            Run Automations
           </Button>
           {lastRun !== null && (
             <span style={{ fontSize: 12, color: 'var(--color-text-dim)' }} data-testid="run-result">
@@ -294,7 +294,7 @@ export function SmallBusinessCRMWithMarketingAutomation({ mode, store, requestUp
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportLeads}>
-          ⬇️ Export Leads as CSV
+          Export Leads as CSV
         </GatedAction>
       </Section>
     </div>

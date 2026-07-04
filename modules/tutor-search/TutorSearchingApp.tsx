@@ -121,7 +121,7 @@ export function TutorSearchingApp({ mode, store, requestUpgrade }: ModuleCompone
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportMatches}>
-          ⬇️ Export Matches as CSV
+          Export Matches as CSV
         </GatedAction>
       </Section>
 

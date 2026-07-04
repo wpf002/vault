@@ -123,7 +123,7 @@ export function RecurringTaskManagerWithClientVisibility({ mode, store, requestU
                 </Select>
               </div>
               <Button variant={shared ? 'primary' : 'secondary'} onClick={() => setShared((s) => !s)} data-testid="task-shared-toggle">
-                {shared ? '👤 Shared' : 'Internal'}
+                {shared ? 'Shared' : 'Internal'}
               </Button>
               <Button variant="primary" onClick={addTask} data-testid="add-task-button">
                 + Add
@@ -179,7 +179,7 @@ export function RecurringTaskManagerWithClientVisibility({ mode, store, requestU
 
         {view === 'internal' && (
           <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportSchedule}>
-            ⬇️ Export Schedule as CSV
+            Export Schedule as CSV
           </GatedAction>
         )}
       </Section>

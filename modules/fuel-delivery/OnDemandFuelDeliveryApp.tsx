@@ -144,7 +144,7 @@ export function OnDemandFuelDeliveryApp({ mode, store, requestUpgrade }: ModuleC
             <Input type="number" value={gallons} onChange={(e) => setGallons(e.target.value)} data-testid="gallons-input" style={{ width: '100%' }} />
           </div>
           <Button variant="primary" onClick={placeOrder} data-testid="place-order-button" disabled={!selectedVehicle || quoteGallons <= 0}>
-            ⛽ Order — {fmt(quoteCents)}
+            Order — {fmt(quoteCents)}
           </Button>
         </div>
         {selectedVehicle && (
@@ -245,7 +245,7 @@ export function OnDemandFuelDeliveryApp({ mode, store, requestUpgrade }: ModuleC
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportReceipts}>
-          ⬇️ Export Receipts as CSV
+          Export Receipts as CSV
         </GatedAction>
       </Section>
     </div>

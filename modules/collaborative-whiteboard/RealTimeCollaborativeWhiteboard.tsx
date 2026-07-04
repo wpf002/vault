@@ -212,7 +212,7 @@ export function RealTimeCollaborativeWhiteboard({ mode, store, requestUpgrade }:
               <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginTop: 10 }} data-testid="note-editor">
                 <Input value={noteText} onChange={(e) => setNoteText(e.target.value)} placeholder="Sticky note text…" data-testid="note-text-input" style={{ flex: 1 }} autoFocus />
                 <Button variant="primary" onClick={placeNote} data-testid="place-note-button">
-                  📌 Place
+                  Place
                 </Button>
                 <Button variant="ghost" onClick={() => setNoteDraft(null)}>
                   Cancel
@@ -238,7 +238,7 @@ export function RealTimeCollaborativeWhiteboard({ mode, store, requestUpgrade }:
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportBoard}>
-          ⬇️ Export Board as SVG
+          Export Board as SVG
         </GatedAction>
       </Section>
     </div>

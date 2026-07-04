@@ -222,7 +222,7 @@ export function AIChatbotForHRMS({ mode, store, ai, requestUpgrade }: ModuleComp
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportTranscript}>
-          ⬇️ Export Chat Transcript as Markdown
+          Export Chat Transcript as Markdown
         </GatedAction>
       </Section>
     </div>

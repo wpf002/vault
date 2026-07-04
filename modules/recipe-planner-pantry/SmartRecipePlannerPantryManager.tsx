@@ -108,7 +108,7 @@ export function SmartRecipePlannerPantryManager({ mode, store, ai, requestUpgrad
               <Input type="number" value={dinners} onChange={(e) => setDinners(e.target.value)} data-testid="dinners-input" style={{ width: '100%' }} />
             </div>
             <Button variant="primary" onClick={plan} data-testid="plan-button" disabled={working || pantryList.length < 3}>
-              {working ? '🥘 Cooking up a plan…' : '🥘 Plan My Dinners'}
+              {working ? 'Cooking up a plan…' : 'Plan My Dinners'}
             </Button>
             {pantryList.length < 3 && <span style={{ fontSize: 12, color: 'var(--color-text-dim)' }}>Stock at least 3 pantry items first.</span>}
           </div>
@@ -144,10 +144,10 @@ export function SmartRecipePlannerPantryManager({ mode, store, ai, requestUpgrad
               </div>
               <div style={{ display: 'flex', gap: 8 }}>
                 <Button variant="secondary" onClick={keepPlan} data-testid="keep-button">
-                  💾 Keep This Plan
+                  Keep This Plan
                 </Button>
                 <Button variant="ghost" onClick={plan} data-testid="retry-button" disabled={working}>
-                  🔁 Different Dinners
+                  Different Dinners
                 </Button>
               </div>
             </div>
@@ -200,7 +200,7 @@ export function SmartRecipePlannerPantryManager({ mode, store, ai, requestUpgrad
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportPlan}>
-          ⬇️ Export Meal Plans as Markdown
+          Export Meal Plans as Markdown
         </GatedAction>
       </Section>
     </div>

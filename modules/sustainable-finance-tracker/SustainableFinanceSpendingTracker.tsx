@@ -171,7 +171,7 @@ export function SustainableFinanceSpendingTracker({ mode, store, requestUpgrade 
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportFootprint}>
-          ⬇️ Export Footprint as CSV
+          Export Footprint as CSV
         </GatedAction>
       </Section>
     </div>

@@ -108,7 +108,7 @@ export function AffiliateDashboard({ mode, store, requestUpgrade }: ModuleCompon
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportReport}>
-          ⬇️ Export Report as CSV
+          Export Report as CSV
         </GatedAction>
       </Section>
 

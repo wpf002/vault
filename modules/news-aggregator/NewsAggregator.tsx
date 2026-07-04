@@ -127,7 +127,7 @@ export function NewsAggregator({ mode, store, requestUpgrade }: ModuleComponentP
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportSaved}>
-          ⬇️ Export Saved Reading List
+          Export Saved Reading List
         </GatedAction>
       </Section>
 

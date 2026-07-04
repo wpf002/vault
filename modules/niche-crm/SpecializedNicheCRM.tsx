@@ -194,7 +194,7 @@ export function SpecializedNicheCRM({ mode, store, requestUpgrade }: ModuleCompo
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportPipeline}>
-          ⬇️ Export Pipeline as CSV
+          Export Pipeline as CSV
         </GatedAction>
       </Section>
     </div>

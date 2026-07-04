@@ -154,7 +154,7 @@ export function EmployeeOnboardingChecklist({ mode, store, requestUpgrade }: Mod
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportChecklist}>
-          ⬇️ Export Checklist as CSV
+          Export Checklist as CSV
         </GatedAction>
       </Section>
     </div>

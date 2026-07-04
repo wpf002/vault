@@ -116,7 +116,7 @@ export function RemoteJobBoardForASpecificSkillSet({ mode, store, requestUpgrade
                   </div>
                 </div>
                 <Button variant="ghost" onClick={() => toggleFeatured(p)} data-testid={`feature-${p.docId}`} style={{ padding: '5px 10px', fontSize: 12 }}>
-                  {p.data.featured ? 'Unpin' : '📌 Feature'}
+                  {p.data.featured ? 'Unpin' : 'Feature'}
                 </Button>
                 <Button variant={p.data.status === 'open' ? 'secondary' : 'primary'} onClick={() => toggleFilled(p)} data-testid={`fill-${p.docId}`} style={{ padding: '5px 10px', fontSize: 12 }}>
                   {p.data.status === 'open' ? 'Mark Filled' : 'Reopen'}
@@ -130,7 +130,7 @@ export function RemoteJobBoardForASpecificSkillSet({ mode, store, requestUpgrade
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportBoard}>
-          ⬇️ Export Board as CSV
+          Export Board as CSV
         </GatedAction>
       </Section>
 

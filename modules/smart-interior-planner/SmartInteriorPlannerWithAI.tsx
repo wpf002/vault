@@ -107,7 +107,7 @@ export function SmartInteriorPlannerWithAI({ mode, store, ai, requestUpgrade }: 
               <Textarea value={problem} onChange={(e) => setProblem(e.target.value)} placeholder="e.g. Cluttered, no place to read, harsh evening light…" data-testid="problem-input" rows={2} style={{ width: '100%' }} />
             </div>
             <Button variant="primary" onClick={design} data-testid="design-button" disabled={working || !room.trim() || !problem.trim()}>
-              {working ? '🛋️ Designing…' : '🛋️ Design It'}
+              {working ? 'Designing…' : 'Design It'}
             </Button>
           </div>
 
@@ -142,10 +142,10 @@ export function SmartInteriorPlannerWithAI({ mode, store, ai, requestUpgrade }: 
               </div>
               <div style={{ display: 'flex', gap: 8 }}>
                 <Button variant="secondary" onClick={keepPlan} data-testid="keep-button">
-                  💾 Save This Plan
+                  Save This Plan
                 </Button>
                 <Button variant="ghost" onClick={design} data-testid="retry-button" disabled={working}>
-                  🔁 Try Another Take
+                  Try Another Take
                 </Button>
               </div>
             </div>
@@ -183,7 +183,7 @@ export function SmartInteriorPlannerWithAI({ mode, store, ai, requestUpgrade }: 
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportPlans}>
-          ⬇️ Export Plans as Markdown
+          Export Plans as Markdown
         </GatedAction>
       </Section>
     </div>

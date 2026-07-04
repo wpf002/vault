@@ -134,7 +134,7 @@ export function PortfolioSiteWithCaseStudyBuilder({ mode, store, requestUpgrade 
             ))}
             <div style={{ display: 'flex', gap: 8 }}>
               <Button variant="primary" onClick={save} data-testid="save-study-button">
-                💾 Save Case Study
+                Save Case Study
               </Button>
               <Button variant="ghost" onClick={() => setEditing(false)}>
                 Cancel
@@ -160,7 +160,7 @@ export function PortfolioSiteWithCaseStudyBuilder({ mode, store, requestUpgrade 
             </div>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               <Button variant="secondary" onClick={() => startEdit(open)} data-testid="edit-study-button">
-                ✏️ Edit
+                Edit
               </Button>
               <Tag active={open.data.published} onClick={() => togglePublished(open)}>
                 {open.data.published ? '🌐 Published' : 'Draft — Click to Publish'}
@@ -174,7 +174,7 @@ export function PortfolioSiteWithCaseStudyBuilder({ mode, store, requestUpgrade 
 
       <Section title="Export">
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportHtml}>
-          ⬇️ Export Published Studies as HTML
+          Export Published Studies as HTML
         </GatedAction>
       </Section>
     </div>

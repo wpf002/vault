@@ -140,10 +140,10 @@ export function SleepQualityJournalWithPatternAnalysis({ mode, store, requestUpg
             </div>
           </div>
           <Button variant={caffeine ? 'primary' : 'secondary'} onClick={() => setCaffeine((c) => !c)} data-testid="caffeine-toggle">
-            ☕ Afternoon Caffeine
+            Afternoon Caffeine
           </Button>
           <Button variant={screens ? 'primary' : 'secondary'} onClick={() => setScreens((s) => !s)} data-testid="screens-toggle">
-            📱 Late Screens
+            Late Screens
           </Button>
           <Button variant="primary" onClick={logNight} data-testid="log-night-button">
             + Log Night
@@ -171,7 +171,7 @@ export function SleepQualityJournalWithPatternAnalysis({ mode, store, requestUpg
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportJournal}>
-          ⬇️ Export Journal as CSV
+          Export Journal as CSV
         </GatedAction>
       </Section>
     </div>

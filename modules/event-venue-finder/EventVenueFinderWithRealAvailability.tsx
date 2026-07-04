@@ -146,7 +146,7 @@ export function EventVenueFinderWithRealAvailability({ mode, store, requestUpgra
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportShortlist}>
-          ⬇️ Export Available Shortlist as CSV
+          Export Available Shortlist as CSV
         </GatedAction>
       </Section>
 

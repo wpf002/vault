@@ -134,7 +134,7 @@ export function LanguageLearningGame({ mode, store, requestUpgrade }: ModuleComp
         ) : !round || !currentCard ? (
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
             <Button variant="primary" onClick={startRun} data-testid="start-button">
-              🕹️ Start a Round
+              Start a Round
             </Button>
             {hearts <= 0 && <span style={{ fontSize: 12, color: '#ff6b5e' }}>Out of hearts — start fresh.</span>}
           </div>
@@ -221,7 +221,7 @@ export function LanguageLearningGame({ mode, store, requestUpgrade }: ModuleComp
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportDeck}>
-          ⬇️ Export Deck as CSV
+          Export Deck as CSV
         </GatedAction>
       </Section>
     </div>

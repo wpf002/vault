@@ -266,7 +266,7 @@ export function OnlineCoursePlatformWithInteractiveLessons({ mode, store, reques
             </div>
 
             <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportCourse}>
-              ⬇️ Export Course Outline as Markdown
+              Export Course Outline as Markdown
             </GatedAction>
           </Section>
         </>

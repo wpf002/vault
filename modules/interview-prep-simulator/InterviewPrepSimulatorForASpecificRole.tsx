@@ -148,7 +148,7 @@ export function InterviewPrepSimulatorForASpecificRole({ mode, store, requestUpg
         ) : (
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
             <Button variant="primary" onClick={drawQuestion} data-testid="draw-button" disabled={list.length === 0}>
-              🎤 Draw a Question
+              Draw a Question
             </Button>
             <span style={{ fontSize: 12, color: 'var(--color-text-dim)' }}>Pulls your least-practiced question first, so the whole bank gets reps.</span>
           </div>
@@ -204,7 +204,7 @@ export function InterviewPrepSimulatorForASpecificRole({ mode, store, requestUpg
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportBank}>
-          ⬇️ Export Question Bank as CSV
+          Export Question Bank as CSV
         </GatedAction>
       </Section>
     </div>

@@ -113,7 +113,7 @@ export function FreelancerDirectoryForASpecificTrade({ mode, store, requestUpgra
                   {p.data.notes && <div style={{ fontSize: 12, marginTop: 4 }}>{p.data.notes}</div>}
                 </div>
                 <Button variant={p.data.verified ? 'primary' : 'secondary'} onClick={() => toggleVerified(p)} data-testid={`verify-${p.docId}`} style={{ padding: '5px 10px', fontSize: 12 }}>
-                  {p.data.verified ? '✅ Verified' : 'Verify'}
+                  {p.data.verified ? 'Verified' : 'Verify'}
                 </Button>
                 <IconButton label="Remove" onClick={() => remove(p.docId)}>
                   ✕
@@ -124,7 +124,7 @@ export function FreelancerDirectoryForASpecificTrade({ mode, store, requestUpgra
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportDirectory}>
-          ⬇️ Export Directory as CSV
+          Export Directory as CSV
         </GatedAction>
       </Section>
 

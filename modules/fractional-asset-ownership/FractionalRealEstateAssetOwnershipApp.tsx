@@ -152,7 +152,7 @@ export function FractionalRealEstateAssetOwnershipApp({ mode, store, requestUpgr
                     </Button>
                     {a.data.monthlyYieldPct > 0 && a.data.ownedShares > 0 && (
                       <Button variant="ghost" onClick={() => logDistribution(a)} data-testid={`distribute-${a.docId}`} style={{ padding: '5px 10px', fontSize: 12, marginLeft: 'auto' }}>
-                        💸 Log Distribution
+                        Log Distribution
                       </Button>
                     )}
                   </div>
@@ -209,7 +209,7 @@ export function FractionalRealEstateAssetOwnershipApp({ mode, store, requestUpgr
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportHoldings}>
-          ⬇️ Export Holdings as CSV
+          Export Holdings as CSV
         </GatedAction>
       </Section>
     </div>

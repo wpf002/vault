@@ -124,7 +124,7 @@ export function ReferralTrackingDashboard({ mode, store, requestUpgrade }: Modul
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportReport}>
-          ⬇️ Export Referrals as CSV
+          Export Referrals as CSV
         </GatedAction>
       </Section>
     </div>

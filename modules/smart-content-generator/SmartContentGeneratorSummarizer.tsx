@@ -127,7 +127,7 @@ export function SmartContentGeneratorSummarizer({ mode, store, ai, requestUpgrad
                   </Select>
                 </div>
                 <Button variant="primary" onClick={run} data-testid="run-button" disabled={working || sourceText.trim().length < 40}>
-                  {working ? '🤖 Summarizing…' : '🤖 Summarize'}
+                  {working ? 'Summarizing…' : 'Summarize'}
                 </Button>
               </div>
             </>
@@ -148,7 +148,7 @@ export function SmartContentGeneratorSummarizer({ mode, store, ai, requestUpgrad
                 </Select>
               </div>
               <Button variant="primary" onClick={run} data-testid="run-button" disabled={working || !topic.trim()}>
-                {working ? '🤖 Outlining…' : '🤖 Generate Outline'}
+                {working ? 'Outlining…' : 'Generate Outline'}
               </Button>
             </div>
           )}
@@ -185,10 +185,10 @@ export function SmartContentGeneratorSummarizer({ mode, store, ai, requestUpgrad
               </div>
               <div style={{ display: 'flex', gap: 8 }}>
                 <Button variant="secondary" onClick={keepResult} data-testid="keep-button">
-                  💾 Keep It
+                  Keep It
                 </Button>
                 <Button variant="ghost" onClick={run} data-testid="retry-button" disabled={working}>
-                  🔁 Regenerate
+                  Regenerate
                 </Button>
               </div>
             </div>
@@ -227,7 +227,7 @@ export function SmartContentGeneratorSummarizer({ mode, store, ai, requestUpgrad
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportSaved}>
-          ⬇️ Export Saved Outputs as Markdown
+          Export Saved Outputs as Markdown
         </GatedAction>
       </Section>
     </div>

@@ -103,7 +103,7 @@ export function WorkoutProgrammingBuilder({ mode, store, requestUpgrade }: Modul
         {exercises.length === 0 && <EmptyState icon="🏋️">Empty program — add your first exercise below.</EmptyState>}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportProgram}>
-          ⬇️ Export Program as CSV
+          Export Program as CSV
         </GatedAction>
       </Section>
 

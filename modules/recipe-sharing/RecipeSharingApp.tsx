@@ -124,7 +124,7 @@ export function RecipeSharingApp({ mode, store, requestUpgrade }: ModuleComponen
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportBox}>
-          ⬇️ Export Recipe Box as Markdown
+          Export Recipe Box as Markdown
         </GatedAction>
       </Section>
 

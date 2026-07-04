@@ -202,7 +202,7 @@ export function TaxEstimateCalculatorForContractors({ mode, store, requestUpgrad
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportEstimates}>
-          ⬇️ Export Estimates as CSV
+          Export Estimates as CSV
         </GatedAction>
       </Section>
     </div>

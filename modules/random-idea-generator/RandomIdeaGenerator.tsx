@@ -93,11 +93,11 @@ export function RandomIdeaGenerator({ mode, store, requestUpgrade }: ModuleCompo
           <SegmentedControl options={['Writing', 'Drawing', 'Brainstorm'].map((v) => ({ value: v, label: v }))} value={genMode} onChange={setGenMode} data-testid="mode-control" />
           <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
             <Button variant="primary" onClick={spin} data-testid="generate-button">
-              💡 Give Me an Idea
+              Give Me an Idea
             </Button>
             {current && (
               <Button variant="secondary" onClick={saveFavorite} data-testid="save-button">
-                ⭐ Keep It
+                Keep It
               </Button>
             )}
           </div>
@@ -143,7 +143,7 @@ export function RandomIdeaGenerator({ mode, store, requestUpgrade }: ModuleCompo
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportFavorites}>
-          ⬇️ Export Saved Prompts as Markdown
+          Export Saved Prompts as Markdown
         </GatedAction>
       </Section>
     </div>

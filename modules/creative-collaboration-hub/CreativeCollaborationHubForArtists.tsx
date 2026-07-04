@@ -152,7 +152,7 @@ export function CreativeCollaborationHubForArtists({ mode, store, requestUpgrade
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportBoard}>
-          ⬇️ Export Board as CSV
+          Export Board as CSV
         </GatedAction>
       </Section>
 

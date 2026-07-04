@@ -155,7 +155,7 @@ export function DecentralizedIdentityCredentialWallet({ mode, store, requestUpgr
             <Input value={idLabel} onChange={(e) => setIdLabel(e.target.value)} placeholder="e.g. Freelance" data-testid="identity-label-input" style={{ width: '100%' }} />
           </div>
           <Button variant="primary" onClick={addIdentity} data-testid="add-identity-button">
-            🪪 Generate DID
+            Generate DID
           </Button>
         </div>
       </Section>
@@ -183,11 +183,11 @@ export function DecentralizedIdentityCredentialWallet({ mode, store, requestUpgr
                       <Tag>🔏 {c.data.fingerprint}</Tag>
                     ) : (
                       <Button variant="ghost" onClick={() => sealCredential(c)} data-testid={`seal-${c.docId}`} style={{ padding: '5px 10px', fontSize: 12 }}>
-                        🔏 Seal
+                        Seal
                       </Button>
                     )}
                     <Button variant="secondary" onClick={() => verifyCredential(c)} data-testid={`verify-${c.docId}`} style={{ padding: '5px 10px', fontSize: 12 }}>
-                      ✅ Verify
+                      Verify
                     </Button>
                     <IconButton label="Remove" onClick={() => removeCredential(c.docId)}>
                       ✕
@@ -237,7 +237,7 @@ export function DecentralizedIdentityCredentialWallet({ mode, store, requestUpgr
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportWallet}>
-          ⬇️ Export Wallet as JSON
+          Export Wallet as JSON
         </GatedAction>
       </Section>
     </div>

@@ -166,7 +166,7 @@ export function CommunityEmergencyResourceMap({ mode, store, requestUpgrade }: M
                     </div>
                   )}
                   <Button variant="ghost" onClick={() => removeResource(selected.docId)} style={{ alignSelf: 'flex-start', padding: '4px 10px', fontSize: 12 }}>
-                    🗑️ Remove Site
+                    Remove Site
                   </Button>
                 </div>
               ) : (
@@ -232,12 +232,12 @@ export function CommunityEmergencyResourceMap({ mode, store, requestUpgrade }: M
             </div>
           )}
           <Button variant="primary" onClick={addResource} data-testid="add-site-button">
-            📍 Plot Site
+            Plot Site
           </Button>
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportRoster}>
-          ⬇️ Export Roster as CSV
+          Export Roster as CSV
         </GatedAction>
       </Section>
     </div>

@@ -123,7 +123,7 @@ export function AutomatedSocialMediaContentCurator({ mode, store, ai, requestUpg
             <Tag>🗣️ {b.voice.slice(0, 40)}{b.voice.length > 40 ? '…' : ''}</Tag>
             <Tag>👥 {b.audience.slice(0, 40)}{b.audience.length > 40 ? '…' : ''}</Tag>
             <Button variant="ghost" onClick={() => { setDraft(b); setEditing(true); }} data-testid="edit-brand-button" style={{ padding: '5px 10px', fontSize: 12 }}>
-              ✏️ Edit
+              Edit
             </Button>
           </div>
         ) : (
@@ -144,7 +144,7 @@ export function AutomatedSocialMediaContentCurator({ mode, store, ai, requestUpg
                 <Input value={draft.audience} onChange={(e) => setDraft({ ...draft, audience: e.target.value })} placeholder="Who you're talking to" data-testid="audience-input" style={{ width: '100%' }} />
               </div>
               <Button variant="primary" onClick={saveBrand} data-testid="save-brand-button">
-                💾 Save
+                Save
               </Button>
             </div>
           </div>
@@ -157,7 +157,7 @@ export function AutomatedSocialMediaContentCurator({ mode, store, ai, requestUpg
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
             <Button variant="primary" onClick={generateWeek} data-testid="generate-button" disabled={working || !b}>
-              {working ? '📱 Writing the week…' : '📱 Generate a Week of Posts'}
+              {working ? 'Writing the week…' : 'Generate a Week of Posts'}
             </Button>
             <span style={{ fontSize: 11, color: 'var(--color-text-dim)' }}>Auto-publishing needs platform APIs — you post from the calendar.</span>
           </div>
@@ -231,7 +231,7 @@ export function AutomatedSocialMediaContentCurator({ mode, store, ai, requestUpg
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportCalendar}>
-          ⬇️ Export Calendar as Markdown
+          Export Calendar as Markdown
         </GatedAction>
       </Section>
     </div>

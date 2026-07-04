@@ -139,7 +139,7 @@ export function BudgetToActualComparisonTool({ mode, store, requestUpgrade }: Mo
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportReport}>
-          ⬇️ Export Variance Report as CSV
+          Export Variance Report as CSV
         </GatedAction>
       </Section>
     </div>

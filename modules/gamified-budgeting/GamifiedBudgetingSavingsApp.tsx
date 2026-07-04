@@ -163,7 +163,7 @@ export function GamifiedBudgetingSavingsApp({ mode, store, requestUpgrade }: Mod
                       style={{ width: 120 }}
                     />
                     <Button variant="secondary" onClick={() => deposit(g)} data-testid={`deposit-button-${g.docId}`} style={{ padding: '5px 12px', fontSize: 12 }}>
-                      💰 Deposit (+10 XP)
+                      Deposit (+10 XP)
                     </Button>
                   </div>
                 </div>
@@ -230,7 +230,7 @@ export function GamifiedBudgetingSavingsApp({ mode, store, requestUpgrade }: Mod
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportProgress}>
-          ⬇️ Export Progress as CSV
+          Export Progress as CSV
         </GatedAction>
       </Section>
     </div>

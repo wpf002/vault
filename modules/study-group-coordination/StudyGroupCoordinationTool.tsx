@@ -262,7 +262,7 @@ export function StudyGroupCoordinationTool({ mode, store, requestUpgrade }: Modu
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportSchedule}>
-          ⬇️ Export Schedule as Markdown
+          Export Schedule as Markdown
         </GatedAction>
       </Section>
     </div>

@@ -149,7 +149,7 @@ export function BusinessSubscriptionAuditTool({ mode, store, requestUpgrade }: M
         </div>
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportAudit}>
-          ⬇️ Export Audit as CSV
+          Export Audit as CSV
         </GatedAction>
       </Section>
     </div>

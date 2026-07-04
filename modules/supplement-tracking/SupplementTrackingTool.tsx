@@ -132,7 +132,7 @@ export function SupplementTrackingTool({ mode, store, requestUpgrade }: ModuleCo
         )}
 
         <GatedAction mode={mode} requestUpgrade={requestUpgrade} onAction={exportStack}>
-          ⬇️ Export Stack as CSV
+          Export Stack as CSV
         </GatedAction>
       </Section>
 
