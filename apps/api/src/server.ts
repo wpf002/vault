@@ -2,6 +2,7 @@ import Fastify from 'fastify';
 import cors from '@fastify/cors';
 import rawBody from 'fastify-raw-body';
 import { authPlugin, requireAuth } from './plugins/auth.js';
+import { observabilityPlugin } from './plugins/observability.js';
 import { registerModuleRoutes } from './routes/modules.js';
 import { registerBillingRoutes } from './routes/billing.js';
 import { registerWaitlistRoutes } from './routes/waitlist.js';
@@ -16,11 +17,16 @@ if (!process.env.AUTH_SECRET) {
 }
 
 const app = Fastify({ logger: true });
-await app.register(cors, { origin: true });
+// Dev default is permissive; production sets CORS_ORIGIN to the real web
+// origin(s), comma-separated, and everything else is refused.
+await app.register(cors, {
+  origin: process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN.split(',').map((o) => o.trim()) : true,
+});
 // global: false — only routes that opt in via `config: { rawBody: true }`
 // (the Stripe webhook) get the raw body Stripe's signature check needs.
 await app.register(rawBody, { global: false });
 await authPlugin(app);
+await observabilityPlugin(app);
 
 app.get('/health', async () => ({ ok: true }));
 // Proves the API can resolve "who is this?" from the bearer token on every request.

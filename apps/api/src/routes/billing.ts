@@ -2,6 +2,7 @@ import type { FastifyInstance } from 'fastify';
 import type Stripe from 'stripe';
 import { prisma } from '@vault/db';
 import { requireAuth } from '../plugins/auth.js';
+import { alertOps } from '../plugins/observability.js';
 import { stripe } from '../lib/stripe.js';
 
 // Phase 2 scaffold — routes are structurally complete but NOT wired to a
@@ -83,22 +84,30 @@ export async function registerBillingRoutes(app: FastifyInstance) {
         return reply.code(400).send({ error: 'Invalid signature' });
       }
 
-      switch (event.type) {
-        case 'checkout.session.completed':
-          await handleCheckoutCompleted(event.data.object as Stripe.Checkout.Session);
-          break;
-        case 'customer.subscription.created':
-        case 'customer.subscription.updated':
-          await handleSubscriptionUpsert(event.data.object as Stripe.Subscription);
-          break;
-        case 'customer.subscription.deleted':
-          await handleSubscriptionDeleted(event.data.object as Stripe.Subscription);
-          break;
-        case 'charge.refunded':
-          await handleChargeRefunded(event.data.object as Stripe.Charge);
-          break;
-        default:
-          break; // ignore everything else
+      // A handler failure here is the worst class of bug this app can have:
+      // Stripe took the money and we didn't grant access. Page the operator
+      // and return 500 so Stripe retries the delivery.
+      try {
+        switch (event.type) {
+          case 'checkout.session.completed':
+            await handleCheckoutCompleted(event.data.object as Stripe.Checkout.Session);
+            break;
+          case 'customer.subscription.created':
+          case 'customer.subscription.updated':
+            await handleSubscriptionUpsert(event.data.object as Stripe.Subscription);
+            break;
+          case 'customer.subscription.deleted':
+            await handleSubscriptionDeleted(event.data.object as Stripe.Subscription);
+            break;
+          case 'charge.refunded':
+            await handleChargeRefunded(event.data.object as Stripe.Charge);
+            break;
+          default:
+            break; // ignore everything else
+        }
+      } catch (err) {
+        alertOps(app, 'stripe-webhook-failure', `${event.type} (${event.id}) failed: ${err instanceof Error ? err.message : String(err)}`);
+        return reply.code(500).send({ error: 'Webhook handler failed — Stripe will retry' });
       }
 
       return { received: true };

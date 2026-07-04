@@ -2,6 +2,7 @@ import type { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify';
 import { prisma } from '@vault/db';
 import { hasAccess } from '@vault/entitlements';
 import { requireAuth } from '../plugins/auth.js';
+import { alertOps } from '../plugins/observability.js';
 
 /**
  * Phase 7 — the AI proxy. The ONLY place AI provider calls happen.
@@ -130,6 +131,8 @@ export async function registerAiRoutes(app: FastifyInstance) {
 
       const result = await call(req.body).catch((err) => {
         req.log.error(err, 'AI provider call failed');
+        // Sustained provider failures mean every AI module is dark — page once per cooldown.
+        alertOps(app, 'ai-provider-failure', err instanceof Error ? err.message : String(err));
         return null;
       });
       if (!result) return reply.code(502).send({ error: 'AI provider request failed' });
