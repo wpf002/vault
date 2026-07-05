@@ -1,0 +1,22 @@
+# Web service (Next.js). Built from the monorepo root. NEXT_PUBLIC_API_URL
+# is inlined into the client bundle at BUILD time, so it must be set as a
+# service variable before this builds (Railway passes service vars as build
+# args). Railway sets PORT at runtime.
+FROM node:20-slim
+
+RUN apt-get update && apt-get install -y --no-install-recommends openssl ca-certificates \
+  && rm -rf /var/lib/apt/lists/*
+RUN corepack enable && corepack prepare pnpm@9.12.0 --activate
+
+WORKDIR /app
+COPY . .
+RUN pnpm install --frozen-lockfile
+RUN pnpm --filter @vault/db exec prisma generate
+
+# Baked into the client bundle at build time.
+ARG NEXT_PUBLIC_API_URL
+ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+RUN pnpm --filter @vault/web build
+
+ENV NODE_ENV=production
+CMD ["sh", "-c", "pnpm --filter @vault/web exec next start -p ${PORT:-3000}"]

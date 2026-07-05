@@ -1,0 +1,10 @@
+# Never ship these into the build context / image.
+**/node_modules
+**/.next
+**/dist
+.git
+.turbo
+**/.env
+**/.env.local
+*.log
+.claude

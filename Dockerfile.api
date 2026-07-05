@@ -1,0 +1,21 @@
+# API service (Fastify). Built from the monorepo root so workspace deps
+# (@vault/db, @vault/entitlements, @vault/module-sdk) resolve. Runs via tsx
+# in production — the exact runtime path the app was verified on all along —
+# so there's no separate build graph to get wrong. Railway sets PORT.
+FROM node:20-slim
+
+# openssl is required by Prisma's engine on slim images.
+RUN apt-get update && apt-get install -y --no-install-recommends openssl ca-certificates \
+  && rm -rf /var/lib/apt/lists/*
+RUN corepack enable && corepack prepare pnpm@9.12.0 --activate
+
+WORKDIR /app
+COPY . .
+RUN pnpm install --frozen-lockfile
+RUN pnpm --filter @vault/db exec prisma generate
+
+ENV NODE_ENV=production
+
+# Apply any pending migrations, then start the API. migrate deploy is
+# idempotent, so restarts are safe.
+CMD ["sh", "-c", "pnpm --filter @vault/db exec prisma migrate deploy && pnpm --filter @vault/api exec tsx src/server.ts"]

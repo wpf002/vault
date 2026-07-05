@@ -40,7 +40,9 @@ await registerStoreRoutes(app);
 await registerAiRoutes(app);
 await registerAdminRoutes(app);
 
-const port = Number(process.env.API_PORT ?? 4000);
+// Railway (and most hosts) inject PORT; honor it first, then our own
+// API_PORT for local multi-service dev, then a default.
+const port = Number(process.env.PORT ?? process.env.API_PORT ?? 4000);
 app.listen({ port, host: '0.0.0.0' }).catch((err) => {
   app.log.error(err);
   process.exit(1);
