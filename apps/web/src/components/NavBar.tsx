@@ -21,23 +21,23 @@ export function NavBar() {
         backdropFilter: 'blur(14px)',
       }}
     >
-      <Link href="/" style={{ fontWeight: 800, fontSize: 18, letterSpacing: '-0.03em' }}>
-        Vault
-      </Link>
-      <nav style={{ display: 'flex', gap: 20, alignItems: 'center', fontSize: 14 }}>
-        <Link href="/">Catalog</Link>
-        {status === 'authenticated' ? (
-          <>
-            <Link href="/library">Library</Link>
-            <Link href="/account">Account</Link>
-            <button onClick={() => signOut()}>Sign out</button>
-          </>
-        ) : (
-          <Link href="/login">
-            <button className="primary">Sign in</button>
-          </Link>
-        )}
-      </nav>
+      {status === 'authenticated' ? (
+        <Link href="/" style={{ fontWeight: 800, fontSize: 18, letterSpacing: '-0.03em' }}>
+          Vault
+        </Link>
+      ) : (
+        // Signed out, the only page is the login front door — the brand is
+        // just a wordmark, not a link back into a catalog you can't see yet.
+        <span style={{ fontWeight: 800, fontSize: 18, letterSpacing: '-0.03em' }}>Vault</span>
+      )}
+      {status === 'authenticated' && (
+        <nav style={{ display: 'flex', gap: 20, alignItems: 'center', fontSize: 14 }}>
+          <Link href="/">Catalog</Link>
+          <Link href="/library">Library</Link>
+          <Link href="/account">Account</Link>
+          <button onClick={() => signOut()}>Sign out</button>
+        </nav>
+      )}
     </header>
   );
 }
